@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery Intro</title>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<!--<script src="scripts/jquery-1.10.2.js"></script>
+<script src="scripts/bootstrap.js"></script>
+<script src="scripts/angular.js"></script>-->
+<script src="../app.js"></script>
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy">
+<nav class="navbar navbar-inverse my-nav navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="#">uitutorials.in</a> </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav category-link">
+        <li ><a href="../Bootstrap/htmlPages/grid.html">Bootstrap</a></li>                
+        <li class="dropdown">
+        <a class="active dropdown-toggle" data-toggle="dropdown" href="../angularjs.html">AngularJS
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="../angularjs_definitions.html">Definition</a></li>
+          <li><a href="../angularjs_programs.html">Programs</a></li>
+          <li><a href="../angularjs_examples.html">Examples</a></li>
+          <li><a href="../angularjs_Questions.html">Quetions</a></li>
+        </ul>
+      </li>
+        <li class="dropdown">
+        <a class="active dropdown-toggle" data-toggle="dropdown" href="../jQuery.html">jQuery
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">          
+          <li><a href="advancedJs.html">Advanced JS</a></li>
+          <li><a href="ajax.html">Ajax</a></li>
+          <li><a href="jQuery_examples.html">Examples</a></li>
+          <li><a href="jQuery_Questions.html">Quetions</a></li>
+        </ul>
+      </li>
+        <li><a href="#">Nodejs</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--navigation Bar End-->
+<div class="container page-content">
+<div class="row">
+
+
+<!--Right Column Wrapper Strat-->
+<div class="col-sm-12">
+<h1>Advanced javascript</h1>
+<div style="display:none;">https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know</div>
+
+<h3>Prototype Design Pattern</h3>
+<p>The Prototype design pattern relies on the JavaScript prototypical inheritance.</p>
+<p>The objects created are clones (shallow clones) of the original object that are passed around. One use case of the prototype pattern is performing an extensive database operation to create an object used for other parts of the application. </p>
+<p>To clone an object, a constructor must exist to instantiate the first object. Next, by using the keyword prototype variables and methods bind to the object's structure. Let's look at a basic example:</p>
+<pre>
+var TeslaModelS = function() {
+  this.numWheels    = 4;
+  this.manufacturer = 'Tesla';
+  this.make         = 'Model S';
+}
+
+TeslaModelS.prototype.go = function() {
+  // Rotate wheels
+}
+
+TeslaModelS.prototype.stop = function() {
+  // Apply brake pads
+}
+</pre>
+<p>The constructor allows the creation of a single TeslaModelS object. When a creating new TeslaModelS object, it will retain the states initialized in the constructor. Additionally, maintaining the function go and stop is easy since we declared them with prototype. </p>
+<p>A synonymous way to extend functions on the prototype as described below:</p>
+<pre>
+var TeslaModelS = function() {
+  this.numWheels    = 4;
+  this.manufacturer = 'Tesla';
+  this.make         = 'Model S';
+}
+
+TeslaModelS.prototype = {
+  go: function() {
+    // Rotate wheels
+  },
+  stop: function() {
+    // Apply brake pads
+  }
+}</pre>
+
+<h3>Revealing Prototype Pattern</h3>
+<p>Similar to Module pattern, the Prototype pattern also has a revealing variation. The Revealing Prototype Pattern provides encapsulation with public and private members since it returns an object literal.</p>
+<p>Since we are returning an object, we will prefix the prototype object with a <strong>function</strong>. By extending our example above, we can choose what we want to expose in the current prototype to preserve their access levels:</p>
+<pre>
+var TeslaModelS = function() {
+  this.numWheels    = 4;
+  this.manufacturer = 'Tesla';
+  this.make         = 'Model S';
+}
+
+TeslaModelS.prototype = function() {
+
+  var go = function() {
+    // Rotate wheels
+  };
+
+  var stop = function() {
+    // Apply brake pads
+  };
+
+  return {
+    pressBrakePedal: stop,
+    pressGasPedal: go
+  }
+
+}();
+</pre>
+<p>Note how the functions stop and go will be shielded from the returning object due to being outside of returned object's scope. Since JavaScript natively supports prototypical inheritance, there is no need to rewrite underlying features.</p>
+<h3>Module Design Pattern</h3>
+
+<p>JavaScript modules are the most prevalently used design patterns for keeping particular pieces of code independent of other components. This provides loose coupling to support well-structured code.</p>
+
+<p>For those that are familiar with object-oriented languages, modules are JavaScript "classes". One of the many advantages of classes is encapsulation - protecting states and behaviors from being accessed from other classes. The module pattern allows for public and private (plus the lesser-know protected and privileged) access levels.</p>
+
+<p>Modules should be Immediately-Invoked-Function-Expressions (IIFE) to allow for private scopes - that is, a closure that protect variables and methods (however, it will return an object instead of a function). This is what it looks like:</p>
+<pre>
+(function() {
+
+    // declare private variables and/or functions
+
+    return {
+      // declare public variables and/or functions
+    }
+
+})();
+</pre>
+
+<p>Here we instantiate the private variables and/or functions before returning our object that we want to return. Code outside of our closure is unable to access these private variables since it is not in the same scope. Let's take a more concrete implementation:
+</p>
+<pre>
+var HTMLChanger = (function() {
+  var contents = 'contents'
+
+  var changeHTML = function() {
+    var element = document.getElementById('attribute-to-change');
+    element.innerHTML = contents;
+  }
+
+  return {
+    callChangeHTML: function() {
+      changeHTML();
+      console.log(contents);
+    }
+  };
+
+})();
+
+HTMLChanger.callChangeHTML();       // Outputs: 'contents'
+console.log(HTMLChanger.contents);  // undefined
+</pre>
+
+<p>Notice that callChangeHTML binds to the returned object and can be referenced within the HTMLChanger namespace. However, when outside the module, contents are unable to be referenced.</p>
+<h1>Revealing Module Pattern</h1>
+<p>A variation of the module pattern is called the Revealing Module Pattern. The purpose is to maintain encapsulation and reveal certain variables and methods returned in an object literal. The direct implementation looks like this:</p>
+<pre>
+var Exposer = (function() {
+  var privateVariable = 10;
+
+  var privateMethod = function() {
+    console.log('Inside a private method!');
+    privateVariable++;
+  }
+
+  var methodToExpose = function() {
+    console.log('This is a method I want to expose!');
+  }
+
+  var otherMethodIWantToExpose = function() {
+    privateMethod();
+  }
+
+  return {
+      first: methodToExpose,
+      second: otherMethodIWantToExpose
+  };
+})();
+
+Exposer.first();        // Output: This is a method I want to expose!
+Exposer.second();       // Output: Inside a private method!
+Exposer.methodToExpose; // undefined
+</pre>
+
+<p>Although this looks much cleaner, an obvious disadvantage is unable to reference the private methods. This can pose unit testing challenges. Similarly, the public behaviors are non-overridable.</p>
+
+
+ 
+<h3>Constructor Pattern</h3>
+
+<ol>
+<li>Basic Constructors
+<pre>
+function Car(model, year, miles) {
+this.model = model;
+this.year = year;
+this.miles = miles;
+this.toString = function () {
+    return this.model + " has done " +
+    this.miles + " miles";
+    };
+}
+var civic = new Car("Honda Civic", 2009, 20000);
+var mondeo = new Car("Ford Mondeo", 2010, 5000);
+console.log(civic.toString());
+console.log(mondeo.toString());
+</pre>
+</li>
+<li>
+
+</li>
+Constructors with Prototype
+<pre>
+function Car(model, year, miles) {
+    this.model = model;
+    this.year = year;
+    this.miles = miles;
+}
+Car.prototype.toString = function () {
+    return this.model + " has done " +
+    this.miles + " miles";
+};
+var civic = new Car("Honda Civic", 2009, 20000);
+var mondeo = new Car("Ford Mondeo", 2010, 5000);
+console.log(civic.toString());
+console.log(mondeo.toString());
+</pre>
+</ol>
+<p>
+Several different patterns exist for structuring javascript code to make it resuable, maintainable, and help it avoid naming confilicts. Prototyping is a feature in the javascript languaage, and this particularr pattern is going to leverage prototyping functionality.</p>
+
+<p>With the prototype pattern, you're going to have two parts to it,  that is going to be the constructor--and this will be where you typically define your variables--and then you'll have a separate section, normally right below that, that's going to be your function prototypes. </p>
+
+<p>One of the main benefits, though, of this pattern that I'll show is that the functions are actually loaded up into memory once, so if you define 50 functions using this pattern, those 50 functions will be loaded up in the memory one time. So if you create let's say a hundred objects, they'll all share those same 50 functions in memory. It won't create a duplicate copy of each function. Now, normally, you'd be up to a lot more than that in memory if you had a hundred times say 50 functions, you're up at 5,000 functions now across all the objects. That's not the case with the prototype pattern.</p>
+
+<h3>What is a Closure ?</h3>
+    <p>An inner function always has access to the vars and parameters of its outer function, even after the outer function has returned.</p>
+    
+    <p><strong>Example :</strong> You have a nested function in an outer function. If you reference a variable(var date) in the nested function that's defined outside here, it will create a closure around it.
+    
+    <div class="panel-group" id="intro"> <!-- Panel Group Start -->
+
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#intro" href="#collapse22">
+        Closure</a>
+</h4>
+</div>
+
+<div id="collapse22" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html22">NonClousre</a></li>
+  <li><a data-toggle="tab" href="#script22">Clousre</a></li>
+<li><a data-toggle="tab" href="#description22">Clousre Class</a></li>  
+</ul>
+
+<div class="tab-content"> <!-- Tab Content Start  -->
+  <div id="html22" class="tab-pane fade in active">
+    <pre>
+     &lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;script type="text/javascript"&gt;
+        window.onload = function() {
+            var output = document.getElementById("Output");
+            output.innerHTML = myNonClouser(); // function executed            
+
+            window.setTimeout(function() {
+                output.innerHTML += '&lt;br /&gt;' + myNonClouser();
+            }, 500);
+
+        }
+
+        //Non-Clouser Function
+        function myNonClouser() {
+            var date = new Date();
+            return date.getMilliseconds();
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id="Output"&gt;&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+	</pre>
+  </div>
+  <div id="script22" class="tab-pane fade">
+    <pre>
+    &lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;script type="text/javascript"&gt;
+        window.onload = function() {
+            var output = document.getElementById("Output");
+            var clousre = myClousre();
+            output.innerHTML = clousre(); // function executed            
+
+            window.setTimeout(function() {
+                output.innerHTML += '&lt;br /&gt;' + clousre();
+            }, 500);
+
+        }
+
+        //Non-Clouser Function
+        function myClousre() {
+            var date = new Date();
+            return function() {
+                return date.getMilliseconds();
+            }
+
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id="Output"&gt;&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+	</pre>
+  </div>
+  <div id="description22" class="tab-pane fade">
+    <pre>
+    &lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;script type="text/javascript"&gt;
+        window.onload = function() {
+            var output = document.getElementById("Output");
+
+            var Clouse = new myClosure2(); // Instantiate the function, then assign it to this variable
+            output.innerHTML = Clouse.foo(); // function executed
+
+            window.setTimeout(function() {
+                output.innerHTML += '&lt;br /&gt;' + Clouse.foo();
+            }, 500);
+
+        }
+
+        function myClosure2() { // This is Container , which encapsulate 
+            var date = new Date(); // Variable Defined
+            var myNestedFunc = function() { // Private Function Defined
+                return date.getMilliseconds();
+            }
+
+            return { // Object Literal
+                foo: myNestedFunc
+            };
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id="Output"&gt;&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+	</pre>
+  </div>  
+</div> <!-- Tab content End -->
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+
+
+</div>
+
+<h3>Module Pattern</h3>
+<ol>
+<li> Module
+    <ul>
+    <li> Interchangeable single-part of a larger system that can be easily reused</li>
+    </ul>
+</li>
+<li> Using the notion of IIFE: Immediately Invoked Function Expressions
+
+<pre>
+(function() {
+// code to be immediately invoked
+}());
+</pre>
+</li>
+<li> Problem: there is no real privacy in JavaScript</li>
+<li> The typical module pattern is where immediately invoked function expressions
+(IIFEs) use execution context to create ‘privacy’
+<ul><li>Here, objects are returned instead of functions.</li></ul>
+</li>
+
+<li>In the pattern
+<ul>
+<li> Variables declared are only available inside the module.</li>
+<li> Variables defined within the returning object are available to everyone</li>
+</ul>
+</li>
+</ol>
+<pre>
+var basketModule = (function() {
+        var basket = []; //private
+        return { //exposed to public
+            addItem: function(values) {
+                basket.push(values);
+            },
+            getItemCount: function() {
+                return basket.length;
+            },
+            getTotal: function() {
+                var q = this.getItemCount(),
+                    p = 0;
+                while (q--) {
+                    p += basket[q].price;
+                }
+                return p;
+            }
+        }
+    }());
+
+    //basketModule is an object with properties which can  also be methods
+
+    basketModule.addItem({ item: 'bread', price: 0.5 });
+    basketModule.addItem({ item: 'butter', price: 0.3 });
+    console.log(basketModule.getItemCount());
+    console.log(basketModule.getTotal());
+
+    //however, the following will not work:
+    // (undefined as not inside the returned object)
+
+    console.log(basketModule.basket); //error!
+
+    //(only possible within the module scope)
+
+    console.log(basket); //error
+</pre>
+
+<h3>Creational Pattern</h3>
+<ul>
+<li>Deals with the creation of new objects</li>
+<li> Basically three ways to create objects:
+     <ul>
+     <li>var newObject = {};</li>
+     <li>var newObject = Object.create(null);</li>
+     <li>var newObject = new Object();</li>
+     </ul>
+ </li>
+ <li>And four ways to assign a value to an object
+     <ol>
+         <li>Dot Syntax
+             <ul>
+             <li>newObject.someKey = 'Hello World'; // Write properties</li>
+             <li>var key = newObject.someKey; // Access properties</li>
+             </ul>     
+         </li>
+         <li>Square Brackets Syntax
+            <ol>
+                <li>newObject['someKey'] = 'Hello World';// Write properties</li>
+                <li>var key = newObject['someKey']; // Access properties</li>
+            </ol>
+         </li>
+         <li>defineProperty
+            <pre>Object.defineProperty(newObject, "someKey", {
+            value: "for more control of the property's behavior",
+            writable: true,
+            enumerable: true,
+            configurable: true
+            });</pre>
+         </li>
+         <li>defineProperties
+            <pre>Object.defineProperties(newObject, {
+                "someKey": {
+                value: "Hello World",
+                writable: true
+                },
+                "anotherKey": {
+                value: "Foo bar",
+                writable: false
+                }
+            });</pre>
+         </li>
+         
+     
+     </ol>
+ </li>
+ </ul>
+ 
+<h3>Facade Pattern</h3>
+<ul>
+<li>Structural Pattern</li>
+<li>Convenient, high-level interfaces to larger bodies of code that hide underlying complexity
+	<ul>
+    	<li> Aims to simplify the presented API to other developers</li>
+    </ul>
+<li>
+<li>The facade pattern :
+    <ul>
+        <li>Simplifies the interface of a class</li>
+        <li>Decouples the class from the code that uses it</li>
+    </ul>
+</li>
+<li>
+Facades can be used with the Module pattern in order to hide its
+methods
+    <ul>
+        <li>It differs from the Module pattern as the limited public API differs greatly from
+        the reality of the implementation.</li>
+    </ul>
+</li>
+</ul>
+
+<pre>
+var module = (function() {
+        var _private = {
+            i: 5,
+            get: function() {
+                console.log('current value:' + this.i);
+            },
+            set: function(val) {
+                this.i = val;
+            },
+            run: function() {
+                console.log('running');
+            },
+            jump: function() {
+                console.log('jumping');
+            }
+        };
+        return {
+            facade: function(args) {
+                _private.set(args.val);
+                _private.get();
+                if (args.run) {
+                    _private.run();
+                }
+            }
+        }
+    }());
+    module.facade({ run: true, val: 10 });
+    //outputs current value: 10, running
+</pre>
+
+<h3>Mediator Pattern</h3>
+<ul>
+<li>A mediator:
+	<ul>
+    	<li>A neutral party who assists in negotiations and conflict resolution.</li>
+    </ul>
+</li>
+<li>Behavioural design pattern</li>
+
+<li>Encapsulates how disparate modules interact with each other by acting as an intermediary
+	<ul>
+    	<li>If a system seems to have too many direct relationships between its modules
+(colleagues), it may be time to have a central point of control that modules
+communicate through instead.
+		</li>
+     </ul>
+</li>
+<li>A mediator:
+    <ul>
+        <li>Promotes loose coupling</li>
+        <li>Modules can broadcast or listen for notifications without worrying about the rest of the system</li>    
+    </ul>
+</li>
+</ul>
+<pre>
+var Participant = function(name) {
+        this.name = name;
+        this.chatroom = null;
+    };
+    Participant.prototype = {
+        send: function(message, to) {
+            this.chatroom.send(message, this, to);
+        },
+        receive: function(message, from) {
+            log.add(from.name + " to " + this.name + ": " + message);
+        }
+    };
+    var Chatroom = function() {
+        var participants = {};
+        return {
+            register: function(participant) {
+                participants[participant.name] = participant;
+                participant.chatroom = this;
+            },
+            send: function(message, from, to) {
+                if (to) { // single message
+                    to.receive(message, from);
+                } else { // broadcast message
+                    for (key in participants) {
+                        if (participants[key] !== from) {
+                            participants[key].receive(message, from);
+                        }
+                    }
+                }
+            }
+        };
+    };
+    
+    // log helper
+    var log = (function() {
+        var log = "";
+        return {
+            add: function(msg) { log += msg + "\n"; },
+            show: function() { alert(log);
+                log = ""; }
+        }
+    })();
+
+    function run() {
+        var yoko = new Participant("Yoko");
+        var john = new Participant("John");
+        var paul = new Participant("Paul");
+        var ringo = new Participant("Ringo");
+        var chatroom = new Chatroom();
+        chatroom.register(yoko);
+        chatroom.register(john);
+        chatroom.register(paul);
+        chatroom.register(ringo);
+        yoko.send("All you need is love.");
+        yoko.send("I love you John.");
+        john.send("Hey, no need to broadcast", yoko);
+        paul.send("Ha, I heard that!");
+        ringo.send("Paul, what do you think?", paul);
+        log.show();
+    }
+</pre>
+<hr>
+
+<h3>Javascript Design Patterns
+<!--<a href="../pdf/01Introduction.pdf" target="_blank">
+<i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>-->
+</h3>
+<div class="panel-group" id="intro"> <!-- Panel Group Start -->
+
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#intro" href="#collapse22">
+        01 Basic Introduction</a>
+</h4>
+</div>
+
+<div id="collapse22" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html22">Html</a></li>
+  <li><a data-toggle="tab" href="#script22">Script</a></li>
+<li><a data-toggle="tab" href="#description22">Description</a></li>  
+</ul>
+
+<div class="tab-content"> <!-- Tab Content Start  -->
+  <div id="html22" class="tab-pane fade in active">
+    <pre>
+     &lt;body ng-app="sample"&gt; 
+    Sum of 1 + 2 is {{ 1 + 2}}
+  &lt;/body&gt;
+	</pre>
+  </div>
+  <div id="script22" class="tab-pane fade">
+    <pre>
+    //--> 	"ng-app" stands for angular application.  
+		//		-It is the root of angular application (starting at the element associated, "body" in this case).  
+		//		-Usually one per web page / app (other workarounds available for multiple "ng-app")
+		//		-Cannot be nested
+		//		-Can be attached to any element, but usually to HTML or BODY
+		//		-Usually attached to an angular module (called "root module")
+
+		//-->	angular.module = all application logic under one umbrella. 
+		//		-passing second parameter means, you are creating new module
+		//		-empty square brackets means, the module has no dependencies (to load)
+		//		-currently, the "sample" module is attached as "root module" (using ng-app)
+        angular.module("sample", []); 		
+		//-->	not passing second parameter means, 
+		//		-search for and use existing module, which was already created earlier or in another file
+		//angular.module("sample"); 
+
+		//-->	{{ }} = angular expression
+		//		javascript-like code snippets, evaulated by angular
+		//		control flow statements, functions etc. NOT allowed
+	</pre>
+  </div>
+  <div id="description22" class="tab-pane fade">
+    <pre>
+    //--> 	"ng-app" stands for angular application.  
+		//		-It is the root of angular application (starting at the element associated, "body" in this case).  
+		//		-Usually one per web page / app (other workarounds available for multiple "ng-app")
+		//		-Cannot be nested
+		//		-Can be attached to any element, but usually to HTML or BODY
+		//		-Usually attached to an angular module (called "root module")
+
+		//-->	angular.module = all application logic under one umbrella. 
+		//		-passing second parameter means, you are creating new module
+		//		-empty square brackets means, the module has no dependencies (to load)
+		//		-currently, the "sample" module is attached as "root module" (using ng-app)
+        angular.module("sample", []); 		
+		//-->	not passing second parameter means, 
+		//		-search for and use existing module, which was already created earlier or in another file
+		//angular.module("sample"); 
+
+		//-->	{{ }} = angular expression
+		//		javascript-like code snippets, evaulated by angular
+		//		control flow statements, functions etc. NOT allowed
+	</pre>
+  </div>  
+</div> <!-- Tab content End -->
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+
+
+</div> <!-- Panel Group End -->
+
+
+
+
+
+</div> <!--Right Column Wrapper End col-sm-9-->
+</div> <!--Container Row End-->
+</div> <!--Container End-->
+
+</body>
+</html>

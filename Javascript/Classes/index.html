@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <!--<script src="plugin.js"></script>-->
+    <script type="text/javascript">
+    </script>
+    <style>
+        body {
+            color: #666;
+            font-family: 'Raleway', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.625;
+        }
+        
+        pre {
+            border: 1px solid #eee;
+        }
+        
+        .hl-reserved {
+            color: Green;
+        }
+        
+        .hl-identifier {
+            color: Blue;
+        }
+        
+        .hl-string {
+            color: Red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>3 ways to define a JavaScript class</h1>
+    <h3>Introduction</h3>
+    <p>JavaScript is a very flexible object-oriented language when it comes to syntax. In this article you can find three ways of defining and instantiating an object. Even if you have already picked your favorite way of doing it, it helps to know some alternatives
+        in order to read other people's code.</p>
+    <p>It's important to note that there are no classes in JavaScript. Functions can be used to somewhat simulate classes, but in general JavaScript is a class-less language. Everything is an object. And when it comes to inheritance, objects inherit
+        <from></from>
+        objects, not classes from classes as in the "class"-ical languages.</p>
+    <h3>1. Using a function</h3>
+    <p>This is probably one of the most common ways. You define a normal JavaScript function and then create an object by using the <code>new</code> keyword. To define properties and methods for an object created using <code>function()</code>, you use the
+        <code>this</code> keyword, as seen in the following example.</p>
+    <pre>function Apple (type) {
+    this.type = type;
+    this.color = "red";
+    this.getInfo = getAppleInfo;
+}
+ 
+// anti-pattern! keep reading...
+function getAppleInfo() {
+    return this.color + ' ' + this.type + ' apple';
+}</pre>
+    <p>To instantiate an object using the Apple <em>constructor function</em>, set some properties and call methods you can do the following:</p>
+    <pre>var apple = new Apple('macintosh');
+apple.color = "reddish";
+alert(apple.getInfo());</pre>
+    <h3>1.1. Methods defined internally</h3>
+    <p>In the example above you see that the method getInfo() of the Apple "class" was defined in a separate function getAppleInfo(). While this works fine, it has one drawback – you may end up defining a lot of these functions and they are all in the "global
+        namespece". This means you may have naming conflicts if you (or another library you are using) decide to create another function with the same name. The way to prevent pollution of the global namespace, you can define your methods within the constructor
+        function, like this:</p>
+    <pre>
+    function Apple (type) {
+    this.type = type;
+    this.color = "red";
+    this.getInfo = function() {
+        return this.color + ' ' + this.type + ' apple';
+    };
+}
+</pre>
+    <p>Using this syntax changes nothing in the way you instantiate the object and use its properties and methods.</p>
+    <h3>1.2. Methods added to the prototype</h3>
+    <p>A drawback of 1.1. is that the method getInfo() is recreated every time you create a new object. Sometimes that may be what you want, but it's rare. A more inexpensive way is to add getInfo() to the <em>prototype</em> of the constructor function.</p>
+    <pre>
+        function Apple (type) {
+    this.type = type;
+    this.color = "red";
+}
+ 
+Apple.prototype.getInfo = function() {
+    return this.color + ' ' + this.type + ' apple';
+};
+    </pre>
+    <p>Again, you can use the new objects exactly the same way as in 1. and 1.1.</p>
+    <h3>2. Using object literals</h3>
+    <p>Literals are shorter way to define objects and arrays in JavaScript. To create an empty object using you can do:<br>
+        <code>var o = {};</code><br> instead of the "normal" way:<br>
+        <code>var o = new Object();</code><br> For arrays you can do:<br>
+        <code>var a = [];</code><br> instead of:<br>
+        <code>var a = new Array();</code><br> So you can skip the class-like stuff and create an instance (object) immediately. Here's the same functionality as described in the previous examples, but using object literal syntax this time:</p>
+
+    <pre>
+            var apple = {
+    type: "macintosh",
+    color: "red",
+    getInfo: function () {
+        return this.color + ' ' + this.type + ' apple';
+    }
+}
+        </pre>
+    <p>In this case you don't need to (and cannot) create an instance of the class, it already exists. So you simply start using this instance.</p>
+    <pre>apple.color = "reddish";
+alert(apple.getInfo());</pre>
+    <p>Such an object is also sometimes called <em>singleton</em>. In "classical" languages such as Java, <em>singleton</em> means that you can have only one single instance of this class at any time, you cannot create more objects of the same class. In
+        JavaScript (no classes, remember?) this concept makes no sense anymore since all objects are singletons to begin with. </p>
+    <h3>3. Singleton using a function</h3>
+    <p>The third way presented in this article is a combination of the other two you already saw. You can use a function to define a singleton object. Here's the syntax:</p>
+    <pre>
+        var apple = new function() {
+    this.type = "macintosh";
+    this.color = "red";
+    this.getInfo = function () {
+        return this.color + ' ' + this.type + ' apple';
+    };
+}
+    </pre>
+    <p>So you see that this is very similar to 1.1. discussed above, but the way to use the object is exactly like in 2.</p>
+    <pre>
+        apple.color = "reddish";
+alert(apple.getInfo());
+    </pre>
+    <p><code>new function(){...}</code> does two things at the same time: define a function (an anonymous constructor function) and invoke it with <code>new</code>. It might look a bit confusing if you're not used to it and it's not too common, but hey,
+        it's an option, when you really want a constructor function that you'll use only once and there's no sense of giving it a name.</p>
+    <hr>
+    <h2>The <em><strong>this</strong></em> Keyword</h2>
+    <p>In JavaScript, the thing called <strong>this</strong>, is the object that "owns" the JavaScript code.</p>
+    <p>The value of <strong>this</strong>, when used in a function, is the object that "owns" the function.</p>
+    <p>The value of <strong>this</strong>, when used in an object, is the object itself.
+    </p>
+    <p>The <strong>this</strong> keyword in an object constructor does not have a value. It is only a substitute for the new object.</p>
+    <p>The value of <strong>this</strong> will become the new object when the constructor is used to create an object.</p>
+    <p>Note that <strong>this</strong> is not a variable. It is a keyword. You cannot change the value of <strong>this</strong>.</p>
+    <hr>
+    <h2>Did You Know?</h2>
+    <p>As you can see, JavaScript has object versions of the primitive data types String, Number, and Boolean.</p>
+    <p>There is no reason to create complex objects. Primitive values execute much faster.</p>
+
+    <p>And there is no reason to use <strong>new Array()</strong>. Use array literals instead: <strong>[]</strong></p>
+    <p>And there is no reason to use <strong>new RegExp()</strong>. Use pattern literals instead:<strong> /()/</strong></p>
+    <p>And there is no reason to use <strong>new Function()</strong>. Use function expressions instead:<strong> function () {}.</strong></p>
+    <p>And there is no reason to use <strong>new Object()</strong>. Use object literals instead:<strong> {}</strong></p>
+    <hr>
+    <p>In JavaScript, almost &quot;everything&quot; is an object.</p>
+
+    <ul>
+        <li>Booleans can be objects (if defined with the <strong>new</strong> keyword)</li>
+        <li>Numbers can be objects (if defined with the <strong>new</strong> keyword)</li>
+        <li>Strings can be objects (if defined with the <strong>new</strong> keyword)</li>
+        <li>Dates are always objects</li>
+        <li>Maths are always objects</li>
+        <li>Regular expressions are always objects</li>
+        <li>Arrays are always objects</li>
+        <li>Functions are always objects</li>
+        <li>Objects are always objects</li>
+    </ul>
+    <p>All JavaScript values, except primitives, are objects.</p>
+
+
+    <h2>JavaScript Primitives</h2>
+    <p>A <strong>primitive value</strong> is a value that has no properties or methods.</p>
+    <p>A <strong>primitive data type</strong> is data that has a primitive value.</p>
+    <p>JavaScript defines 5 types of primitive data types:</p>
+    <ul>
+        <li>string</li>
+        <li>number</li>
+        <li>boolean</li>
+        <li>null</li>
+        <li>undefined</li>
+    </ul>
+
+    <p>Primitive values are immutable (they are hardcoded and therefore cannot be changed).</p>
+
+    <div class="w3-panel w3-note">
+        <p>if x = 3.14, you can change the value of x. But you cannot change the value of 3.14.</p>
+    </div>
+
+    <h2>String Objects</h2>
+    <p>Normally, strings are created as primitives: <strong>var firstName = &quot;John&quot;</strong></p>
+    <p>But strings can also be created as objects using the <strong>new</strong> keyword: <strong>var 
+firstName = new 
+String(&quot;John&quot;)</strong></p>
+    <h2>Number Objects</h2>
+    <p>Normally, numbers are created as primitives: <strong>var x = 123</strong></p>
+    <p>But numbers can also be created as objects using the <strong>new</strong> keyword: <strong>var x = new 
+Number(123)</strong></p>
+    <h2>Boolean Objects</h2>
+    <p>Normally, booleans are created as primitives: <strong>var x = 
+false</strong></p>
+    <p>But booleans can also be created as objects using the <strong>new</strong> keyword: <strong>var x = new 
+Boolean(false)</strong></p>
+
+    <h2>JavaScript Objects are Mutable</h2>
+    <p>Objects are mutable: They are addressed by reference, not by value.</p>
+    <p>If person is an object, the following statement will not create a copy of person:</p>
+    <div>
+        var x = person;&nbsp; // This will not create a copy of person.
+    </div>
+    <p>The object x is <strong>not a copy</strong> of person. It <strong>is</strong> person. Both x and person are the same object.</p>
+    <p>Any changes to x will also change person, because x and person are the same object. </p>
+    <pre>
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}
+var x = person;
+x.age = 10;           // This will change both x.age and person.age
+</pre>
+    <p><strong>Note: </strong>JavaScript variables are not mutable. Only JavaScript objects.</p>
+
+
+    <div style="display:none">http://www.phpied.com/3-ways-to-define-a-javascript-class/</div>
+
+</body>
+
+</html>

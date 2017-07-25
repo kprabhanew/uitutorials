@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            color: #666;
+            font-family: 'Raleway', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.625;
+        }
+        
+        pre {
+            border: 1px solid #eee;
+        }
+        
+        .hl-reserved {
+            color: Green;
+        }
+        
+        .hl-identifier {
+            color: Blue;
+        }
+        
+        .hl-string {
+            color: Red;
+        }
+        
+        code {
+            padding: 2px 6px;
+            background: #f0f0f0;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--https://davidwalsh.name/promises-->
+    <h1>JavaScript Promise API</h1>
+    <p>While synchronous code is easier to follow and debug, async is generally better for performance and flexibility. Why "hold up the show" when you can trigger numerous requests at once and then handle them when each is ready? Promises are becoming a
+        big part of the JavaScript world, with many new APIs being implemented with the promise philosophy. Let's take a look at promises, the API, how it's used!</p>
+    <h2>Promises in the Wild</h2>
+    <p>The XMLHttpRequest API is async but does&nbsp;<em>not</em> use the Promises API. &nbsp;There are a few native APIs that now use promises, however:</p>
+    <ul>
+        <li><a href="https://davidwalsh.name/javascript-battery-api">Battery API</a></li>
+        <li><a href="https://davidwalsh.name/fetch">fetch API</a> (XHR's replacement)</li>
+        <li>ServiceWorker API (post coming soon!)</li>
+    </ul>
+    <p>Promises will only become more prevalent so it's important that all front-end&nbsp;developers get used to them. &nbsp;It's also worth noting that Node.js is another platform for Promises (obviously, as&nbsp;Promise is a core language feature).</p>
+    <p><em>Testing promises is probably easier than you think because <code>setTimeout</code> can be used as your async "task"!</em></p>
+    <h2>Basic Promise Usage</h2>
+    <p>The <code>new Promise()</code> constructor should only be used for legacy async tasks, like usage of <code>setTimeout</code> or <code>XMLHttpRequest</code>. A new Promise is created with the <code>new</code> keyword and the promise provides <code>resolve</code>        and <code>reject</code> functions to the provided callback:</p>
+    <pre>
+        var p = new Promise(function(resolve, reject) {
+	
+	// Do an async task async task and then...
+
+        if(/* good condition */) {
+            resolve('Success!');
+        }
+        else {
+            reject('Failure!');
+        }
+    });
+
+    p.then(function() { 
+        /* do something with the result */
+    }).catch(function() {
+        /* error :( */
+    })
+    </pre>
+    <p>It's up to the developer to manually call <code>resolve</code> or <code>reject</code> within the body of the callback based on&nbsp;the result of&nbsp;their given task. A realistic example would be converting XMLHttpRequest to a promise-based task:</p>
+    <pre>
+        // From Jake Archibald's Promises and Back:
+// http://www.html5rocks.com/en/tutorials/es6/promises/#toc-promisifying-xmlhttprequest
+
+function get(url) {
+  // Return a new promise.
+  return new Promise(function(resolve, reject) {
+    // Do the usual XHR stuff
+    var req = new XMLHttpRequest();
+    req.open('GET', url);
+
+    req.onload = function() {
+      // This is called even on 404 etc
+      // so check the status
+      if (req.status == 200) {
+        // Resolve the promise with the response text
+        resolve(req.response);
+      }
+      else {
+        // Otherwise reject with the status text
+        // which will hopefully be a meaningful error
+        reject(Error(req.statusText));
+      }
+    };
+
+    // Handle network errors
+    req.onerror = function() {
+      reject(Error("Network Error"));
+    };
+
+    // Make the request
+    req.send();
+  });
+}
+
+// Use it!
+get('story.json').then(function(response) {
+  console.log("Success!", response);
+}, function(error) {
+  console.error("Failed!", error);
+});
+    </pre>
+    <p>Sometimes you don't&nbsp;<em>need</em> to complete an async tasks within the promise -- if it's&nbsp;<em>possible</em> that an async action&nbsp;will be taken, however, returning a promise will be best so that you can always count on a promise coming
+        out of a given function. In that case you can simply call <code>Promise.resolve()</code> or <code>Promise.reject()</code> without using the <code>new</code> keyword.&nbsp;For example:</p>
+    <pre>
+            var userCache = {};
+
+function getUserDetail(username) {
+  // In both cases, cached or not, a promise will be returned
+
+  if (userCache[username]) {
+  	// Return a promise without the "new" keyword
+    return Promise.resolve(userCache[username]);
+  }
+
+  // Use the fetch API to get the information
+  // fetch returns a promise
+  return fetch('users/' + username + '.json')
+    .then(function(result) {
+      userCache[username] = result;
+      return result;
+    })
+    .catch(function() {
+      throw new Error('Could not find user: ' + username);
+    });
+}
+        </pre>
+    <p>Since a promise is always returned, you can always use the <code>then</code> and <code>catch</code> methods on its return value!</p>
+    <h2>then</h2>
+    <p>All promise instances get&nbsp;a <code>then</code> method which allows you to react to the promise. &nbsp;The first <code>then</code> method callback&nbsp;receives the result given to it by the <code>resolve()</code> call:</p>
+    <pre>
+        new Promise(function(resolve, reject) {
+	// A mock async action using setTimeout
+	setTimeout(function() { resolve(10); }, 3000);
+    })
+    .then(function(result) {
+        console.log(result);
+    });
+
+    // From the console:
+    // 10
+    </pre>
+    <p>The <code>then</code> callback&nbsp;is&nbsp;triggered when the promise is resolved. &nbsp;You can also chain <code>then</code> method&nbsp;callbacks:</p>
+    <pre>
+        new Promise(function(resolve, reject) { 
+	// A mock async action using setTimeout
+	setTimeout(function() { resolve(10); }, 3000);
+    })
+    .then(function(num) { console.log('first then: ', num); return num * 2; })
+    .then(function(num) { console.log('second then: ', num); return num * 2; })
+    .then(function(num) { console.log('last then: ', num);});
+
+    // From the console:
+    // first then:  10
+    // second then:  20
+    // last then:  40
+    </pre>
+    <p>Each <code>then</code>&nbsp;receives the result of the previous <code>then</code>'s return value.</p>
+    <p>If a promise has already resolved but <code>then</code> is called again, the callback immediately fires. If the promise is rejected and you call <code>then</code> after rejection, the callback is never called.</p>
+    <p>The <code>catch</code> callback is executed when the promise is rejected:</p>
+    <h2>catch</h2>
+    <pre>
+    new Promise(function(resolve, reject) {
+        // A mock async action using setTimeout
+        setTimeout(function() { reject('Done!'); }, 3000);
+    })
+    .then(function(e) { console.log('done', e); })
+    .catch(function(e) { console.log('catch: ', e); });
+
+    // From the console:
+    // 'catch: Done!'
+    </pre>
+    <p>What you provide to the <code>reject</code> method is up to you. A frequent pattern is sending an <code>Error</code> to the <code>catch</code>:</p>
+    <p>reject(Error('Data could not be found'));</p>
+    <h2><code>Promise.all</code></h2>
+    <p>Think&nbsp;about JavaScript loaders: &nbsp;there are times when you trigger multiple async interactions but only want to respond when all of them are completed -- that's where <code>Promise.all</code> comes in. &nbsp;The <code>Promise.all</code> method
+        takes an&nbsp;array of promises and fires one callback once they are all resolved:</p>
+    <pre>
+        Promise.all([promise1, promise2]).then(function(results) {
+            // Both promises resolved
+        })
+        .catch(function(error) {
+            // One or more promises was rejected
+        });
+    </pre>
+    <p>An&nbsp;perfect way of thinking about <code>Promise.all</code> is firing off multiple AJAX (via <code>fetch</code>) requests at one time:</p>
+    <pre>
+        var request1 = fetch('/users.json');
+        var request2 = fetch('/articles.json');
+
+        Promise.all([request1, request2]).then(function(results) {
+            // Both promises done!
+        });
+    </pre>
+    <p>You could combine APIs like <code>fetch</code> and the Battery API since they both return promises:</p>
+    <pre>
+        Promise.all([fetch('/users.json'), navigator.getBattery()]).then(function(results) {
+            // Both promises done!
+        });
+    </pre>
+    <p>Dealing with rejection is, of course, hard. If any promise is rejected the catch fires for the first rejection:</p>.
+    <pre>
+        var req1 = new Promise(function(resolve, reject) { 
+	// A mock async action using setTimeout
+	setTimeout(function() { resolve('First!'); }, 4000);
+});
+var req2 = new Promise(function(resolve, reject) { 
+	// A mock async action using setTimeout
+	setTimeout(function() { reject('Second!'); }, 3000);
+});
+Promise.all([req1, req2]).then(function(results) {
+	console.log('Then: ', results);
+}).catch(function(err) {
+	console.log('Catch: ', err);
+});
+
+// From the console:
+// Catch: Second!
+    </pre>
+    <p><code>Promise.all</code> will be super useful as more APIs move toward promises.</p>
+    <h2><code>Promise.race</code></h2>
+    <p><code>Promise.race</code> is an interesting function&nbsp;-- instead of waiting for all promises to be resolved or rejected, <code>Promise.race</code> triggers as soon as any&nbsp;promise in the array is resolved or rejected:</p>
+    <pre>
+        var req1 = new Promise(function(resolve, reject) { 
+	// A mock async action using setTimeout
+	setTimeout(function() { resolve('First!'); }, 8000);
+});
+var req2 = new Promise(function(resolve, reject) { 
+	// A mock async action using setTimeout
+	setTimeout(function() { resolve('Second!'); }, 3000);
+});
+Promise.race([req1, req2]).then(function(one) {
+	console.log('Then: ', one);
+}).catch(function(one, two) {
+	console.log('Catch: ', one);
+});
+
+// From the console:
+// Then: Second!
+    </pre>
+    <p>A use case could be triggering a request to a primary source and a secondary source (in case the primary or secondary are unavailable).</p>
+    <h3>Get Used to Promises</h3>
+    <p>Promises have been a hot topic for the past few years (or the last 10 years if you were a Dojo Toolkit user) and they've gone from a JavaScript framework pattern to a language staple. It's probably wise to assume you'll be seeing most new JavaScript
+        APIs being implemented with a promise-based pattern...</p>
+
+
+    <p>...and that's a great thing! Developers are able to avoid callback hell and async interactions can be passed around like any other variable. Promises take some time getting used to be the tools are (natively) there and now is the time to learn them!</p>
+
+    <h2>Examples</h2>
+    <pre>
+        
+var promiseToCleanRoom = new Promise(function(resolve, reject) {
+
+    var isClean = false;
+
+    if (isClean) {
+        resolve('clean');
+    } else {
+        reject('not clean');
+    }
+
+})
+
+promiseToCleanRoom.then(function(fromResolve) {
+    console.log('Room cleansed');
+}).catch(function(fromReject) {
+    console.log('Room not cleaned');
+})
+console.log('*********************');
+/******************** */
+
+var cleanRoom = function() {
+    return new Promise(function(resolve, reject) {
+        resolve('Cleaned The Room');
+    });
+}
+
+var removeGarbage = function(message) {
+    return new Promise(function(resolve, reject) {
+        resolve(message + ' reomve Garbage');
+    })
+}
+
+var winIcecream = function(message) {
+    return new Promise(function(resolve, reject) {
+        resolve(message + ' Won Ice Cream')
+    })
+}
+
+//call Promise cleanRoom() ->  wait for promise done 
+//after that then() will be called, we have the callback function
+//once cleanRoom() finished then only removeGarbage called
+
+cleanRoom().then(function(result) {
+    return removeGarbage(result);
+}).then(function(result1) {
+    return winIcecream(result1);
+}).then(function(result2) {
+    console.log(result2);
+})
+
+/****************** */
+
+Promise.all([cleanRoom(), removeGarbage(), winIcecream()]).then(function() {
+    console.log('All Finished');
+})
+
+Promise.race([cleanRoom(), removeGarbage(), winIcecream()]).then(function() {
+    console.log('One of them Finished');
+})
+    </pre>
+    <a href="https://github.com/maxogden/art-of-node#callbacks">Node JS</a>
+    <a href="https://medium.com/coding-design/writing-better-ajax-8ee4a7fb95f"> Better AJAX calls in jQuery </a>
+    <a href="http://www.binaryintellect.net/articles/749ed588-b408-4a7e-94da-77549c00e803.aspx"> Three Ways of Callbacks To JQuery $.Ajax()</a>
+
+</body>
+
+</html>

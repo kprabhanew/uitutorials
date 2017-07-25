@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        window.onload = function() {
+            var output = document.getElementById("Output");
+
+            var Clouse = new myClosure2(); // Instantiate the function, then assign it to this variable
+            output.innerHTML = Clouse.foo(); // function executed
+
+            window.setTimeout(function() {
+                output.innerHTML += '<br />' + Clouse.foo();
+            }, 500);
+
+        }
+
+        function myClosure2() { // This is Container , which encapsulate 
+            var date = new Date(); // Variable Defined
+            var myNestedFunc = function() { // Private Function Defined
+                return date.getMilliseconds();
+            }
+
+            return { // Object Literal
+                foo: myNestedFunc
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <div id="Output"></div>
+</body>
+
+</html>

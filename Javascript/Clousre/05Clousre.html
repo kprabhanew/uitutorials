@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        window.onload = function() {
+            var output = document.getElementById("Output");
+            var clousre = myClousre();
+            output.innerHTML = clousre(); // function executed            
+
+            window.setTimeout(function() {
+                output.innerHTML += '<br />' + clousre();
+            }, 500);
+
+        }
+
+        //Non-Clouser Function
+        function myClousre() {
+            var date = new Date();
+            return function() {
+                return date.getMilliseconds();
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="Output"></div>
+</body>
+
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ajax Intro</title>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<!--<script src="scripts/jquery-1.10.2.js"></script>
+<script src="scripts/bootstrap.js"></script>
+<script src="scripts/angular.js"></script>-->
+<script src="app.js"></script>
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy">
+<nav class="navbar navbar-inverse my-nav navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="#">uitutorials.in</a> </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav category-link">
+        <li ><a href="Bootstrap/htmlPages/grid.html">Bootstrap</a></li>                
+        <li class="dropdown">
+        <a class="active dropdown-toggle" data-toggle="dropdown" href="angularjs.html">AngularJS
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="angularjs_definitions.html">Definition</a></li>
+          <li><a href="angularjs_programs.html">Programs</a></li>
+          <li><a href="angularjs_examples.html">Examples</a></li>
+          <li><a href="angularjs_Questions.html">Quetions</a></li>
+        </ul>
+      </li>
+        <li class="dropdown">
+        <a class="active dropdown-toggle" data-toggle="dropdown" href="jQuery.html">jQuery
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="ajax.html">Ajax</a></li>
+          <li><a href="jQuery_programs.html">Programs</a></li>
+          <li><a href="jQuery_examples.html">Examples</a></li>
+          <li><a href="jQuery_Questions.html">Quetions</a></li>
+        </ul>
+      </li>
+        <li><a href="#">Nodejs</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--navigation Bar End-->
+<div class="container page-content">
+<div class="row">
+
+<div class="col-sm-2" id="myScrollspy">
+  <nav >
+    <ul class="nav nav-pills nav-stacked left-menu" data-offset-top="50" data-spy="affix">
+      <li><a href="#navbar-section"><i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp; Directives </a></li>
+      <li><a href="#dropdown-section"><i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp; Transclusion</a></li>
+      <li><a href="#tab-section"><i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp; Scope</a></li>
+       
+      <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      <i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp; Section 4 <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Tabs</a></li>
+          <li><a href="#">Modal</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+<!--Right Column Wrapper Strat-->
+<div class="col-sm-9">
+<h1>Ajax Introduction</h1>
+<div class="well">
+<p>Unfortunately, different browsers implement the Ajax API differently. Typically this meant that developers would have to account for all the different browsers to ensure that Ajax would work universally. Fortunately, jQuery provides Ajax support that abstracts away painful browser differences. It offers both a full-featured $.ajax() method, and simple convenience methods such as <code>$.get(), $.getScript(), $.getJSON(), $.post(), and $().load()</code>.</p>
+<a href="https://learn.jquery.com/ajax/" target="_blank">jQuery Ajax</a> &nbsp; / &nbsp; <a href="https://www.sitepoint.com/introduction-jquery-shorthand-ajax-methods/" target="_blank">jQuery Ajax Ref</a>
+</div>
+<h2>load()
+<a href="pdf/01Introduction.pdf" target="_blank">
+<i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+</h2>
+<p>The first method we’ll discuss is <code>load()</code>. It enables us to load data from the server and place the returned data (often HTML code) into the elements matched by the selection. Before seeing it in action, let’s see its signature:</p>
+<pre><doce>load</code>(url[, data][, callback])</pre>
+<p>The meaning of each parameter is described below:</p>
+<ul><li><code >url</code>: A string specifying the URL of the resource to which you want to send the request;</li>
+<li><code>data</code>: An optional string that should be a well formatted query string or an object that has to be passed as the request parameter. In case a string is passed the request method will be GET, if an object is passed the method of the request will be POST. If this parameter is omitted the GET method is used;</li>
+<li><code>callback</code>: An optional callback function invoked after the Ajax request is complete. This function accepts up to three parameters: the response text, a status string of the request, and the jqXHR instance. Inside the callback, the context (<code>this</code>) is set to each element of the collection, one at a time.</li>
+</ul>
+<div class="panel-group" id="intro"> <!-- Panel Group Start -->
+
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#intro" href="#collapse22">
+        01 load()</a>
+</h4>
+</div>
+
+<div id="collapse22" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html22">Html</a></li>
+  <li><a data-toggle="tab" href="#script22">Script</a></li>
+<li><a data-toggle="tab" href="#textFile22">Description</a></li>  
+</ul>
+
+<div class="tab-content"> <!-- Tab Content Start  -->
+  <div id="html22" class="tab-pane fade in active">
+    <pre>
+    &lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Javascript Async Call&lt;/title&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;link href="css/style.css" rel="stylesheet"&gt;
+    &lt;script src="script/jquery-1.10.2.js"&gt;&lt;/script&gt;
+    &lt;script src="script/app.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;ul id="main-menu"&gt;
+        &lt;li&gt;&lt;a href="myFile.txt"&gt;New Page (click me)&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div id="notification-bar" class="nb"&gt;&lt;/div&gt;
+    &lt;div id="main"&gt;&lt;/div&gt;
+
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+    </pre>
+  </div>
+  <div id="script22" class="tab-pane fade">
+
+    <pre>
+    app.js
+    $(document).ready(function() {
+
+    $('#main-menu a').click(function(event) {
+        // Prevents the default behavior which is
+        // to load the page synchronously
+        event.preventDefault();
+
+        $('#main').load(this.href + ' #sharemenu *', function(data, status) {
+            $bar = $('#notification-bar');
+
+            if (status === 'success') {
+                $bar.text('The page has been successfully loaded.');
+            } else {
+                $bar.text('An error occurred.');
+            }
+
+            $bar
+                .slideDown('normal')
+                .delay(2000)
+                .slideUp('fast');
+        });
+
+        //$('#main').load(this.href) + '#main *';
+    });
+})
+    </pre>
+  </div>
+  <div id="textFile22" class="tab-pane fade">
+  
+  <pre>
+  myFile.txt
+  
+  &lt;div id="sharemenu"&gt;
+    &lt;p&gt;[page content goes here]&lt;/p&gt;
+&lt;/div&gt;
+
+  </pre>
+    
+  </div>  
+</div> <!-- Tab content End -->
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+
+
+</div> <!-- Panel Group End -->
+
+
+<h2>$.post()</h2>
+<p>Sometimes we don’t only want to inject the content returned by the server in one or more elements. We may want to retrieve the data and then decide what to do with it after it’s retrieved. To do that, we can use either the <code>$.post() or the $.get()</code> methods.</p>
+<p>The signature of the $.post() method is:</p>
+<pre>
+<code>$.post</code>(url[, data][, callback][, type])
+</pre>
+<p>The parameters are described below:</p>
+<ul><li><code>url</code>: A string specifying the URL of the resource to which you want to send the request;</li>
+<li><code>data</code>: An optional string or object that jQuery will send as part of the POST request;</li>
+<li><code>callback</code>: A callback function that is executed after the request succeeds. Inside the callback, the context (<code>this</code>) is set to an object that represents the Ajax settings used in the call.</li>
+<li><code>type</code>: An optional string to specify how the response body is interpreted. The values accepted are: html, text, xml, json, script, and jsonp. This can also be a string of multiple, space-separated values. In this case, jQuery converts one type into another. For example, if the response is text and we want it to be treated as XML, we can write “text xml”. If this parameter is omitted, the response text is passed to the callbacks without any processing or evaluation, and jQuery does its best to guess the correct format.</li>
+</ul>
+<div class="panel-group" id="controller"> <!-- Panel Group Start -->
+
+
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#controller" href="#collapse23">
+        02 post()</a>
+</h4>
+</div>
+
+<div id="collapse23" class="panel-collapse collapse ">
+      <div class="panel-body">
+      <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html23">Html</a></li>
+  <li><a data-toggle="tab" href="#script23">Script</a></li>
+    <li><a data-toggle="tab" href="#template-post">Template</a></li>
+
+</ul>
+
+<div class="tab-content"> <!-- Tab Content Start  -->
+  <div id="html23" class="tab-pane fade in active">
+    <pre>
+    &lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Javascript Async Call&lt;/title&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;link href="css/style.css" rel="stylesheet"&gt;
+    &lt;script src="script/jquery-1.10.2.js"&gt;&lt;/script&gt;
+    &lt;script src="script/app.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;label&gt;Username: &lt;input name="username" /&gt;&lt;/label&gt;
+    &lt;div id="notification-bar"&gt;&lt;/div&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+  </div>
+  <div id="script23" class="tab-pane fade">
+    <pre>
+    $('input').blur(function() {
+        var data = {};
+        data[this.name] = this.value;
+
+        $.post(
+            '/user',
+            data,
+            function(responseText) {
+                if (responseText.status === 'error') {
+                    $('#notification-bar').html('&lt;p&gt;' + responseText.message + '&lt;p&gt;');
+                }
+            }
+        );
+    });
+    </pre>
+  </div>
+  <div id="template-post" class="tab-pane fade">
+    <pre>
+    &lt;div id="sharemenu"&gt;
+    &lt;p&gt;[page content goes here]&lt;/p&gt;
+&lt;/div&gt;
+    </pre>
+    </div>
+  
+</div> <!-- Tab content End -->
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+
+
+</div> <!-- Panel Group End -->
+
+
+<h1>$.get()</h1>
+<p><code>$.get()</code> is one of the means jQuery provides to make a GET request. This method initiates a GET request to the server using the URL specified and the optional data provided. It can also execute a callback when the request has been completed.</p>
+<p class="well"><code>$.get</code>(url[, data][, callback][, type])</p>
+<div class="panel-group" id="basic-scope"> <!-- Panel Group Start -->
+<div class="panel panel-default"> <!-- Panel Start -->
+<div class="panel-heading">
+<h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#basic-scope" href="#collapse24">
+        Example 3 : $.get()</a>
+</h4>
+</div>
+
+<div id="collapse24" class="panel-collapse collapse ">
+      <div class="panel-body">
+
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#html24">Html</a></li> 
+  <li><a data-toggle="tab" href="#script24">Script</a></li>
+    <li><a data-toggle="tab" href="#template-get">Template</a></li>   
+</ul>
+
+<div class="tab-content"> <!-- Tab Content Start  -->
+  <div id="html24" class="tab-pane fade in active">
+    <pre>
+    &lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Javascript Async Call&lt;/title&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;link href="css/style.css" rel="stylesheet"&gt;
+    &lt;script src="script/jquery-1.10.2.js"&gt;&lt;/script&gt;
+    &lt;script src="script/app.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;label&gt;Username: &lt;input name="username" /&gt;&lt;/label&gt;
+    &lt;div id="notification-bar"&gt;&lt;/div&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+	</pre>
+  </div>  
+  <div id="script24" class="tab-pane fade">
+    <pre>
+    // Needed to simulate a JSON response
+    var fakeResponse = {
+        status: "error",
+        message: "Username already in use"
+    };
+
+    $('input').blur(function() {
+        var data = {};
+        data[this.name] = this.value;
+
+        if (this.value) {
+            $.get(
+                'myFile.txt',
+                //data,
+                function(responseText) {
+                    if (fakeResponse.status === 'error') {
+                        $('#notification-bar')
+                            .html('<p>' + fakeResponse.message + '<p>')
+                    }
+                });
+        }
+    });
+
+    $('input').focus(function() {
+        $('#notification-bar').html('');
+    });
+    
+	</pre>
+  </div> 
+  <div id="template-get" class="tab-pane fade">
+    <pre>
+    &lt;div id="sharemenu"&gt;
+    &lt;p&gt;[page content goes here]&lt;/p&gt;
+&lt;/div&gt;
+    </pre>
+    </div>
+</div> <!-- Tab content End -->
+	  </div>
+    </div>
+</div> <!-- Panel ENd -->
+</div> <!-- Panel Group End -->
+<h3>Reference Documents</h3>
+<table class="table table-bordered ">
+<tr>
+<td><a href="pdf/23 ajax-jQuery-1.9.pdf" target="_blank">$.Ajax() 9.1</a></td>
+<td><a href="pdf/24 ajax-jQuery-function.pdf" target="_blank">$.Ajax()</a></td>
+<td><a href="pdf/26 ajax-jQuery-getJSON.pdf" target="_blank">$.getJson()</a></td>
+</tr>
+</table>
+
+</div> <!--Right Column Wrapper End col-sm-9-->
+</div> <!--Container Row End-->
+</div> <!--Container End-->
+
+</body>
+</html>

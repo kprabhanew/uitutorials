@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        window.onload = function() {
+            var output = document.getElementById("Output");
+            output.innerHTML = myNonClouser(); // function executed            
+
+            window.setTimeout(function() {
+                output.innerHTML += '<br />' + myNonClouser();
+            }, 500);
+            window.setTimeout(function() {
+                output.innerHTML += '<br />' + myNonClouser();
+            }, 500);
+
+            console.log("code executed before setTimeout");
+
+        }
+
+        //Non-Clouser Function
+        function myNonClouser() {
+            var date = new Date();
+            return date.getMilliseconds();
+        }
+    </script>
+</head>
+
+<body>
+    <div id="Output"></div>
+</body>
+
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery Intro</title>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<!--<script src="scripts/jquery-1.10.2.js"></script>
+<script src="scripts/bootstrap.js"></script>
+<script src="scripts/angular.js"></script>-->
+<script src="../app.js"></script>
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy">
+<nav class="navbar navbar-inverse my-nav navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="#">uitutorials.in</a> </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav category-link">
+        <li ><a href="../Bootstrap/htmlPages/grid.html">Bootstrap</a></li>                
+        <li class="dropdown">
+        <a class="active dropdown-toggle" data-toggle="dropdown" href="../angularjs.html">AngularJS
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="../angularjs_definitions.html">Definition</a></li>
+          <li><a href="../angularjs_programs.html">Programs</a></li>
+          <li><a href="../angularjs_examples.html">Examples</a></li>
+          <li><a href="../angularjs_Questions.html">Quetions</a></li>
+        </ul>
+      </li>
+        <li class="dropdown">
+        <a class="active dropdown-toggle" data-toggle="dropdown" href="../jQuery.html">jQuery
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">          
+          <li><a href="advancedJs.html">Advanced JS</a></li>
+          <li><a href="ajax.html">Ajax</a></li>
+          <li><a href="jQuery_examples.html">Examples</a></li>
+          <li><a href="jQuery_Questions.html">Quetions</a></li>
+        </ul>
+      </li>
+        <li><a href="#">Nodejs</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--navigation Bar End-->
+<div class="container page-content">
+<div class="row">
+
+
+<!--Right Column Wrapper Strat-->
+<div class="col-sm-12">
+
+<h1>Regular Expression</h1>
+
+<table class="table table-striped ">
+<tr>
+<td>Category</td>
+<td>Description</td>
+<td>Symbol</td>
+<td>Details</td>
+<td>Example</td>
+<td>Result</td>
+</tr>
+<tr>
+<td>Character classes</td>
+<td>a single character of : a,b or c</td>
+<td>[abc]</td>
+<td>Matches either an a, b or c character</td>
+<td>/[abc]+/g</td>
+<td>a bb ccc</td>
+</tr>
+<tr>
+<td></td>
+<td>A character except: a, b or c</td>
+<td>[^abc]</td>
+<td>Matches any character except for an a, b or c</td>
+<td>/[^abc]+/g</td>
+<td>{Anything} b{ut} abc{.}</td>
+</tr>
+
+<tr>
+<td></td>
+<td>A character in the range: a-z</td>
+<td>[a-z]</td>
+<td>Matches any characters between a and z, including a and z.</td>
+<td>/[a-z]+/g</td>
+<td>{Only} {a}-{z}</td>
+</tr>
+
+<tr>
+<td></td>
+<td>A character not in the range: a-z</td>
+<td>[^a-z]</td>
+<td>Matches any characters except those in the range a-z.</td>
+<td>/[^a-z]+/g</td>
+<td>{A}nything{ }but{ }a{-}z{.}</td>
+</tr>
+
+<tr>
+<td></td>
+<td>A character in the range: a-z or A-Z</td>
+<td>[a-zA-Z]</td>
+<td>Matches any characters between a-z or A-Z. You can combine as much as you please.</td>
+<td>/[a-zA-Z]+/g</td>
+<td>{abc}123{DEF}</td>
+</tr>
+
+
+<tr>
+<td>Meta sequences</td>
+<td>Any single character</td>
+<td>.</td>
+<td>Matches any character other than newline (or including newline with the /s flag)</td>
+<td>/.+/</td>
+<td>{a b c}</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>Any whitespace character</td>
+<td>\s</td>
+<td>Matches any space, tab or newline character.</td>
+<td>/\s/g</td>
+<td>any{ }whitespace{ }character</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>Any non-whitespace character</td>
+<td>\S</td>
+<td>Matches anything other than a space, tab or newline.</td>
+<td>/\S+/</td>
+<td>any non-whitespace</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Any digit</td>
+<td>\d</td>
+<td>Matches any decimal digit. Equivalent to [0-9].</td>
+<td>/\d/g</td>
+<td>one: {1}, two: {2}</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Any non-digit</td>
+<td>\D</td>
+<td>Matches anything other than a decimal digit.</td>
+<td>/\D+/</td>
+<td>{one: }1{, two: }2</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Any word character</td>
+<td>\w</td>
+<td>Matches any letter, digit or underscore. Equivalent to [a-zA-Z0-9_].</td>
+<td>/\w+/g</td>
+<td>{any} {word} {character}</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Any non-word character</td>
+<td>\W</td>
+<td>Matches anything other than a letter, digit or underscore.</td>
+<td>/\W+/g</td>
+<td>not{.}a{@}word{%}character</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Vertical whitespace character</td>
+<td>\v</td>
+<td>Matches newlines and vertical tabs. Works with Unicode. Vertical tabs can be inserted in some word processors using CMD/CTRL+ENTER.</td>
+<td>/(\v)/</td>
+<td>{line one} {} {line two}</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Match nth subpattern</td>
+<td>\n</td>
+<td>Usually referred to as a `backreference`, this will match a repeat of the text captured in a previous set of parentheses.</td>
+<td>/(.)\1/</td>
+<td>Repeated le{tt}ers</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Backspace character</td>
+<td>[\b]</td>
+<td>Matches the backspace control character.</td>
+<td>[\b]</td>
+<td> </td>
+</tr>
+
+<tr>
+<td></td>
+<td>Makes any character literal</td>
+<td>\</td>
+<td>This may be used to match the literal value of any metacharacter, or the / delimiter.</td>
+<td>/\\w/</td>
+<td>match \\w literally </td>
+</tr>
+
+<tr>
+<td>Group constructs</td>
+<td>Capture everything enclosed</td>
+<td>(...)</td>
+<td>Parts of the regex enclosed in parentheses may be referred to later in the expression or extracted from the results of a successful match.</td>
+<td>/(he)+/g</td>
+<td>{hehe}h {he} {he}h</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Match either a or b</td>
+<td>(a|b)</td>
+<td>Matches the a or the b part of the subexpression.</td>
+<td>/(a|b)/g</td>
+<td>{b}e{a}ch</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Match everything enclosed</td>
+<td>(?:...)</td>
+<td>This construct is similar to (...), but won't create a capture group.</td>
+<td>/(?:he)+/g</td>
+<td>{hehe}h {he} {he}h</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Positive lookahead</td>
+<td>(?=...)</td>
+<td>Asserts that the given subpattern can be matched here, without consuming characters</td>
+<td>/foo(?=bar)/</td>
+<td>{foo}bar foobaz</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Negative Lookahead</td>
+<td>(?!...)</td>
+<td>Starting at the current position in the expression, ensures that the given pattern will not match. Does not consume characters.</td>
+<td>/foo(?!bar)/</td>
+<td>foobar {foo}baz</td>
+</tr>
+
+<tr>
+<td>quantifiers</td>
+<td>Zero or one of a</td>
+<td>a?</td>
+<td>Matches an `a` character or nothing.</td>
+<td>/ba?/g</td>
+<td>{ba} {b} a</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Zero or more of a</td>
+<td>a*</td>
+<td>Matches zero or more consecutive `a` characters.</td>
+<td>/ba*/g</td>
+<td>a {ba} {baa} aaa {ba} {b}</td>
+</tr>
+
+<tr>
+<td></td>
+<td>One or more of a</td>
+<td>a+</td>
+<td>Matches one or more consecutive `a` characters.</td>
+<td>/a+/g</td>
+<td>{a} {aa} {aaa} {aaaa} b{a}b b{aa}b</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>Exactly 3 of a</td>
+<td>a{3}</td>
+<td>Matches exactly 3 consecutive `a` characters.</td>
+<td>/a{3}/g</td>
+<td>a aa {aaa} {aaa}a</td>
+</tr>
+
+<tr>
+<td></td>
+<td>3 or more of a</td>
+<td>a{3,}</td>
+<td>Matches at least 3 consecutive `a` characters.</td>
+<td>/a{3,}/</td>
+<td>a aa {aaa} {aaaa} {aaaaaa}</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>Between 3 and 6 of a</td>
+<td>a{3,6}</td>
+<td>Matches between 3 and 6 (inclusive) consecutive `a` characters.</td>
+<td>/a{3,6}/</td>
+<td>a aa {aaa} {aaaa} aaaaaaaaaa</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Lazy quantifier</td>
+<td>a*?</td>
+<td>Matches as few characters as possible.</td>
+<td>/r\w*?/</td>
+<td>{r} {r}e {r}egex</td>
+</tr>
+
+<tr>
+<td>Anchors</td>
+<td>Start of string</td>
+<td>^</td>
+<td>Matches the start of a string without consuming any characters. If multiline mode is used, this will also match immediately after a newline character.</td>
+<td>/^\w+/</td>
+<td>{start} of string</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>End of string</td>
+<td>$</td>
+<td>Matches the end of a string without consuming any characters. If multiline mode is used, this will also match immediately before a newline character.</td>
+<td>/\w+$/</td>
+<td>end of {string}</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>A word boundary</td>
+<td>\b</td>
+<td>Matches, without consuming any characters, immediately between a character matched by \w and a character not matched by \w (in either order). It cannot be used to separate non words from words.</td>
+<td>/d\b/g</td>
+<td>wor{d} boundaries are od{d}</td>
+</tr>
+
+
+<tr>
+<td></td>
+<td>Non-word boundary</td>
+<td>\B</td>
+<td>Matches, without consuming any characters, at the position between two characters matched by \w</td>
+<td>/r\B/g</td>
+<td>{r}egex is {r}eally cool</td>
+</tr>
+
+<tr>
+<td>flags/modifiers</td>
+<td>Global</td>
+<td>g</td>
+<td>Tells the engine not to stop after the first match has been found, but rather to continue until no more matches can be found.</td>
+<td>/this/g</td>
+<td>match {this} and again {this}</td>
+</tr>
+
+<tr>
+<td> </td>
+<td>Multiline</td>
+<td>m</td>
+<td>The ^ and $ anchors now match at the beginning/end of each line respectively, instead of beginning/end of the entire string.</td>
+<td>/^d.+\d{3}$/m</td>
+<td>{digits coming up 443}</td>
+</tr>
+</table>
+
+
+<ul>
+<li>(?!) - negative lookahead</li>
+<ii>(?=) - positive lookahead</li>
+<li>(?<=) - positive lookbehind</li>
+<li>(?&lt;!) - negative lookbehind</li>
+<li>&nbsp;</li>
+<li>(?>) - atomic group</li>
+</ul>
+
+<h3>Example : </h3>
+<p>Given the string <code>foobarbarfoo</code>:
+
+<ul>
+<li>bar(?=bar)     finds the 1st bar ("bar" which has "bar" after it)</li>
+<li>bar(?!bar)     finds the 2nd bar ("bar" which does not have "bar" after it)</li>
+<li>(?<=foo)bar    finds the 1st bar ("bar" which has "foo" before it)</li>
+<li>(?&lt;!foo)bar    finds the 2nd bar ("bar" which does not have "foo" before it)</li>
+</ul>
+<p>You can also combine them:</p>
+<p>(?<=foo)bar(?=bar)    finds the 1st bar ("bar" with "foo" before it and "bar" after it)</p>
+
+Definitions
+<h4>Look ahead positive (?=)</h4>
+<p>Find expression A where expression B follows</p>
+A(?=B)
+<h4>Look ahead negative (?!)</h4>
+<p>Find expression A where expression B does not follow:</p>
+A(?!B)
+<h4>Look behind positive (?<=)</h4>
+<p>Find expression A where expression B precedes:</p>
+(?&lt;=B)A
+<p>Look behind negative (?&lt;!)</p>
+<p>Find expression A where expression B does not precede:</p>
+(?&lt;!B)A
+<h4>Atomic groups (?&gt;)</h4>
+<p>An atomic group is a non-capturing group that exits the group and throws away all alternatives after the first match of the pattern inside the group, so backtracking is disabled.</p>
+<p>A non-atomic group will allow backtracking, it will still find the first match, then if the matching ahead fails it will backtrack and find the next match, until a match for the entire expression is found or all possibilities are exhausted.</p>
+<ul>
+<li>A non-atomic group in the expression (foo|foot)s applied to foots will:
+<ol>
+	<li>match its 1st alternative foo, then fail as s does not immediately follow in foots, and backtrack to its 2nd alternative;</li>
+    <li>match its 2nd alternative foot, then succeed as s immediately follows in foots, and stop.</li>
+</ol>
+</li>
+<li>An atomic group in the expression (?>foo|foot)s applied to foots will match its 1st alternative foo, then fail as s does not immediately follow, and stop as backtracking is disabled.</li>
+</ul>
+</div> <!--Right Column Wrapper End col-sm-9-->
+</div> <!--Container Row End-->
+</div> <!--Container End-->
+
+</body>
+</html>
