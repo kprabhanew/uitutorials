@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Affordable and professional web design">
+	  <meta name="keywords" content="web design, affordable web design, professional web design">
+  	<meta name="author" content="Brad Traversy">
+    <title>UI Tutorials | Welcome</title>
+    
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">    
+    <link rel="stylesheet" type="text/css" href="../css/MenuStyle.css">
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="../scripts/menuScript.js"></script>
+    <link rel="stylesheet" href="../css/SiteStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/prism.css">
+    <script src="../scripts/prism.js"></script>
+    
+    <style type="text/css">
+	.leftCol{
+		font-family: Arial, sans-serif; font-size: 14px; padding: 10px 5px; border-style: solid; border-width: 1px; overflow: hidden; word-break: normal; font-weight: bold; background-color: #fd6864; color: #ffffff;
+		}
+		.rightCol{
+			
+			font-family: Arial, sans-serif; font-size: 14px; padding: 10px 5px; border-style: solid; border-width: 1px; overflow: hidden; word-break: normal; text-align: left;}
+	</style>
+    
+    
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">UI</span> Tutorials</h1>
+        </div>
+        <nav id='cssmenu'>            
+            <div id="head-mobile"></div>
+            <div class="button"></div>
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href='#'>Bootstrap</a></li>
+                <li class='active'><a href="#">AngularJS</a>
+                  <ul>
+                    <li><a href='#'>Introduction</a>
+                      <ul>
+                        <li><a href="01_AngularIntro_Index.html">Basic</a></li>
+                        <li><a href="03_AngularIntro_Module.html">Module</a></li>
+                        <li><a href="02_AngularIntro_Controller.html">Controller MVC</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Angular DOM</a>
+                      <ul>
+                        <li><a href="01_AngularDOM_events.html">Events</a></li>
+                        <li><a href="03_AngularDOM_ngShow.html">ng Show</a></li>
+                        <li><a href="02_AngularDOM_ngHide.html">ng Hide</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Filter</a>
+                      <ul>
+                        <li><a href="02_FilterIndex_FormatData.html">Format Data</a></li>
+                        <li><a href="03_Filter_SortData.html">Sort Data</a></li>
+                        <li><a href="01_FilterData.html">Filter Data</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Form</a>
+                      <ul>
+                        <li><a href="01Form_index.html">Form</a></li>
+                        <li><a href="03_AngularDOM_ngShow.html">CheckBox</a></li>
+                        <li><a href="02_AngularDOM_ngHide.html">ShowHide</a></li>
+                        <li><a href="01_AngularDOM_events.html">RadioButton</a></li>
+                        <li><a href="01_AngularDOM_events.html">TrackingEvents</a></li>
+                        <li><a href="01_AngularDOM_events.html">Validation</a></li>
+                        <li><a href="01_AngularDOM_events.html">NestedValidation</a></li>
+                        <li><a href="01_AngularDOM_events.html">FormSubmission</a></li>
+                        <li><a href="#">Select Element</a>
+                          <ul>
+                            <li><a href="09SelectDD_htmlIndex.html">Html</a></li>
+                            <li><a href="09SelectDD_arrayIndex.html">Array</a></li>
+                            <li><a href="09SelectDD_objectIndex.html">Object</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Service</a>
+                      <ul>                                
+                        <li><a href="01_Service_index.html">Index</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Directive</a>
+                      <ul>
+                        <li><a href='00_Directive_index.html'>Index</a></li>
+                        <li><a href="#">Shared Scope</a>
+                          <ul>
+                            <li><a href='01_Scope_inheritance_index.html'>Scoope Inheritance</a></li>
+                            <li><a href='02_SharedScope_index.html'>SharedScope(SS)</a></li>
+                            <li><a href='03_Shared_Scope_index.html'>SS-Modifying</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Isolated Scope</a>
+                          <ul>
+                            <li><a href='04_Inherited_ScopeChild_index.html'>InheritedScope(Child)</a></li>
+                            <li><a href='05_Child_index.html'>Child-Directive</a></li>
+                            <li><a href='06_Child_index.html'>Child-ng Repeat</a></li>
+                          </ul>
+                        </li>
+                        
+                        
+                        <li><a href="#">IsolatedScope</a>
+                          <ul>
+                            <li><a href='07_Isolated_Scope_index.html'>IsolatedScope @</a></li>
+                            <li><a href='08_Isolated_Scope_index.html'>IsolatedScope =</a></li>
+                            <li><a href='09_Isolated_Scope_index.html'>IsolatedScope &amp;</a></li>
+                          </ul>
+                        </li>
+                        
+                        <li><a href='#'>Directive Compile</a>
+                          <ul>
+                            <li><a href='01_Directive_Compile_compile.html'>Compile</a></li>
+                            <li><a href='02_ Directive_Compile_controller.html'>Controller</a></li>
+                            <li><a href='03_Directive_Compile_PrePostLink.html'>LinkPrePost</a></li>
+                            <li><a href='04_Directive_Compile_compileCtrlLink.html'>CompileControllerLink</a></li>
+                          </ul>
+                        </li>
+                        <li><a href='#'>Directive Link</a>
+                          <ul>
+                            <li><a href='01_Directive_Link_interpolation.html'>Interpolation</a></li>
+                            <li><a href='02_Directive_Link_modifyDomInCompile.html'>ModifyDom</a></li>
+                            <li><a href='03_Directive_Link_DomEventHandler.html'>EventHandler</a></li>
+                            <li><a href='04_Directive_Link_WithoutCompile.html'>WithoutCompile</a></li>
+                            <li><a href='05_Directive_Link_CompileReturn.html'>CompileReturn</a></li>
+                            <li><a href='06_Directive_Link_PostOnly.html'>PostOnly</a></li>
+                          </ul>
+                        </li>
+                        
+                      </ul>
+                    </li>
+                    <li><a href='#'>Routing</a>
+                      <ul>
+                        <li><a href="01_Route_index.html">Index</a></li>
+                        <li><a href="#">Code</a>
+                          <ul>
+                            
+                            <li><a href="02_Route_Intro.html">Intro Routing</a></li>
+                            <li><a href="03_Route_Parameters.html">Parameters</a></li>
+                            <li><a href="04_Route_Async.html">Asynchronous</a></li>
+                            <li><a href="05_Route_Redirect.html">Redirect</a></li>
+                            <li><a href="06_Route_events.html">Events</a></li>
+                            <li><a href="Routing/code/06 Route-routeService-events with Loading/index.htm">With Loading</a></li>
+                            <li><a href="Routing/code/07 Route-routeService-with-resolve/index.htm">With Resolve</a></li>
+                          </ul>
+                          
+                        </li>
+                        
+                      </ul>
+                    </li>
+                    <li><a href='#'>UI Route</a>
+                      <ul>
+                        <li><a href="01UiRoute_index.html">Index</a></li>
+                        <li><a href="#">Code</a>
+                          <ul>
+                            
+                            <li><a href="02UIRoute_Intro_Routing_index.html">Intro Routing</a></li>
+                            <li><a href="03_UIRoute_RouteWithParams.html">Parameters</a></li>
+                            <li><a href="04_UIRoute_StateService.html">State</a></li>
+                            <li><a href="05_UIRoute_WithResolve.html">Resolve</a></li>
+                            <li><a href="06_UIRoute_SingleView.html">SingleView</a></li>
+                            <li><a href="07_UIRoute_MultipleViews.html">MultipleView</a></li>
+                            
+                          </ul>
+                          
+                        </li>
+                        
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href='#'>Javascript</a></li>
+                <li><a href='#'>NodeJS</a></li>
+                
+              </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!--<section id="newsletter">
+      <div class="container">
+        <h1>Subscribe To Our Newsletter</h1>
+        <form>
+          <input type="email" placeholder="Enter Email...">
+          <button type="submit" class="button_1">Subscribe</button>
+        </form>
+      </div>
+    </section>-->
+
+<section id="main">
+      <div class="container">
+    <article id="main-col">
+    <h1>$watch,$diget,$apply</h1>
+    <h3>What does it mean Data Binding</h3>
+    <p>Data binding means that when you change something in the view, the <code>scope</code> model automagically updates. Similarly, whenever the <code>scope</code> model changes, the view updates itself with the new value. </p>
+    <h3>How does does AngularJS do that?</h3>
+    <p>When you write an expression (<code>{{aModel}}</code>), behind the scenes Angular sets up a watcher on the <code>scope</code> model, which in turn updates the view whenever the model changes.</p>
+    <p>This <code>watcher</code> is just like any watcher you set up in AngularJS:</p>
+    <pre><code class="language-javascript">
+        $scope.$watch('aModel', function(newValue, oldValue) {
+            //update the DOM with newValue
+        });
+    </code></pre>
+    <p>The second argument passed to <code>$watch()</code> is known as a listener function, and is called whenever the value of <code>aModel</code> changes. It is easy for us to grasp that when the value of <code>aModel</code> changes this listener
+        is called, updating the expression in HTML.</p>
+    <h4>How does Angular figure out when to call this listener function? In other words, how does AngularJS know when <code>aModel</code> changes so it can call the corresponding listener? Does it run a function periodically to check whether the value
+        of the <code>scope</code> model has changed?</h4>
+    <p> Well, this is where the <code>$digest</code> cycle steps in.</p>
+    <h4>Next, when and how this $digest cycle starts?</h4>
+    <p>The <code>$digest</code> cycle starts as a result of a call to <code>$scope.$digest()</code>. </p>
+    <p>Example if you change a <code>scope</code> model in a handler function through the <code>ng-click</code> directive. In that case AngularJS automatically triggers a <code>$digest</code> cycle by calling <code>$digest()</code>.<u>"When the $digest cycle starts, it fires each of the WATCHERS." </u></p>
+    <p>These watchers check if the current value of the scope model is different from last calculated value. If yes, then the corresponding listener function executes. As a result if you have any expressions in the view they will be updated. </p>
+    <p>In the above cases, Angular doesn’t directly call <code>$digest()</code>. Instead, it calls <code>$scope.$apply()</code>, which in turn calls <code>$rootScope.$digest()</code>. As a result of this, a digest cycle starts at the <code>$rootScope</code>,
+        and subsequently visits all the child scopes calling the watchers along the way.</p>
+    <p>In addition to "ng-click", there are several other built-in directives/services that let you change models (e.g. ng-model, $timeout, etc) and <u>automatically trigger</u> a $digest cycle.</p>
+    <br>Note :
+    <p><code>$scope.$apply()</code> automatically calls <code>$rootScope.$digest()</code>. The <code>$apply()</code> function comes in two flavors.</p>
+    <ol>
+        <li>The first one takes a function as an argument, evaluates it, and triggers a $digest cycle.</li>
+        <li>The second version does not take any arguments and just starts a $digest cycle when called.</li>
+    </ol>
+    <h4>When Do You Call $apply() Manually?</h4>
+    <p>It will account for only those model changes which are done inside AngularJS’ context (i.e. the code that changes models is wrapped inside $apply()). Angular’s built-in directives already do this so that any model changes you make are reflected in
+        the view. </p>
+    <p>However, if you change any model outside of the Angular context, then you need to inform Angular of the changes by calling $apply() manually. </p>
+    <p>For example, if you use JavaScript’s <code>setTimeout()</code> function to update a scope model, Angular has no way of knowing what you might change. In this case it’s your responsibility to call <code>$apply()</code> manually, which triggers
+        a $digest cycle. </p>
+    <p>Similarly, if you have a directive that sets up a DOM event listener and changes some models inside the handler function, you need to call <code>$apply()</code> to ensure the changes take effect.</p>
+    <br>app.js -
+    <p>(1) What happens without an $apply()</p>
+    <pre><code class="language-javascript">
+    angular.module('myApp', []).controller('MessageController', function($scope) {
+
+    $scope.getMessage = function() {
+        setTimeout(function() {
+            $scope.message = 'Fetched after 3 seconds';
+            console.log('message:' + $scope.message);
+        }, 2000);
+    }
+    $scope.getMessage();
+});
+
+</code></pre>
+<a href="http://plnkr.co/edit/WB174A?p=info" target="_blank">Plunker</a>
+    <p>(2)What happens with $apply</p>
+    <pre><code class="language-javascript">
+    angular.module('myApp', []).controller('MessageController', function($scope) {
+    $scope.getMessage = function() {
+        setTimeout(function() {
+            $scope.$apply(function() {
+                //wrapped this within $apply
+                $scope.message = 'Fetched after 3 seconds';
+                console.log('message:' + $scope.message);
+            });
+        }, 2000);
+    }
+    $scope.getMessage();
+});
+
+</code></pre> 
+<a href="http://plnkr.co/edit/euGizL?p=info" target="_blank">Plunker</a>
+<span class="filename">Example : index.html</span>
+
+    <pre><code class="language-html">
+&lt;body ng-app="myApp"&gt;
+    &lt;div ng-controller="MessageController"&gt;
+        Delayed Message: {{message}}
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+    <p>you could have done the model changes as usual and placed a call to $apply() (the no-arg version) in the end. </p>
+    <pre><code class="language-javascript">
+    $scope.getMessage = function() {
+    setTimeout(function() {
+            $scope.message = 'Fetched after two seconds';
+            console.log('message:' + $scope.message);
+            $scope.$apply(); //this triggers a $digest
+    }, 2000);
+};
+</code></pre>
+
+    <p>you should always use the version of <code>$apply()</code> that accepts a function argument. This is because when you pass a function to <code>$apply()</code>, the function call is wrapped inside a <code>try...catch</code> block, and any
+        exceptions that occur will be passed to the <code>$exceptionHandler</code> service.</p>
+    <h4>How Many Times Does the $digest Loop Run?</h4>
+    <p>When a $digest cycle runs, the watchers are executed to see if the scope models have changed. If they have, then the corresponding listener functions are called.</p>
+    <p>The <code>$digest</code> loop doesn’t run just once. At the end of the current loop, it starts all over again to check if any of the models have changed. This is basically <u>dirty checking</u>, and is done to account for any model changes that
+        might have been done by listener functions. So, the <code>$digest</code> cycle keeps looping until there are no more model changes, or it hits the max loop count of 10. It’s always good to stay idempotent and try to minimize model changes
+        inside the listener functions.
+    </p>
+    <p><code>Note:</code> At a minimum, <code>$digest</code> will run twice even if your listener functions don’t change any models. As discussed above, it runs once more to make sure the models are stable and there are no changes.</p>
+    <h2>Conclusion</h2>
+    <p>The most important thing to keep in mind is whether or not Angular can detect your changes. If it cannot, then you must call <code>$apply()</code> manually.</p>
+
+        </article>
+    <aside id="sidebar">
+          <div class="dark">
+        <h3>What We Do</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius auctor lacus nec feugiat. Phasellus sit amet ex ipsum. Praesent pharetra tincidunt tempor. Etiam velit eros, dapibus eget porta in, lacinia et magna</p>
+      </div>
+        </aside>
+  </div>
+    </section>
+<footer>
+      <p>UI Tutorials, Copyright &copy; 2017</p>
+    </footer>
+</body>
+</html>

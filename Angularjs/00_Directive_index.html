@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Affordable and professional web design">
+	  <meta name="keywords" content="web design, affordable web design, professional web design">
+  	<meta name="author" content="Brad Traversy">
+    <title>UI Tutorials | Welcome</title>
+    
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">    
+    <link rel="stylesheet" type="text/css" href="../css/MenuStyle.css">
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="../scripts/menuScript.js"></script>
+    <link rel="stylesheet" href="../css/SiteStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/prism.css">
+    <script src="../scripts/prism.js"></script>
+    
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">UI</span> Tutorials</h1>
+        </div>
+        <nav id='cssmenu'>            
+            <div id="head-mobile"></div>
+            <div class="button"></div>
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href='../Bootstrap/htmlPages/grid.html'>Bootstrap</a></li>
+                <li class='active'><a href="#">AngularJS</a>
+                  <ul>
+                    <li><a href='#'>Introduction</a>
+                      <ul>
+                        <li><a href="01_AngularIntro_Index.html">Basic</a></li>
+                        <li><a href="03_AngularIntro_Module.html">Module</a></li>
+                        <li><a href="02_AngularIntro_Controller.html">Controller MVC</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Angular DOM</a>
+                      <ul>
+                        <li><a href="01_AngularDOM_events.html">Events</a></li>
+                        <li><a href="03_AngularDOM_ngShow.html">ng Show</a></li>
+                        <li><a href="02_AngularDOM_ngHide.html">ng Hide</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Filter</a>
+                      <ul>
+                        <li><a href="02_FilterIndex_FormatData.html">Format Data</a></li>
+                        <li><a href="03_Filter_SortData.html">Sort Data</a></li>
+                        <li><a href="01_FilterData.html">Filter Data</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Form</a>
+                      <ul>
+                        <li><a href="01Form_index.html">Form</a></li>
+                        <li><a href="03_AngularDOM_ngShow.html">CheckBox</a></li>
+                        <li><a href="02_AngularDOM_ngHide.html">ShowHide</a></li>
+                        <li><a href="01_AngularDOM_events.html">RadioButton</a></li>
+                        <li><a href="01_AngularDOM_events.html">TrackingEvents</a></li>
+                        <li><a href="01_AngularDOM_events.html">Validation</a></li>
+                        <li><a href="01_AngularDOM_events.html">NestedValidation</a></li>
+                        <li><a href="01_AngularDOM_events.html">FormSubmission</a></li>
+                        <li><a href="#">Select Element</a>
+                          <ul>
+                            <li><a href="09SelectDD_htmlIndex.html">Html</a></li>
+                            <li><a href="09SelectDD_arrayIndex.html">Array</a></li>
+                            <li><a href="09SelectDD_objectIndex.html">Object</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Service</a>
+                      <ul>                                
+                        <li><a href="01_Service_index.html">Index</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Directive</a>
+                      <ul>
+                        <li><a href='00_Directive_index.html'>Index</a></li>
+                        <li><a href="#">Shared Scope</a>
+                          <ul>
+                            <li><a href='01_Scope_inheritance_index.html'>Scoope Inheritance</a></li>
+                            <li><a href='02_SharedScope_index.html'>SharedScope(SS)</a></li>
+                            <li><a href='03_Shared_Scope_index.html'>SS-Modifying</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Isolated Scope</a>
+                          <ul>
+                            <li><a href='04_Inherited_ScopeChild_index.html'>InheritedScope(Child)</a></li>
+                            <li><a href='05_Child_index.html'>Child-Directive</a></li>
+                            <li><a href='06_Child_index.html'>Child-ng Repeat</a></li>
+                          </ul>
+                        </li>
+                        
+                        
+                        <li><a href="#">IsolatedScope</a>
+                          <ul>
+                            <li><a href='07_Isolated_Scope_index.html'>IsolatedScope @</a></li>
+                            <li><a href='08_Isolated_Scope_index.html'>IsolatedScope =</a></li>
+                            <li><a href='09_Isolated_Scope_index.html'>IsolatedScope &amp;</a></li>
+                          </ul>
+                        </li>
+                        
+                        <li><a href='#'>Directive Compile</a>
+                          <ul>
+                            <li><a href='01_Directive_Compile_compile.html'>Compile</a></li>
+                            <li><a href='02_ Directive_Compile_controller.html'>Controller</a></li>
+                            <li><a href='03_Directive_Compile_PrePostLink.html'>LinkPrePost</a></li>
+                            <li><a href='04_Directive_Compile_compileCtrlLink.html'>CompileControllerLink</a></li>
+                          </ul>
+                        </li>
+                        <li><a href='#'>Directive Link</a>
+                          <ul>
+                            <li><a href='01_Directive_Link_interpolation.html'>Interpolation</a></li>
+                            <li><a href='02_Directive_Link_modifyDomInCompile.html'>ModifyDom</a></li>
+                            <li><a href='03_Directive_Link_DomEventHandler.html'>EventHandler</a></li>
+                            <li><a href='04_Directive_Link_WithoutCompile.html'>WithoutCompile</a></li>
+                            <li><a href='05_Directive_Link_CompileReturn.html'>CompileReturn</a></li>
+                            <li><a href='06_Directive_Link_PostOnly.html'>PostOnly</a></li>
+                          </ul>
+                        </li>
+                        
+                      </ul>
+                    </li>
+                    <li><a href='#'>Routing</a>
+                      <ul>
+                        <li><a href="01_Route_index.html">Index</a></li>
+                        <li><a href="#">Code</a>
+                          <ul>
+                            
+                            <li><a href="02_Route_Intro.html">Intro Routing</a></li>
+                            <li><a href="03_Route_Parameters.html">Parameters</a></li>
+                            <li><a href="04_Route_Async.html">Asynchronous</a></li>
+                            <li><a href="05_Route_Redirect.html">Redirect</a></li>
+                            <li><a href="06_Route_events.html">Events</a></li>
+                            <li><a href="Routing/code/06 Route-routeService-events with Loading/index.htm">With Loading</a></li>
+                            <li><a href="Routing/code/07 Route-routeService-with-resolve/index.htm">With Resolve</a></li>
+                          </ul>
+                          
+                        </li>
+                        
+                      </ul>
+                    </li>
+                    <li><a href='#'>UI Route</a>
+                      <ul>
+
+
+                        <li><a href="01UiRoute_index.html">Index</a></li>
+                        <li><a href="#">Code</a>
+                          <ul>
+                            
+                            <li><a href="02UIRoute_Intro_Routing_index.html">Intro Routing</a></li>
+                            <li><a href="03_UIRoute_RouteWithParams.html">Parameters</a></li>
+                            <li><a href="04_UIRoute_StateService.html">State</a></li>
+                            <li><a href="05_UIRoute_WithResolve.html">Resolve</a></li>
+                            <li><a href="06_UIRoute_SingleView.html">SingleView</a></li>
+                            <li><a href="07_UIRoute_MultipleViews.html">MultipleView</a></li>
+                            
+                          </ul>
+                          
+                        </li>
+                        
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href='#'>Javascript</a></li>
+                <li><a href='#'>NodeJS</a></li>
+                
+              </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!--<section id="newsletter">
+      <div class="container">
+        <h1>Subscribe To Our Newsletter</h1>
+        <form>
+          <input type="email" placeholder="Enter Email...">
+          <button type="submit" class="button_1">Subscribe</button>
+        </form>
+      </div>
+    </section>-->
+
+<section id="main">
+      <div class="container">
+    <article id="main-col">
+     <h1>AngularJS Custom Directives Tutorial – Part 1</h1>
+    <h3>What is a Directive?</h3>
+    <p>In the simplest terms, a directive in AngularJS is a <strong><code><i>reusable component</i></code></strong>. Directives in AngularJS <strong><code><i>encapsulate all the behavioral properties and functionalities of an </i></code></strong> <strong><code><i> element in a semantic way</i></code></strong>, thereby keeping all of the functionality grouped together.
+        This helps to keep track of changes of one HTML section in one place rather than tracking the changes on a global level in a script.</p>
+    <p>A more formal definition of a directive is: In AngularJS, a directive is a JavaScript factory function defined inside an AngularJS module that holds a set of instructions for the HTML compiler for defining a specified behavior of a DOM element.</p>
+    <p>AngularJS provides several directives to manipulate the DOM’s behavior. Earlier we looked at some of the built in <a href="#">directives </a>like ng-app, ng-controller, ng-repeat etc. You can check out the <a title="Directives" href="https://docs.angularjs.org/api/ng/directive"
+            rel="nofollow" target="_blank">official angular API documentation</a> for more directives.&nbsp; Although angular provides many built in directives, sometimes we will face some scenarios in which we need to write our own directive to achieve a
+        specific task.&nbsp; In this series of tutorials, we will guide you to write a good Angular directive.</p>
+    <p>In AngularJS Custom Directives Tutorial – Part 1, we will start with a simple example to create a directive.</p>
+    <h3>Creating Directives</h3>
+    <p>We use <code><span class="kwd">module</span><span class="pun">.</span><span class="pln">directive</span></code> API to register our directive. You must make sure not to prefix your directive with <strong>ng</strong> since it may conflict with other
+        built in directives.</p>
+    <p>The following example demonstrates the usage of module’s directive API to create our directive. In this example,we use directive’s <code>template </code>property to create a directive called <code>myEmployee</code>.</p>
+    <span class="filename">Example </span>
+    <pre><code class="language-javascript">
+        var app = angular.module('mainApp', []); 
+        
+        app.controller('EmployeeCtrl', function($scope) {
+        $scope.employee = {
+            role: 'Software Developer',skill:'Angular JS'
+        };
+        });
+        
+        app.directive('myEmployee', function() {
+        return {
+            template: 'Role: <b>{{employee.role}}</b> - Skill: <b>{{employee.skill}}</b>'
+        };
+        });
+	</code></pre>
+    <p>Following code demonstrates how to use our <code>myEmployee </code>directive.</p>
+    <span class="filename">Example : index.html</span>
+    <pre><code class="language-html">
+        &lt;html&gt;
+        &lt;head&gt;
+            &lt;title&gt;AngularJS Custom Directive Tutorial&lt;/title&gt;
+            &lt;script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"&gt;&lt;/script&gt;
+            &lt;script src="app.js"&gt;&lt;/script&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+        
+        &lt;div ng-app="mainApp" ng-controller="EmployeeCtrl"&gt;
+            &lt;div my-employee&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;/body&gt;
+        &lt;/html&gt;
+    </code></pre>
+    <p>The <code>template </code>attribute defines the content that should be the output from the directive. We can include HTML, data binding expressions, and even other directives.<br> Unless the template is too small, it’s always better to break it apart
+        into its own HTML file and load it with the <code>templateUrl </code>option.</p>
+    <p>We will modify the above example to demonstrate the usage of <code>templateUrl </code>option property of the directive.</p>
+    <span class="filename">Example : app.js</span>
+    <pre><code class="language-javascript">
+    var app = angular.module('mainApp', []); 
+    
+    app.controller('EmployeeCtrl', function($scope) {
+    $scope.employee = {
+        role: 'Software Developer',skill:'Angular JS'
+    };
+    });
+    
+    app.directive('myEmployee', function() {
+    return {
+        templateUrl: 'my-employee.html'
+    };
+    });
+</code></pre>
+    <p>There isn’t any change in the index.html file.</p>
+    
+    <p>The my-employee.html file contains the contents of the template used by the directive.</p>
+    my-employee.html
+    <p>Role: <b>{{employee.role}}</b> - Skill: <b>{{employee.skill}}</b></p>
+    <p>You will see the same output in this case as well.</p>
+    
+    <h2>Part II </h2>
+    <p>In the above example, we created a simple directive to manipulate the DOM’s behavior. In this post, we are going to describe the directive properties.</p>
+    <h2>Directive Properties</h2>
+    <p>Earlier we looked at the usage of <strong>template </strong>and <strong>templateUrl </strong>properties. Now we are going to look at the other directive properties.</p>
+    <ul>
+        <li><strong>restrict: </strong>This property Determines where a directive can be used (as an element, attribute, CSS class, or a comment).</li>
+        <li><strong>scope&nbsp;: </strong>Used to create and isolate the scope.</li>
+        <li><strong>template&nbsp;: </strong>Defines the content that should be output from the directive. Can include HTML, data binding expressions, and even other directives.</li>
+        <li><strong>templateUrl&nbsp;: </strong>Provides the path to the template that should be used by the directive.</li>
+        <li><strong>controller : </strong>Used to define the controller associated with the directive template.</li>
+        <li><strong>controllerAs : </strong>Controller alias at the directive scope.</li>
+        <li><strong>priority : </strong>Used to specify the order in which the directives are applied when there are multiple directives defines on a single DOM element.</li>
+        <li><strong>link&nbsp;: </strong>Defines the function used for DOM manipulation tasks.</li>
+        <li><strong>compile</strong> : The compile function deals with transforming the template DOM.</li>
+        <li><strong>transclude</strong>: Extract the contents of the element where the directive appears and make it available to the directive. The contents are compiled and provided to the directive as a transclusion function.</li>
+    </ul>
+    <h2>Restriction in Directives</h2>
+    <p>When you create a directive, it is restricted to attribute and elements only by default. In order to create directives that are triggered by class name, you need to use the restrict option.<br> Angular provides different options to restrict the usage
+        of directives.</p>
+    <p>Following section demonstrates the usage of the restrict options.</p>
+    <p>‘A’ – This directive is applied only when attribute name is matched.</p>
+
+    <pre><code class="language-html">&lt;div my-directive="expression"&gt;&lt;/div&gt;</code></pre>
+    <p>‘E’ – This directive is applied only when element name is matched.</p>
+
+    <pre><code class="language-html">&lt;my-directive&gt;&lt;/my-directive&gt;</code></pre>
+    <p>‘C’ – This directive is applied only when class name is matched.</p>
+
+    <pre><code class="language-html">&lt;div class="my-directive:expression;"&gt;&lt;/div&gt;</code></pre>
+    <p>‘M’ – used in a comment.</p>
+
+    <pre><code class="language-html">&lt;!-- directive: my-directive expression--&gt;</code></pre>
+    <p>We can also combine these restrictions as needed:</p>
+
+    <p>‘AEC’ – matches either attribute or element or class name</p>
+    <h3>Syntax for Using Directive properties</h3>
+    <p>Following script demonstrates the syntax for using directive properties. You don’t have to use all of these properties to create a directive. You can use these directive properties depending on your requirement.</p>
+    <pre><code class="language-javascript">
+
+        var app = angular.module('moduleName', []);
+            app.directive('directiveName', function () {
+            return {
+                restrict: 'EA', //E = element, A = attribute, C = class, M = comment
+                scope: { }, //<-- data bound from parent scope via attribute
+                templateUrl: 'mytemplate.html',
+                controller: function() { }, //define controller in the directive
+                link: function () { } //Dom manipulation
+            }
+        });
+    </code></pre>
+    <h2>Using Directive Properties</h2>
+    <p>The following example demonstrates the usage of above-mentioned properties to create a directive called <code>myEmployee</code>.</p>
+    <pre><code class="language-javascript">
+        var app = angular.module('mainApp', []);
+
+app.directive('myEmployee', function() {
+    return {
+        restrict: 'EA',
+        scope: {}, //isolate scope.
+        link: function() {
+            alert("Hello, I'm working.");
+        },
+        template: "&lt;div&gt;My First Directive.&lt;/div&gt;"
+    };
+});
+    </code></pre>
+    <p>We can use the&nbsp; <code>myEmployee </code>directive as an attribute or element. We use link function in the above example to alert a message.</p>
+    <span class="filename">Example 2 : index.html</span>
+    <pre><code class="language-html">
+    &lt;html&gt;
+        &lt;head&gt;
+            &lt;title&gt;AngularJS Custom Directive Tutorial&lt;/title&gt;
+            &lt;script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"&gt;&lt;/script&gt;
+            &lt;script src="app.js"&gt;&lt;/script&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+        
+        &lt;div ng-app="mainApp"&gt;
+            &lt;div my-employee&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;/body&gt;
+        &lt;/html&gt;
+</code></pre>
+    <pre><code>
+    Write Your First Directive
+    Directive Restrictions
+    Directives Talking to Controllers
+    Directive to Directive Communication in AngularJS
+    Understanding Isolate Scope
+    Isolate Scope "@"
+    Isolate Scope "="
+    Isolate Scope "&"
+    Isolate Scope Review
+    Directive Communication
+    Unit Testing a Directive
+    Unit Testing Directive Scope
+    Unit Testing Directive Scope Binding
+    </code></pre>
+        </article>
+    <aside id="sidebar">
+          <div class="dark">
+        <h3>What We Do</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius auctor lacus nec feugiat. Phasellus sit amet ex ipsum. Praesent pharetra tincidunt tempor. Etiam velit eros, dapibus eget porta in, lacinia et magna</p>
+      </div>
+        </aside>
+  </div>
+    </section>
+<footer>
+      <p>UI Tutorials, Copyright &copy; 2017</p>
+    </footer>
+</body>
+</html>

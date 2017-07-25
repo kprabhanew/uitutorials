@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Affordable and professional web design">
+	  <meta name="keywords" content="web design, affordable web design, professional web design">
+  	<meta name="author" content="Brad Traversy">
+    <title>UI Tutorials | Welcome</title>
+    
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">    
+    <link rel="stylesheet" type="text/css" href="../css/MenuStyle.css">
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="../scripts/menuScript.js"></script>
+    <link rel="stylesheet" href="../css/SiteStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/prism.css">
+    <script src="../scripts/prism.js"></script>
+    
+    <style type="text/css">
+	.leftCol{
+		font-family: Arial, sans-serif; font-size: 14px; padding: 10px 5px; border-style: solid; border-width: 1px; overflow: hidden; word-break: normal; font-weight: bold; background-color: #fd6864; color: #ffffff;
+		}
+		.rightCol{
+			
+			font-family: Arial, sans-serif; font-size: 14px; padding: 10px 5px; border-style: solid; border-width: 1px; overflow: hidden; word-break: normal; text-align: left;}
+	</style>
+    
+    
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">UI</span> Tutorials</h1>
+        </div>
+        <nav id='cssmenu'>            
+            <div id="head-mobile"></div>
+            <div class="button"></div>
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href='#'>Bootstrap</a></li>
+                <li class='active'><a href="#">AngularJS</a>
+                  <ul>
+                    <li><a href='#'>Introduction</a>
+                      <ul>
+                        <li><a href="01_AngularIntro_Index.html">Basic</a></li>
+                        <li><a href="03_AngularIntro_Module.html">Module</a></li>
+                        <li><a href="02_AngularIntro_Controller.html">Controller MVC</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Angular DOM</a>
+                      <ul>
+                        <li><a href="01_AngularDOM_events.html">Events</a></li>
+                        <li><a href="03_AngularDOM_ngShow.html">ng Show</a></li>
+                        <li><a href="02_AngularDOM_ngHide.html">ng Hide</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Filter</a>
+                      <ul>
+                        <li><a href="02_FilterIndex_FormatData.html">Format Data</a></li>
+                        <li><a href="03_Filter_SortData.html">Sort Data</a></li>
+                        <li><a href="01_FilterData.html">Filter Data</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Form</a>
+                      <ul>
+                        <li><a href="01Form_index.html">Form</a></li>
+                        <li><a href="03_AngularDOM_ngShow.html">CheckBox</a></li>
+                        <li><a href="02_AngularDOM_ngHide.html">ShowHide</a></li>
+                        <li><a href="01_AngularDOM_events.html">RadioButton</a></li>
+                        <li><a href="01_AngularDOM_events.html">TrackingEvents</a></li>
+                        <li><a href="01_AngularDOM_events.html">Validation</a></li>
+                        <li><a href="01_AngularDOM_events.html">NestedValidation</a></li>
+                        <li><a href="01_AngularDOM_events.html">FormSubmission</a></li>
+                        <li><a href="#">Select Element</a>
+                          <ul>
+                            <li><a href="09SelectDD_htmlIndex.html">Html</a></li>
+                            <li><a href="09SelectDD_arrayIndex.html">Array</a></li>
+                            <li><a href="09SelectDD_objectIndex.html">Object</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Service</a>
+                      <ul>                                
+                        <li><a href="01_Service_index.html">Index</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Directive</a>
+                      <ul>
+                        <li><a href='00_Directive_index.html'>Index</a></li>
+                        <li><a href="#">Shared Scope</a>
+                          <ul>
+                            <li><a href='01_Scope_inheritance_index.html'>Scoope Inheritance</a></li>
+                            <li><a href='02_SharedScope_index.html'>SharedScope(SS)</a></li>
+                            <li><a href='03_Shared_Scope_index.html'>SS-Modifying</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Isolated Scope</a>
+                          <ul>
+                            <li><a href='04_Inherited_ScopeChild_index.html'>InheritedScope(Child)</a></li>
+                            <li><a href='05_Child_index.html'>Child-Directive</a></li>
+                            <li><a href='06_Child_index.html'>Child-ng Repeat</a></li>
+                          </ul>
+                        </li>
+                        
+                        
+                        <li><a href="#">IsolatedScope</a>
+                          <ul>
+                            <li><a href='07_Isolated_Scope_index.html'>IsolatedScope @</a></li>
+                            <li><a href='08_Isolated_Scope_index.html'>IsolatedScope =</a></li>
+                            <li><a href='09_Isolated_Scope_index.html'>IsolatedScope &amp;</a></li>
+                          </ul>
+                        </li>
+                        
+                        <li><a href='#'>Directive Compile</a>
+                          <ul>
+                            <li><a href='01_Directive_Compile_compile.html'>Compile</a></li>
+                            <li><a href='02_ Directive_Compile_controller.html'>Controller</a></li>
+                            <li><a href='03_Directive_Compile_PrePostLink.html'>LinkPrePost</a></li>
+                            <li><a href='04_Directive_Compile_compileCtrlLink.html'>CompileControllerLink</a></li>
+                          </ul>
+                        </li>
+                        <li><a href='#'>Directive Link</a>
+                          <ul>
+                            <li><a href='01_Directive_Link_interpolation.html'>Interpolation</a></li>
+                            <li><a href='02_Directive_Link_modifyDomInCompile.html'>ModifyDom</a></li>
+                            <li><a href='03_Directive_Link_DomEventHandler.html'>EventHandler</a></li>
+                            <li><a href='04_Directive_Link_WithoutCompile.html'>WithoutCompile</a></li>
+                            <li><a href='05_Directive_Link_CompileReturn.html'>CompileReturn</a></li>
+                            <li><a href='06_Directive_Link_PostOnly.html'>PostOnly</a></li>
+                          </ul>
+                        </li>
+                        
+                      </ul>
+                    </li>
+                    <li><a href='#'>Routing</a>
+                      <ul>
+                        <li><a href="01_Route_index.html">Index</a></li>
+                        <li><a href="#">Code</a>
+                          <ul>
+                            
+                            <li><a href="02_Route_Intro.html">Intro Routing</a></li>
+                            <li><a href="03_Route_Parameters.html">Parameters</a></li>
+                            <li><a href="04_Route_Async.html">Asynchronous</a></li>
+                            <li><a href="05_Route_Redirect.html">Redirect</a></li>
+                            <li><a href="06_Route_events.html">Events</a></li>
+                            <li><a href="Routing/code/06 Route-routeService-events with Loading/index.htm">With Loading</a></li>
+                            <li><a href="Routing/code/07 Route-routeService-with-resolve/index.htm">With Resolve</a></li>
+                          </ul>
+                          
+                        </li>
+                        
+                      </ul>
+                    </li>
+                    <li><a href='#'>UI Route</a>
+                      <ul>
+                        <li><a href="01UiRoute_index.html">Index</a></li>
+                        <li><a href="#">Code</a>
+                          <ul>
+                            
+                            <li><a href="02UIRoute_Intro_Routing_index.html">Intro Routing</a></li>
+                            <li><a href="03_UIRoute_RouteWithParams.html">Parameters</a></li>
+                            <li><a href="04_UIRoute_StateService.html">State</a></li>
+                            <li><a href="05_UIRoute_WithResolve.html">Resolve</a></li>
+                            <li><a href="06_UIRoute_SingleView.html">SingleView</a></li>
+                            <li><a href="07_UIRoute_MultipleViews.html">MultipleView</a></li>
+                            
+                          </ul>
+                          
+                        </li>
+                        
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href='#'>Javascript</a></li>
+                <li><a href='#'>NodeJS</a></li>
+                
+              </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!--<section id="newsletter">
+      <div class="container">
+        <h1>Subscribe To Our Newsletter</h1>
+        <form>
+          <input type="email" placeholder="Enter Email...">
+          <button type="submit" class="button_1">Subscribe</button>
+        </form>
+      </div>
+    </section>-->
+
+    <section id="main">
+      <div class="container">
+        <article id="main-col">
+
+    <h1>AngularJS filters</h1>
+
+    <h3>Filters in angular can do 3 different things</h3>
+    <ol>
+        <li>Format data</li>
+        <li>Sort data</li>
+        <li>Filter data </li>
+    </ol>
+    <hr>
+
+<h2>Sort Data</h2>
+    <h3>To sort the data in Angular</h3>
+    <ol>
+        <li>Use orderBy filter <code>{{ orderBy_expression | orderBy : expression : reverse}}</code> </br>Example : <code>ng-repeat="employee in employees | orderBy:'salary':false"</code></li>
+        <li> To sort in ascending order, set reverse to false</li>
+        <li> To sort in descending order, set reverse to true</li>
+        <li> You can also use + and - to sort in ascending and descending order respectively </br>Example : <code>ng-repeat="employee in employees | orderBy:'+salary'"</code></li>
+    </ol>
+    <span class="filename">Example 2 : index.html</span>
+    <pre><code class="language-html">
+    &lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;
+    &lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"&gt;&lt;/script&gt;
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body ng-app="myModule"&gt;
+    &lt;div ng-controller="myController"&gt;
+        Sort By :
+        &lt;select ng-model="sortColumn"&gt;
+            &lt;option value="name"&gt;Name ASC&lt;/option&gt;
+            &lt;option value="+dateOfBirth"&gt;Date of Birth ASC&lt;/option&gt;
+            &lt;option value="+gender"&gt;Gender ASC&lt;/option&gt;
+            &lt;option value="-salary"&gt;Salary DESC&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;br /&gt;&lt;br /&gt;
+        &lt;table class="table table-bordered"&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Name&lt;/th&gt;
+                    &lt;th&gt;Date of Birth&lt;/th&gt;
+                    &lt;th&gt;Gender&lt;/th&gt;
+                    &lt;th&gt;Salary&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                &lt;tr ng-repeat="employee in employees | orderBy:sortColumn"&gt;
+                    &lt;td&gt;
+                        {{ employee.name }}
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        {{ employee.dateOfBirth | date:"dd/MM/yyyy" }}
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        {{ employee.gender }}
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        {{ employee.salary }}
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+    
+    </code></pre>
+    <span class="filename">Example 2 : script.js</span>
+    <pre><code class="language-javascript">
+    // Code goes here
+
+var app = angular
+    .module("myModule", []);
+    app.controller("myController", function($scope) {
+
+        var employees = [{
+                name: "Ben",
+                dateOfBirth: new Date("November 23, 1980"),
+                gender: "Male",
+                salary: 55000
+            },
+            {
+                name: "Sara",
+                dateOfBirth: new Date("May 05, 1970"),
+                gender: "Female",
+                salary: 68000
+            },
+            {
+                name: "Mark",
+                dateOfBirth: new Date("August 15, 1974"),
+                gender: "Male",
+                salary: 57000
+            },
+            {
+                name: "Pam",
+                dateOfBirth: new Date("October 27, 1979"),
+                gender: "Female",
+                salary: 53000
+            },
+            {
+                name: "Todd",
+                dateOfBirth: new Date("December 30, 1983"),
+                gender: "Male",
+                salary: 60000
+            }
+        ];
+
+        $scope.employees = employees;
+        $scope.sortColumn = "name";
+
+    });
+    </code></pre>
+    <a href="http://plnkr.co/edit/xmrI9K?p=preview" target="_blank">Plunker</a><br>
+    </hr>
+    
+    <h3>Implement bidirectional sort in Angular JS</h3>
+    <p>Here is what we want to do</p>
+    <ol>
+        <li>The data should be sorted when the table column header is clicked</li>
+        <li>The user should be able to sort in both the directions - ascending and descending. Clicking on the column for the first time should sort the data in ascending order. Clicking on the same column again should sort in descending order.</li>
+        <li>An icon should be displayed next to the column showing the sort column and direction </li>
+    </ol>
+    <p>Script.js : The controller function in the script does the following</p>
+    <ul>
+        <li>Sets up the model </li>
+        <li>sortColumn and reverseSort properties are attached to the $scope object. These 2 properties are used to control the column by which the data should be sorted and the sort direction.</li>
+        <li>sortColumn is set to name and reverseSort is set to false. This will ensure that when the form is initially loaded, the table data will be sorted by name column in ascending order.</li>
+        <li>Depending on the column header the user has clicked, sortData() function sets the sortColumn and reverseSort property values. </li>
+        <li>Based on the sort column and the sort direction, getSortClass() function returns the CSS class name to return. The CSS class controls the sort icon that will be displayed next to the sort column.</li>
+    </ul>
+    <span class="filename">Example  : index.html</span>
+    <pre><code class="language-html">
+    &lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;
+    &lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"&gt;&lt;/script&gt;
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+    
+&lt;/head&gt;
+
+&lt;body ng-app="myModule"&gt;
+    &lt;div ng-controller="myController"&gt;
+        &lt;table class="table table-bordered"&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th ng-click="sortData('name')"&gt;
+                        Name
+                        &lt;div ng-class="getSortClass('name')"&gt;&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th ng-click="sortData('dateOfBirth')"&gt;
+                        Date of Birth
+                        &lt;div ng-class="getSortClass('dateOfBirth')"&gt;&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th ng-click="sortData('gender')"&gt;
+                        Gender
+                        &lt;div ng-class="getSortClass('gender')"&gt;&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th ng-click="sortData('salary')"&gt;
+                        Salary
+                        &lt;div ng-class="getSortClass('salary')"&gt;&lt;/div&gt;
+                    &lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                &lt;tr ng-repeat="employee in employees | orderBy:sortColumn:reverseSort"&gt;
+                    &lt;td&gt; {{ employee.name }} &lt;/td&gt;
+                    &lt;td&gt; {{ employee.dateOfBirth | date:"dd/MM/yyyy" }} &lt;/td&gt;
+                    &lt;td&gt; {{ employee.gender }} &lt;/td&gt;
+                    &lt;td&gt; {{ employee.salary }} &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+    </code></pre>
+    <span class="filename">Example  : script.js</span>
+    <pre><code class="language-javascript">
+    // Code goes here
+
+var app = angular
+    .module("myModule", [])
+    .controller("myController", function($scope) {
+
+        var employees = [{
+                name: "Ben",
+                dateOfBirth: new Date("November 23, 1980"),
+                gender: "Male",
+                salary: 55000
+            },
+            {
+                name: "Sara",
+                dateOfBirth: new Date("May 05, 1970"),
+                gender: "Female",
+                salary: 68000
+            },
+            {
+                name: "Mark",
+                dateOfBirth: new Date("August 15, 1974"),
+                gender: "Male",
+                salary: 57000
+            },
+            {
+                name: "Pam",
+                dateOfBirth: new Date("October 27, 1979"),
+                gender: "Female",
+                salary: 53000
+            },
+            {
+                name: "Todd",
+                dateOfBirth: new Date("December 30, 1983"),
+                gender: "Male",
+                salary: 60000
+            }
+        ];
+
+        $scope.employees = employees;
+        $scope.sortColumn = "name";
+        $scope.reverseSort = false;
+
+        $scope.sortData = function(column) {
+            $scope.reverseSort = ($scope.sortColumn == column) ?
+                !$scope.reverseSort : false;
+            $scope.sortColumn = column;
+        }
+
+        $scope.getSortClass = function(column) {
+
+            if ($scope.sortColumn == column) {
+                return $scope.reverseSort ?
+                    'arrow-down' :
+                    'arrow-up';
+            }
+
+            return '';
+        }
+    });
+    
+    </code></pre>
+    <span class="filename">Example 2 : style.css</span>
+    <pre><code class="language-css">
+    /*This class displays the UP arrow*/
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid black;
+    display: inline-block;
+}
+
+
+/*This class displays the DOWN arrow*/
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid black;
+    display: inline-block;
+}
+    </code></pre>
+     
+    <a href="http://plnkr.co/edit/wPUtei?p=info" target="_blank">Plunker</a><br>
+    
+    </article>
+
+        <aside id="sidebar">
+          <div class="dark">
+            <h3>What We Do</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius auctor lacus nec feugiat. Phasellus sit amet ex ipsum. Praesent pharetra tincidunt tempor. Etiam velit eros, dapibus eget porta in, lacinia et magna</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      <p>UI Tutorials, Copyright &copy; 2017</p>
+    </footer>
+  </body>
+</html>
+
+
+    
+
+
+    

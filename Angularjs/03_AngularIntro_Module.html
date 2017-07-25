@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Affordable and professional web design">
+	  <meta name="keywords" content="web design, affordable web design, professional web design">
+  	<meta name="author" content="Brad Traversy">
+    <title>UI Tutorials | Welcome</title>
+    
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">    
+    <link rel="stylesheet" type="text/css" href="../css/MenuStyle.css">
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="../scripts/menuScript.js"></script>
+    <link rel="stylesheet" href="../css/SiteStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/prism.css">
+    <script src="../scripts/prism.js"></script>
+    
+    <style type="text/css">
+	.leftCol{
+		font-family: Arial, sans-serif; font-size: 14px; padding: 10px 5px; border-style: solid; border-width: 1px; overflow: hidden; word-break: normal; font-weight: bold; background-color: #fd6864; color: #ffffff;
+		}
+		.rightCol{
+			
+			font-family: Arial, sans-serif; font-size: 14px; padding: 10px 5px; border-style: solid; border-width: 1px; overflow: hidden; word-break: normal; text-align: left;}
+	</style>
+    
+    
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">UI</span> Tutorials</h1>
+        </div>
+        <nav id='cssmenu'>            
+            <div id="head-mobile"></div>
+            <div class="button"></div>
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href='#'>Bootstrap</a></li>
+                <li class='active'><a href="#">AngularJS</a>
+                  <ul>
+                    <li><a href='#'>Introduction</a>
+                      <ul>
+                        <li><a href="01_AngularIntro_Index.html">Basic</a></li>
+                        <li><a href="03_AngularIntro_Module.html">Module</a></li>
+                        <li><a href="02_AngularIntro_Controller.html">Controller MVC</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Angular DOM</a>
+                      <ul>
+                        <li><a href="01_AngularDOM_events.html">Events</a></li>
+                        <li><a href="03_AngularDOM_ngShow.html">ng Show</a></li>
+                        <li><a href="02_AngularDOM_ngHide.html">ng Hide</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Filter</a>
+                      <ul>
+                        <li><a href="02_FilterIndex_FormatData.html">Format Data</a></li>
+                        <li><a href="03_Filter_SortData.html">Sort Data</a></li>
+                        <li><a href="01_FilterData.html">Filter Data</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Form</a>
+                      <ul>
+                        <li><a href="01Form_index.html">Form</a></li>
+                        <li><a href="03_AngularDOM_ngShow.html">CheckBox</a></li>
+                        <li><a href="02_AngularDOM_ngHide.html">ShowHide</a></li>
+                        <li><a href="01_AngularDOM_events.html">RadioButton</a></li>
+                        <li><a href="01_AngularDOM_events.html">TrackingEvents</a></li>
+                        <li><a href="01_AngularDOM_events.html">Validation</a></li>
+                        <li><a href="01_AngularDOM_events.html">NestedValidation</a></li>
+                        <li><a href="01_AngularDOM_events.html">FormSubmission</a></li>
+                        <li><a href="#">Select Element</a>
+                          <ul>
+                            <li><a href="09SelectDD_htmlIndex.html">Html</a></li>
+                            <li><a href="09SelectDD_arrayIndex.html">Array</a></li>
+                            <li><a href="09SelectDD_objectIndex.html">Object</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Service</a>
+                      <ul>                                
+                        <li><a href="01_Service_index.html">Index</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Directive</a>
+                      <ul>
+                        <li><a href='00_Directive_index.html'>Index</a></li>
+                        <li><a href="#">Shared Scope</a>
+                          <ul>
+                            <li><a href='01_Scope_inheritance_index.html'>Scoope Inheritance</a></li>
+                            <li><a href='02_SharedScope_index.html'>SharedScope(SS)</a></li>
+                            <li><a href='03_Shared_Scope_index.html'>SS-Modifying</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Isolated Scope</a>
+                          <ul>
+                            <li><a href='04_Inherited_ScopeChild_index.html'>InheritedScope(Child)</a></li>
+                            <li><a href='05_Child_index.html'>Child-Directive</a></li>
+                            <li><a href='06_Child_index.html'>Child-ng Repeat</a></li>
+                          </ul>
+                        </li>
+                        
+                        
+                        <li><a href="#">IsolatedScope</a>
+                          <ul>
+                            <li><a href='07_Isolated_Scope_index.html'>IsolatedScope @</a></li>
+                            <li><a href='08_Isolated_Scope_index.html'>IsolatedScope =</a></li>
+                            <li><a href='09_Isolated_Scope_index.html'>IsolatedScope &amp;</a></li>
+                          </ul>
+                        </li>
+                        
+                        <li><a href='#'>Directive Compile</a>
+                          <ul>
+                            <li><a href='01_Directive_Compile_compile.html'>Compile</a></li>
+                            <li><a href='02_ Directive_Compile_controller.html'>Controller</a></li>
+                            <li><a href='03_Directive_Compile_PrePostLink.html'>LinkPrePost</a></li>
+                            <li><a href='04_Directive_Compile_compileCtrlLink.html'>CompileControllerLink</a></li>
+                          </ul>
+                        </li>
+                        <li><a href='#'>Directive Link</a>
+                          <ul>
+                            <li><a href='01_Directive_Link_interpolation.html'>Interpolation</a></li>
+                            <li><a href='02_Directive_Link_modifyDomInCompile.html'>ModifyDom</a></li>
+                            <li><a href='03_Directive_Link_DomEventHandler.html'>EventHandler</a></li>
+                            <li><a href='04_Directive_Link_WithoutCompile.html'>WithoutCompile</a></li>
+                            <li><a href='05_Directive_Link_CompileReturn.html'>CompileReturn</a></li>
+                            <li><a href='06_Directive_Link_PostOnly.html'>PostOnly</a></li>
+                          </ul>
+                        </li>
+                        
+                      </ul>
+                    </li>
+                    <li><a href='#'>Routing</a>
+                      <ul>
+                        <li><a href="01_Route_index.html">Index</a></li>
+                        <li><a href="#">Code</a>
+                          <ul>
+                            
+                            <li><a href="02_Route_Intro.html">Intro Routing</a></li>
+                            <li><a href="03_Route_Parameters.html">Parameters</a></li>
+                            <li><a href="04_Route_Async.html">Asynchronous</a></li>
+                            <li><a href="05_Route_Redirect.html">Redirect</a></li>
+                            <li><a href="06_Route_events.html">Events</a></li>
+                            <li><a href="Routing/code/06 Route-routeService-events with Loading/index.htm">With Loading</a></li>
+                            <li><a href="Routing/code/07 Route-routeService-with-resolve/index.htm">With Resolve</a></li>
+                          </ul>
+                          
+                        </li>
+                        
+                      </ul>
+                    </li>
+                    <li><a href='#'>UI Route</a>
+                      <ul>
+                        <li><a href="01UiRoute_index.html">Index</a></li>
+                        <li><a href="#">Code</a>
+                          <ul>
+                            
+                            <li><a href="02UIRoute_Intro_Routing_index.html">Intro Routing</a></li>
+                            <li><a href="03_UIRoute_RouteWithParams.html">Parameters</a></li>
+                            <li><a href="04_UIRoute_StateService.html">State</a></li>
+                            <li><a href="05_UIRoute_WithResolve.html">Resolve</a></li>
+                            <li><a href="06_UIRoute_SingleView.html">SingleView</a></li>
+                            <li><a href="07_UIRoute_MultipleViews.html">MultipleView</a></li>
+                            
+                          </ul>
+                          
+                        </li>
+                        
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href='#'>Javascript</a></li>
+                <li><a href='#'>NodeJS</a></li>
+                
+              </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!--<section id="newsletter">
+      <div class="container">
+        <h1>Subscribe To Our Newsletter</h1>
+        <form>
+          <input type="email" placeholder="Enter Email...">
+          <button type="submit" class="button_1">Subscribe</button>
+        </form>
+      </div>
+    </section>-->
+
+    <section id="main">
+      <div class="container">
+        <article id="main-col">
+
+    <h1>AngularJS Module Example</h1>
+    <p>In this post, we are going to cover one of the most important feature in AngularJS called Modules. We can use AngularJS Module API to modularize angular applications.</p>
+    <h2>What is a Module?</h2>
+    <p>Module can be treated as a container for the different parts of your application like <code>controllers</code>, <code>filters</code>, <code>services</code>, <code>directives ,</code>etc, which specify how an application should be bootstrapped. Module
+        is an important part of the AngularJS <strong>dependency injection</strong> system.</p>
+    <p>Here is the general syntax for creating a module:</p>
+    <pre><code class="language-javascript">
+        angular.module(“myModule”, []);
+    </code></pre>
+    <p>Here <strong><em>myModule</em></strong> is the name of the module. <strong>[]</strong> is where you inject the dependencies.</p>
+    <p>Why Modules?</p>
+    <ul>
+        <li>Helps package our code into reusable modules.</li>
+        <li>The declarative process is easier to understand.</li>
+        <li>Modules can be loaded in any order.</li>
+        <li>Easily testable and maintainable components.</li>
+        <li>Helps organize your application.</li>
+    </ul>
+    <h2>Creating a Controller in a Module</h2>
+    <p>In this section, we are going to explain how to create a controller in a module. It is very simple and we use the following steps to achieve that task.</p>
+    <pre><code class="language-javascript">
+        var myFirstModule = angular.module("myFirstModule ", []);
+        myFirstModule.controller("MyController", function); 
+    </code></pre>
+    <p>Here we have created a module called <strong><em>myFirstModule</em></strong> and defined a controller named <strong><em>MyController </em></strong>in it.</p>
+    <p>You can also create services, providers and factories using the angular module API. The following table briefly describes some of the mostly used methods in the API.</p>
+    <table style="border-collapse: collapse; border-spacing: 0;">
+        <tbody>
+            <tr>
+                <th class="leftCol">Method</th>
+                <th class="rightCol">Syntax</th>
+            </tr>
+            <tr>
+                <td class="leftCol">module.service</td>
+                <td class="rightCol">module.service( ‘serviceName’, function );</td>
+            </tr>
+            <tr>
+                <td class="leftCol">module.factory</td>
+                <td class="rightCol">module.factory( ‘factoryName’, function );</td>
+            </tr>
+            <tr>
+                <td class="leftCol">module.provider</td>
+                <td class="rightCol">module.provider( ‘providerName’, function );</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>In this post, we are not going to look into the details of these concepts. We will see these concepts in the coming posts.</p>
+    <h2>Creating a Controller in a Module Example</h2>
+    <p>The following example demonstrates how to create a controller in angular module. In this example, we will create a module called <strong>demoApp </strong>and will define the controller, <strong>blogController </strong>in it.</p>
+    <p>angular-module</p>
+    <pre><code class="language-html">
+        &lt;!DOCTYPE html&gt;
+            &lt;html ng-app="demoApp"&gt;
+            
+            &lt;head&gt;
+            &lt;title&gt; AngularJS - Module&lt;/title&gt;
+            &lt;script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"&gt;&lt;/script&gt;
+            &lt;/head&gt;
+            
+            &lt;body&gt;
+            
+            &lt;div ng-controller="blogController"&gt;
+            
+                First Name: &lt;input type="text" ng-model="firstName"&gt;&lt;br&gt;
+                Last Name: &lt;input type="text" ng-model="lastName"&gt;&lt;br&gt;
+                &lt;br&gt;
+                Full Name: {{firstName + " " + lastName}}
+                &lt;br&gt;
+                Blog Name : {{blogName }}
+            
+            &lt;/div&gt;
+            
+            &lt;script&gt;
+            
+            var app = angular.module("demoApp", []);
+            
+            app.controller("blogController", function($scope) {
+                    $scope.firstName = "Pankaj",
+                    $scope.lastName = "Kumar",
+                    $scope.blogName = "JournalDev"
+            });
+            
+            &lt;/script&gt;
+            
+            &lt;/body&gt;
+            &lt;/html&gt;
+    </code></pre>
+    <p>We use ng-app directive to specify the name of the module used in the application. You will see the following output in your browser.</p>
+    <h2>AngularJS Application Files</h2>
+    <p>Earlier we looked at how to include controllers in external files. That is very helpful when you deal with big applications. In any angular application, we use mainly two types of files, one with module and other with controllers. Let’s look in to
+        it.
+        <br> The following example demonstrates this usage.</p>
+    <p>First, we create a module in the app.js file.</p>
+    app.js
+    <pre><code class="language-javascript">var app = angular.module("demoApp", []);</code></pre>
+    <p>Second step is to define the controllers in controller.js file.</p>
+    controller.js
+    <pre><code class="language-javascript">
+        app.controller("blogController", function($scope) {
+                $scope.firstName = "Pankaj",
+                $scope.lastName = "Kumar",
+                $scope.blogName = "JournalDev"
+        });
+    </code></pre>
+    <p>Third step is to include these two files in our application.</p>
+    <p>angular-module</p>
+    <pre><code class="language-html">
+    &lt;!DOCTYPE html&gt;
+        &lt;html ng-app="demoApp"&gt;
+        
+        &lt;head&gt;
+        	&lt;title&gt; AngularJS - Module&lt;/title&gt;
+        	&lt;script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"&gt;&lt;/script&gt;
+        &lt;/head&gt;
+        
+        &lt;body&gt;
+        
+            &lt;div ng-controller="blogController"&gt;
+            
+                First Name: &lt;input type="text" ng-model="firstName"&gt;&lt;br&gt;
+                Last Name: &lt;input type="text" ng-model="lastName"&gt;&lt;br&gt;
+                &lt;br&gt;
+                Full Name: {{firstName + " " + lastName}}
+                &lt;br&gt;
+                Blog Name : {{blogName }}
+            
+            &lt;/div&gt;
+            
+            &lt;script src="app.js"&gt;&lt;/script&gt;
+            &lt;script src="controller.js"&gt;&lt;/script&gt;
+        
+        &lt;/body&gt;
+   &lt;/html&gt;
+    </code></pre>
+
+        </article>
+
+        <aside id="sidebar">
+          <div class="dark">
+            <h3>What We Do</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius auctor lacus nec feugiat. Phasellus sit amet ex ipsum. Praesent pharetra tincidunt tempor. Etiam velit eros, dapibus eget porta in, lacinia et magna</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      <p>UI Tutorials, Copyright &copy; 2017</p>
+    </footer>
+  </body>
+</html>
+
+
+    
+

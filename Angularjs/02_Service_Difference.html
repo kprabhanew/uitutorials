@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Angular 1.x Intro</title>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            color: #666;
+            font-family: 'Raleway', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.625;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>AngularJS: Factory vs Service vs Provider</h1>
+    <p>Your controller should be very thin; meaning, most of the business logic and persistent data in your application should be taken care of or stored in a service.</p>
+    <ul>
+        <li>For memory purposes, controllers are instantiated only when they are needed and discarded when they are not. Because of this, every time you switch a route or reload a page, Angular cleans up the current controller.</li>
+        <li>Services however provide a means for keeping data around for the lifetime of an application while they also can be used across different controllers in a consistent manner.</li>
+    </ul>
+    <p>Angular provides us with three ways to create and register our own service.</p>
+    <ol>
+        <li>Factory</li>
+        <li>Service</li>
+        <li>Provider</li>
+    </ol>
+    <p>1. When you’re using a <strong>Factory</strong> </p>
+    <ol>
+        <li> create an object,</li>
+        <li>add properties to it,</li>
+        <li>then return that same object.</li>
+    </ol>
+    <p>When you pass this service into your controller, those properties on the object will now be available in that controller through your factory.</p>
+
+    <pre>
+        app.controller('myFactoryCtrl', function ($scope, myFactory) {
+            $scope.artist = myFactory.getArtist()
+        })
+        app.factory('myFactory', function () {
+            var _artist = '';
+            var service = {}
+
+            service.getArtist = function () {
+                return _artist
+            }
+
+            return service;
+        })
+    </pre>
+    <hr>
+    <p>2. When you’re using a <strong>Service</strong> </p>
+    <ol>
+        <li>it’s instantiated with the ‘new’ keyword</li>
+        <li>Because of that, you’ll add properties to ‘this’ and the service will return ‘this’.</li>
+    </ol>
+    <p>When you pass the service into your controller, those properties on ‘this’ will now be available on that controller through your service.</p>
+    <hr>
+    <p>2. Providers are the only service you can pass into your .config() function.</p>
+
+    <p>Use a provider when you want to provide module-wide configuration for your service object before making it available.</p>
+
+</body>
+
+</html>

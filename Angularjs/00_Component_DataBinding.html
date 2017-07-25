@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Affordable and professional web design">
+	  <meta name="keywords" content="web design, affordable web design, professional web design">
+  	<meta name="author" content="Brad Traversy">
+    <title>UI Tutorials | Welcome</title>
+    
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">    
+    <link rel="stylesheet" type="text/css" href="../css/MenuStyle.css">
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="../scripts/menuScript.js"></script>
+    <link rel="stylesheet" href="../css/SiteStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/prism.css">
+    <script src="../scripts/prism.js"></script>
+    
+    <style type="text/css">
+	.leftCol{
+		font-family: Arial, sans-serif; font-size: 14px; padding: 10px 5px; border-style: solid; border-width: 1px; overflow: hidden; word-break: normal; font-weight: bold; background-color: #fd6864; color: #ffffff;
+		}
+		.rightCol{
+			
+			font-family: Arial, sans-serif; font-size: 14px; padding: 10px 5px; border-style: solid; border-width: 1px; overflow: hidden; word-break: normal; text-align: left;}
+	</style>
+    
+    
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">UI</span> Tutorials</h1>
+        </div>
+        <nav id='cssmenu'>            
+            <div id="head-mobile"></div>
+            <div class="button"></div>
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href='#'>Bootstrap</a></li>
+                <li class='active'><a href="#">AngularJS</a>
+                  <ul>
+                    <li><a href='#'>Introduction</a>
+                      <ul>
+                        <li><a href="01_AngularIntro_Index.html">Basic</a></li>
+                        <li><a href="03_AngularIntro_Module.html">Module</a></li>
+                        <li><a href="02_AngularIntro_Controller.html">Controller MVC</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Angular DOM</a>
+                      <ul>
+                        <li><a href="01_AngularDOM_events.html">Events</a></li>
+                        <li><a href="03_AngularDOM_ngShow.html">ng Show</a></li>
+                        <li><a href="02_AngularDOM_ngHide.html">ng Hide</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Filter</a>
+                      <ul>
+                        <li><a href="02_FilterIndex_FormatData.html">Format Data</a></li>
+                        <li><a href="03_Filter_SortData.html">Sort Data</a></li>
+                        <li><a href="01_FilterData.html">Filter Data</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Form</a>
+                      <ul>
+                        <li><a href="01Form_index.html">Form</a></li>
+                        <li><a href="03_AngularDOM_ngShow.html">CheckBox</a></li>
+                        <li><a href="02_AngularDOM_ngHide.html">ShowHide</a></li>
+                        <li><a href="01_AngularDOM_events.html">RadioButton</a></li>
+                        <li><a href="01_AngularDOM_events.html">TrackingEvents</a></li>
+                        <li><a href="01_AngularDOM_events.html">Validation</a></li>
+                        <li><a href="01_AngularDOM_events.html">NestedValidation</a></li>
+                        <li><a href="01_AngularDOM_events.html">FormSubmission</a></li>
+                        <li><a href="#">Select Element</a>
+                          <ul>
+                            <li><a href="09SelectDD_htmlIndex.html">Html</a></li>
+                            <li><a href="09SelectDD_arrayIndex.html">Array</a></li>
+                            <li><a href="09SelectDD_objectIndex.html">Object</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Service</a>
+                      <ul>                                
+                        <li><a href="01_Service_index.html">Index</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Directive</a>
+                      <ul>
+                        <li><a href='00_Directive_index.html'>Index</a></li>
+                        <li><a href="#">Shared Scope</a>
+                          <ul>
+                            <li><a href='01_Scope_inheritance_index.html'>Scoope Inheritance</a></li>
+                            <li><a href='02_SharedScope_index.html'>SharedScope(SS)</a></li>
+                            <li><a href='03_Shared_Scope_index.html'>SS-Modifying</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Isolated Scope</a>
+                          <ul>
+                            <li><a href='04_Inherited_ScopeChild_index.html'>InheritedScope(Child)</a></li>
+                            <li><a href='05_Child_index.html'>Child-Directive</a></li>
+                            <li><a href='06_Child_index.html'>Child-ng Repeat</a></li>
+                          </ul>
+                        </li>
+                        
+                        
+                        <li><a href="#">IsolatedScope</a>
+                          <ul>
+                            <li><a href='07_Isolated_Scope_index.html'>IsolatedScope @</a></li>
+                            <li><a href='08_Isolated_Scope_index.html'>IsolatedScope =</a></li>
+                            <li><a href='09_Isolated_Scope_index.html'>IsolatedScope &amp;</a></li>
+                          </ul>
+                        </li>
+                        
+                        <li><a href='#'>Directive Compile</a>
+                          <ul>
+                            <li><a href='01_Directive_Compile_compile.html'>Compile</a></li>
+                            <li><a href='02_ Directive_Compile_controller.html'>Controller</a></li>
+                            <li><a href='03_Directive_Compile_PrePostLink.html'>LinkPrePost</a></li>
+                            <li><a href='04_Directive_Compile_compileCtrlLink.html'>CompileControllerLink</a></li>
+                          </ul>
+                        </li>
+                        <li><a href='#'>Directive Link</a>
+                          <ul>
+                            <li><a href='01_Directive_Link_interpolation.html'>Interpolation</a></li>
+                            <li><a href='02_Directive_Link_modifyDomInCompile.html'>ModifyDom</a></li>
+                            <li><a href='03_Directive_Link_DomEventHandler.html'>EventHandler</a></li>
+                            <li><a href='04_Directive_Link_WithoutCompile.html'>WithoutCompile</a></li>
+                            <li><a href='05_Directive_Link_CompileReturn.html'>CompileReturn</a></li>
+                            <li><a href='06_Directive_Link_PostOnly.html'>PostOnly</a></li>
+                          </ul>
+                        </li>
+                        
+                      </ul>
+                    </li>
+                    <li><a href='#'>Routing</a>
+                      <ul>
+                        <li><a href="01_Route_index.html">Index</a></li>
+                        <li><a href="#">Code</a>
+                          <ul>
+                            
+                            <li><a href="02_Route_Intro.html">Intro Routing</a></li>
+                            <li><a href="03_Route_Parameters.html">Parameters</a></li>
+                            <li><a href="04_Route_Async.html">Asynchronous</a></li>
+                            <li><a href="05_Route_Redirect.html">Redirect</a></li>
+                            <li><a href="06_Route_events.html">Events</a></li>
+                            <li><a href="Routing/code/06 Route-routeService-events with Loading/index.htm">With Loading</a></li>
+                            <li><a href="Routing/code/07 Route-routeService-with-resolve/index.htm">With Resolve</a></li>
+                          </ul>
+                          
+                        </li>
+                        
+                      </ul>
+                    </li>
+                    <li><a href='#'>UI Route</a>
+                      <ul>
+                        <li><a href="01UiRoute_index.html">Index</a></li>
+                        <li><a href="#">Code</a>
+                          <ul>
+                            
+                            <li><a href="02UIRoute_Intro_Routing_index.html">Intro Routing</a></li>
+                            <li><a href="03_UIRoute_RouteWithParams.html">Parameters</a></li>
+                            <li><a href="04_UIRoute_StateService.html">State</a></li>
+                            <li><a href="05_UIRoute_WithResolve.html">Resolve</a></li>
+                            <li><a href="06_UIRoute_SingleView.html">SingleView</a></li>
+                            <li><a href="07_UIRoute_MultipleViews.html">MultipleView</a></li>
+                            
+                          </ul>
+                          
+                        </li>
+                        
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href='#'>Javascript</a></li>
+                <li><a href='#'>NodeJS</a></li>
+                
+              </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!--<section id="newsletter">
+      <div class="container">
+        <h1>Subscribe To Our Newsletter</h1>
+        <form>
+          <input type="email" placeholder="Enter Email...">
+          <button type="submit" class="button_1">Subscribe</button>
+        </form>
+      </div>
+    </section>-->
+
+<section id="main">
+      <div class="container">
+        <article id="main-col">
+        <h1>Data Binding in AngularJS</h1>
+        <ul>
+            <li>automatic propagation of data changes;</li>
+            <li>the view it's updated automatically when the model is changed;</li>
+            <li>model is updated automatically when a value in the view has changed.</li>
+            <li>no DOM manipulation needed.</li>
+        </ul>
+        <h3>Principle of bidirectional Binding of AngularJS - digest loop</h3>
+        <p>One of the essential features of the Javascript MVC framework is the binding between Model and View.</p>
+<p>Typically, HTML input elements generate events when there is input from the user and write code that reflects the data in the event listeners.</p>
+<img src="images/BinidingImg1.png" width="484" height="167" alt=""/>
+<p>If there is a change in the model in any way, you must generate an event that this model has changed, and you will be able to write code that reflects the data in the event listener.
+</p>
+<img src="images/BinidingImg2.png" width="516" height="167" alt=""/>
+<h3>Digest Loop</h3>
+<p>AngularJS is configured to work with code that reflects the model to the View for these three cases</p>
+<ol>
+<li>Handlers for ng-click, ng-mousedown, etc.</li>
+<li>success, error handler in $ http</li>
+<li>$ timer</li>
+</ol>
+<p>In the above case, the process of allowing AngularJS to reflect the model to the view is called <strong>digest loop</strong></p>
+<p>As shown in the figure(right), the watch registered in the scope becomes the code that reflects the model to the view, and the digest loop is called because the process of executing these watches is executed periodically.</p>
+<img src="images/DigestPicture1.jpg" width="397" height="582" alt=""/>
+<p>However, since the digest loop is operated by AngularJS, the digest loop does not work if AngularJS does not know the above three cases.</p>
+<p>For example, if you use an event handler in jQuery instead of ng-click for any HTML element, the model will not be reflected in the View.</p>
+<pre>
+<code class="language-html">
+&lt;body ng-controller="fooCtrl"&gt;
+    &lt;div&gt; {{text}} &lt;/div&gt;
+    &lt;input id="btn1" type="button" value="button" ng-click="btnClick()" /&gt;
+    &lt;input id="btn2" type="button" value="button"/&gt;
+&lt;/body&gt;
+</code>
+</pre>
+<span class="filename">Example : app.js</span>
+    <pre><code class="language-javascript">
+    function fooCtrl($scope){
+    $scope.text = "";
+    $scope.btnClick = function(){
+        $scope.text = "btn1 click" // Your Changes appear on the screen
+    }
+
+    Jquery("btn2").click(function(){ 
+        $scope.text = "btn2 click"; //Your changes do not appear on the screen
+    })
+}</code></pre>
+
+<p>In the above code, the {{text}} expression will register a watch for scope.text by default.
+In the case of btn1, you can see that the click event is handled using AngularJS, the event handler for btn2 is using jQuery, and for btn2, the changes are not directly reflected in the view.</p>
+<p>For this case, AngularJS has a device that can arbitrarily operate this digest loop, which is <code>$scope.$apply()</code>. If you modify the above code as follows</p>
+
+<span class="filename">Example </span>
+    <pre><code class="language-javascript">
+    function fooCtrl($scope){
+    //...
+
+    Jquery("btn2").click(function(){ 
+        $scope.text = "btn2 click";
+        $scope.$apply();
+    })
+}
+    </code></pre>
+<p>You can see that the contents are reflected in the view as well.</p>
+<img src="images/DigestLoopPicture1.jpg" width="396" height="584" alt=""/>
+<h2>Scope in Angularjs</h2>
+<p>The scope has two important lists: the watch list and the event listener list.The watch and digest loop exist to implement the binding.</p>
+<p>By default, the watch is registered in the scope and the digest loop is executed at the appropriate time to execute the registered watch.</p>
+<img src="images/DigestLoopPicture2.jpg" width="323" height="301" alt=""/>
+<p>However, the process of performing a digest loop is more precisely the scope of the $digest() function, which calls the $digest() function to execute the digest loop.</p>
+<code>$scope.digest()</code>
+
+<p>When the scope. $ Digest function is called, the list of watches registered in the scope is executed, and in turn the watch lists of that scope are recursively executed.</p>
+<img src="images/DigestLoopPicture3.jpg" width="398" height="377" alt=""/>
+<p>But scope has <code>$apply()</code> function  instead of <code>$digest()</code>.</p>
+<img src="images/DigestLoopPicture4.jpg" width="438" height="434" alt=""/>
+
+<p>In the previous example,  i was calling <code>$apply</code>, not <code>$digest</code>, to run the digest loop. </p>
+
+<p>So what is the difference between <code>$digest</code> and <code>$apply</code>?</p>
+
+<p>Both functions are like running a digest loop, but there are differences in their scope. That is, $digest performs a digest loop only for the scope that invoked the <code>$digest</code> and its sub scopes, but <code>$apply</code> calls the $scope for the root scope, so the digest loop is performed for all scope watches will be.</p>
+
+<p>Finally, the scope maintains a list of event listeners that can respond to events. These events are events that are used entirely within AngularJS, not events that occur in a browser or HTML DOM Element.</p>
+<div>
+<img src="images/DigestLoopPicture1.jpg" width="396" height="584" alt=""/>
+<img src="images/BrodcastPicture1.png" width="320" height="300" alt=""/>
+</div>
+<p>This event can be raised through scope, and the flow of that event will also move along the scope.</p>
+<h2>$watch, $apply & $digest</h2>
+<p>Angular uses some main components to implement 2 way data binding : </p>
+<ul>
+<li>$watch</li>
+<li>$apply</li>
+<li>$digest - dirty checking</li>
+</ul>
+<h3>$watch</h3>
+<p>Angular extends the browser events-loop and creates the angular-context; </p>
+<p>Every time something is bound in the html a watcher is inserted in a watch list; </p>
+<p>A  watcher consist of:</p>
+<ul>
+<li>a watch function that returns the current value of the property it is watching; </li>
+<li>a listener function that will be triggered if a change happened. </li>
+<li>the last value returned by the watch function;</li>
+</ul>
+<pre><code class="language-html">
+    First	Name:	&lt;input	type="text"	ng-model="user.firstName" /&gt; 
+Last Name:	&lt;input	type="text"	ng-model="user.lastName" /&gt; 
+    </code></pre>
+    <p>Doing this two watchers are registered. </p>
+    
+    <pre><code class="language-html">
+    &lt;ul&gt; 
+	&lt;li ng-repeat="user in userList"&gt; {{user.firstName}} {{user.lastName}} &lt;/li&gt; 
+&lt;/ul&gt;
+    </code></pre>
+    <p>	For 10 people in the list it will be (2 * 10) + 1 watchers registered.</p>
+
+<h2>$digest loop</h2>
+<p>Angular knows about browser events-loop; </p>
+<p>When the browser receives an event that can be handled by angular-context  the $digest loop will be ﬁred;</p>
+<p>The $digest loop is made from two smaller loops: </p>
+	 <ul>
+     <li>$evalAsync queue; </li>
+     <li>$watch list;</li>
+     </ul>
+<p>The $digest will loop trough the watchers list: </p>
+
+<ul>
+<li>It will check the current value returned by the watchfunction; </li>
+<li>It will compare the current value with the last value;</li>
+<li><p>If the equality test fails, it will: </p>
+	<ol style="margin-left:15px;">
+    <li>call the listener function associated with that watcher; </li>
+	<li>it will set the current value as last value; </li>
+	<li>it will set the $scope as dirty; </li>
+    </ol>
+</li>
+<li>If the $scope is dirty, another $digest loop is triggered.</li>
+</ul>
+
+<h2>$apply()</h2>
+<p>Angular calls $apply under the hood when we use framework directives like: </p>
+<p>ngClick, ngModel,ngChange, etc. </p>
+<p>The $apply function executes expressions in angular context and then calls the $digest; </p>
+
+<p>Where to use $apply? In most of the cases in directives where you handle events manually; </p>
+
+<p>When you use 3rd party code that will change the $scope;</p>
+
+<pre><code class="language-javascript">
+    app.directive('click', function() {
+    return {
+        scope: { name: '=' },
+        link: function(scope, element, attrs) {
+            element.on('click', function() {
+                scope.$apply(
+                    function() { scope.name = 'new name'; }
+                );
+            });
+        }
+    }
+});
+</code></pre>
+<h2>$digest(),$apply()</h2>
+<p>Angular doesn’t directly call $digest(). Instead, it calls $scope.$apply(), which in turn calls $rootScope.$digest(). As a result of this, a digest cycle starts at the $rootScope, and subsequently visits all the child scopes calling the watchers along the way.</p>
+
+<p><strong>Services:</strong> $http, $timeout, $interval</p>
+<p><strong>Directives:</strong> ngClick, ngChange, ngFocus, ngPaste, etc...</p>
+When inside a watch listener, no need to trigger a digest!
+
+<pre><code class="language-javascript">
+// Apply changes: execute function and call $digest
+$scope.$apply(function () {
+$scope.myModel = 'Hello';
+});    
+</code></pre>
+
+<strong>Example</strong>
+
+<p>If you use JavaScript’s setTimeout() function to update a scope model, Angular has no way of knowing what you might change. </p>
+<p>In this case it’s your responsibility to call $apply() manually, which triggers a $digest cycle.</p>
+<span class="filename">Html</span>
+    <pre><code class="language-html">
+    &lt;body ng-app="myApp"&gt; 
+ &lt;div ng-controller="MessageController"&gt; Delayed Message: {{message}} &lt;/div&gt;
+ &lt;/body&gt;
+ </code></pre>
+ 
+ <span class="filename">Without Apply</span>
+    <pre><code class="language-javascript">
+    /*Without Apply*/
+angular.module('myApp', []).controller('MessageController', function($scope) {
+    $scope.getMessage = function() {
+        setTimeout(function() {
+            $scope.message = 'Fetched after 3 seconds';
+        }, 2000);
+        $scope.getMessage();
+    }
+})
+    </code></pre>
+    
+    <span class="filename">With Apply</span>
+    <pre><code class="language-javascript">
+    /*With Apply*/
+angular.module('myApp', []).controller('MessageController', function($scope) {
+    $scope.getMessage = function() {
+        setTimeout(function() {
+            $scope.$apply(function() {
+                $scope.message = 'Fetched after 3 seconds';
+            });
+        }, 2000);
+    }
+    $scope.getMessage();
+});
+    </code></pre>
+    
+    <h2>Watching Depth</h2>
+    
+    <pre><code class="language-javascript">
+    $scope.$watch(watchExpr, listener)
+    </code></pre>
+	<p>for watching primitives or object references</p>
+
+    <pre><code class="language-javascript">
+  $scope.$watchCollection(watchExpr, listener)  
+    </code></pre>
+    <p>for watching additions and deletions in Arrays</p>
+
+    <pre><code class="language-javascript">
+    $scope.$watch(watchExpr, listener, true)
+    </code></pre>
+<p>for objects and arrays equality (using angular.equals)</p>
+<img src="images/WatchImg.png" width="582" height="404" alt=""/>
+<h2>From View To Model</h2>
+<p>Javascript DOM <strong>Event</strong> model: Event, KeyboardEvent, MouseEvent...
+Easy to <strong>bind</strong> model to view in Angular directives</p>
+
+    <pre><code class="language-javascript">
+    add.directive("input", function() {
+    return {
+        restrict: 'E',
+        scope: false,
+        link: function(scope, element, attrs) {
+            element.bind('input', function(event) {
+                scope.$apply(function() {
+                    scope.model = element.val();
+                })
+            })
+        }
+    }
+})
+    </code></pre>
+        </article>
+    <aside id="sidebar">
+          <div class="dark">
+        <h3>What We Do</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius auctor lacus nec feugiat. Phasellus sit amet ex ipsum. Praesent pharetra tincidunt tempor. Etiam velit eros, dapibus eget porta in, lacinia et magna</p>
+      </div>
+        </aside>
+  </div>
+    </section>
+<footer>
+      <p>UI Tutorials, Copyright &copy; 2017</p>
+    </footer>
+</body>
+</html>
