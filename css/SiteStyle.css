@@ -177,6 +177,7 @@ footer{
 /* Media Queries */
 @media(max-width: 768px){
   header #branding,
+text-align:left;
   header nav,
   header nav li,
   #newsletter h1,
