@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="angularjs, javascript, ui development, controller, directive, module, Filter, Databinding, Dependancy injection, service, ui route, transclusion, angular validation, scope, scope inheritance">
+	  <meta name="keywords" content="uitutorials.in, angularjs, javascript, ui development, controller, directive, module, Filter, Databinding, Dependancy injection, service, ui route, transclusion, angular validation, scope, scope inheritance">
+  	<meta name="author" content="Prabakaran">
+    <title>UI Tutorials | Welcome</title>    
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="https:maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <link rel="stylesheet" type="text/css" href="../css/MenuStyle.css">
+    <link rel="stylesheet" href="../css/SiteStyle.css">
+    <script src='http:cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="../scripts/menuScript.js"></script>    
+    <link rel="stylesheet" type="text/css" href="../css/prism.css">
+    <script src="../scripts/prism.js"></script>
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https:www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-103420198-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">UI</span> Tutorials</h1>
+        </div>
+        <nav id='cssmenu'>
+            
+            <div id="head-mobile"></div>
+            <div class="button"></div>
+            <ul>
+                <li class='active'><a href="../index.html">HOME</a></li>
+                <li><a href='../Bootstrap/htmlPages/grid.html'>Bootstrap</a></li>
+                <li><a href="#">AngularJS</a>
+                  <ul>
+                    <li><a href='#'>Introduction</a>
+                      <ul>
+                        <li><a href="../Angularjs/01_AngularIntro_Index.html">Basic</a></li>
+                        <li><a href="../Angularjs/03_AngularIntro_Module.html">Module</a></li>
+                        <li><a href="../Angularjs/02_AngularIntro_Controller.html">Controller MVC</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Angular DOM</a>
+                      <ul>
+                        <li><a href="../Angularjs/01_AngularDOM_events.html">Events</a></li>
+                        <li><a href="../Angularjs/03_AngularDOM_ngShow.html">ng Show</a></li>
+                        <li><a href="../Angularjs/02_AngularDOM_ngHide.html">ng Hide</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Filter</a>
+                      <ul>
+                        <li><a href="../Angularjs/02_FilterIndex_FormatData.html">Format Data</a></li>
+                        <li><a href="../Angularjs/03_Filter_SortData.html">Sort Data</a></li>
+                        <li><a href="../Angularjs/01_FilterData.html">Filter Data</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Form</a>
+                      <ul>
+                        <li><a href="../Angularjs/01Form_index.html">Form</a></li>
+                        <li><a href="../Angularjs/03_AngularDOM_ngShow.html">CheckBox</a></li>
+                        <li><a href="../Angularjs/02_AngularDOM_ngHide.html">ShowHide</a></li>
+                        <li><a href="../Angularjs/01_AngularDOM_events.html">RadioButton</a></li>
+                        <li><a href="../Angularjs/01_AngularDOM_events.html">TrackingEvents</a></li>
+                        <li><a href="../Angularjs/01_AngularDOM_events.html">Validation</a></li>
+                        <li><a href="../Angularjs/01_AngularDOM_events.html">NestedValidation</a></li>
+                        <li><a href="../Angularjs/01_AngularDOM_events.html">FormSubmission</a></li>
+                        <li><a href="#">Select Element</a>
+                          <ul>
+                            <li><a href="../Angularjs/09SelectDD_htmlIndex.html">Html</a></li>
+                            <li><a href="../Angularjs/09SelectDD_arrayIndex.html">Array</a></li>
+                            <li><a href="../Angularjs/09SelectDD_objectIndex.html">Object</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Service</a>
+                      <ul>                                
+                        <li><a href="../Angularjs/01_Service_index.html">Index</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Directive</a>
+                      <ul>
+                        <li><a href='../Angularjs/00_Directive_index.html'>Index</a></li>
+                        <li><a href="#">Shared Scope</a>
+                          <ul>
+                            <li><a href='../Angularjs/01_Scope_inheritance_index.html'>Scoope Inheritance</a></li>
+                            <li><a href='../Angularjs/02_SharedScope_index.html'>SharedScope(SS)</a></li>
+                            <li><a href='../Angularjs/03_Shared_Scope_index.html'>SS-Modifying</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Isolated Scope</a>
+                          <ul>
+                            <li><a href='../Angularjs/04_Inherited_ScopeChild_index.html'>InheritedScope(Child)</a></li>
+                            <li><a href='../Angularjs/05_Child_index.html'>Child-Directive</a></li>
+                            <li><a href='../Angularjs/06_Child_index.html'>Child-ng Repeat</a></li>
+                          </ul>
+                        </li>
+                        
+                        
+                        <li><a href="#">IsolatedScope</a>
+                          <ul>
+                            <li><a href='../Angularjs/07_Isolated_Scope_index.html'>IsolatedScope @</a></li>
+                            <li><a href='../Angularjs/08_Isolated_Scope_index.html'>IsolatedScope =</a></li>
+                            <li><a href='../Angularjs/09_Isolated_Scope_index.html'>IsolatedScope &amp;</a></li>
+                          </ul>
+                        </li>
+                        
+                        <li><a href='#'>Directive Compile</a>
+                          <ul>
+                            <li><a href='../Angularjs/01_Directive_Compile_compile.html'>Compile</a></li>
+                            <li><a href='../Angularjs/02_ Directive_Compile_controller.html'>Controller</a></li>
+                            <li><a href='../Angularjs/03_Directive_Compile_PrePostLink.html'>LinkPrePost</a></li>
+                            <li><a href='../Angularjs/04_Directive_Compile_compileCtrlLink.html'>CompileControllerLink</a></li>
+                          </ul>
+                        </li>
+                        <li><a href='#'>Directive Link</a>
+                          <ul>
+                            <li><a href='../Angularjs/01_Directive_Link_interpolation.html'>Interpolation</a></li>
+                            <li><a href='../Angularjs/02_Directive_Link_modifyDomInCompile.html'>ModifyDom</a></li>
+                            <li><a href='../Angularjs/03_Directive_Link_DomEventHandler.html'>EventHandler</a></li>
+                            <li><a href='../Angularjs/04_Directive_Link_WithoutCompile.html'>WithoutCompile</a></li>
+                            <li><a href='../Angularjs/05_Directive_Link_CompileReturn.html'>CompileReturn</a></li>
+                            <li><a href='../Angularjs/06_Directive_Link_PostOnly.html'>PostOnly</a></li>
+                          </ul>
+                        </li>
+                        
+                      </ul>
+                    </li>
+                    <li><a href='#'>Routing</a>
+                      <ul>
+                        <li><a href="../Angularjs/01_Route_index.html">Index</a></li>
+                        <li><a href="#">Code</a>
+                          <ul>
+                            
+                            <li><a href="../Angularjs/02_Route_Intro.html">Intro Routing</a></li>
+                            <li><a href="../Angularjs/03_Route_Parameters.html">Parameters</a></li>
+                            <li><a href="../Angularjs/04_Route_Async.html">Asynchronous</a></li>
+                            <li><a href="../Angularjs/05_Route_Redirect.html">Redirect</a></li>
+                            <li><a href="../Angularjs/06_Route_events.html">Events</a></li>
+                            <li><a href="../Angularjs/Routing/code/06 Route-routeService-events with Loading/index.htm">With Loading</a></li>
+                            <li><a href="../Angularjs/Routing/code/07 Route-routeService-with-resolve/index.htm">With Resolve</a></li>
+                          </ul>
+                          
+                        </li>
+                        
+                      </ul>
+                    </li>
+                    <li><a href='#'>UI Route</a>
+                      <ul>
+                        <li><a href="../Angularjs/01UiRoute_index.html">Index</a></li>
+                        <li><a href="#">Code</a>
+                          <ul>
+                            
+                            <li><a href="../Angularjs/02UIRoute_Intro_Routing_index.html">Intro Routing</a></li>
+                            <li><a href="../Angularjs/03_UIRoute_RouteWithParams.html">Parameters</a></li>
+                            <li><a href="../Angularjs/04_UIRoute_StateService.html">State</a></li>
+                            <li><a href="../Angularjs/05_UIRoute_WithResolve.html">Resolve</a></li>
+                            <li><a href="../Angularjs/06_UIRoute_SingleView.html">SingleView</a></li>
+                            <li><a href="../Angularjs/07_UIRoute_MultipleViews.html">MultipleView</a></li>
+                            
+                          </ul>
+                          
+                        </li>
+                        
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href='#'>Javascript</a></li>
+                <li><a href='#'>NodeJS</a></li>
+                
+              </ul>
+        </nav>
+      </div>
+    </header>
+
+    
+
+    <section id="newsletter">
+      <div class="container">
+        <!--<h1>Follow us for latest update  : </h1>
+        <ul id="follow-icons">
+        	<li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+            <li><i class="fa fa-youtube-play" aria-hidden="true"></i></li>            
+        </ul>-->
+        
+      </div>
+    </section>
+
+    <section id="main">
+      <div class="container">
+      <article id="main-col">
+      <h1>Promise Functions</h1>
+      <!--https://davidwalsh.name/promises-->
+    <h1>JavaScript Promise API</h1>
+    <p>While synchronous code is easier to follow and debug, async is generally better for performance and flexibility. Why "hold up the show" when you can trigger numerous requests at once and then handle them when each is ready? Promises are becoming a
+        big part of the JavaScript world, with many new APIs being implemented with the promise philosophy. Let's take a look at promises, the API, how it's used!</p>
+    <h2>Promises in the Wild</h2>
+    <p>The XMLHttpRequest API is async but does&nbsp;<em>not</em> use the Promises API. &nbsp;There are a few native APIs that now use promises, however:</p>
+    <ul>
+        <li><a href="https://davidwalsh.name/javascript-battery-api">Battery API</a></li>
+        <li><a href="https://davidwalsh.name/fetch">fetch API</a> (XHR's replacement)</li>
+        <li>ServiceWorker API (post coming soon!)</li>
+    </ul>
+    <p>Promises will only become more prevalent so it's important that all front-end&nbsp;developers get used to them. &nbsp;It's also worth noting that Node.js is another platform for Promises (obviously, as&nbsp;Promise is a core language feature).</p>
+    <p><em>Testing promises is probably easier than you think because <code>setTimeout</code> can be used as your async "task"!</em></p>
+    <h2>Basic Promise Usage</h2>
+    <p>The <code>new Promise()</code> constructor should only be used for legacy async tasks, like usage of <code>setTimeout</code> or <code>XMLHttpRequest</code>. A new Promise is created with the <code>new</code> keyword and the promise provides <code>resolve</code>        and <code>reject</code> functions to the provided callback:</p>
+    <span class="filename">Example : app.js</span>
+    <pre><code class="language-javascript">
+        var p = new Promise(function(resolve, reject) {
+	
+	// Do an async task async task and then...
+
+        if(/* good condition */) {
+            resolve('Success!');
+        }
+        else {
+            reject('Failure!');
+        }
+    });
+
+    p.then(function() { 
+        /* do something with the result */
+    }).catch(function() {
+        /* error :( */
+    })
+    </code></pre>
+    <p>It's up to the developer to manually call <code>resolve</code> or <code>reject</code> within the body of the callback based on&nbsp;the result of&nbsp;their given task. A realistic example would be converting XMLHttpRequest to a promise-based task:</p>
+    <span class="filename">Example : app.js</span>
+    <pre><code class="language-javascript">
+        // From Jake Archibald's Promises and Back:
+
+
+function get(url) {
+  // Return a new promise.
+  return new Promise(function(resolve, reject) {
+    // Do the usual XHR stuff
+    var req = new XMLHttpRequest();
+    req.open('GET', url);
+
+    req.onload = function() {
+      // This is called even on 404 etc
+      // so check the status
+      if (req.status == 200) {
+        // Resolve the promise with the response text
+        resolve(req.response);
+      }
+      else {
+        // Otherwise reject with the status text
+        // which will hopefully be a meaningful error
+        reject(Error(req.statusText));
+      }
+    };
+
+    // Handle network errors
+    req.onerror = function() {
+      reject(Error("Network Error"));
+    };
+
+    // Make the request
+    req.send();
+  });
+}
+
+// Use it!
+get('story.json').then(function(response) {
+  console.log("Success!", response);
+}, function(error) {
+  console.error("Failed!", error);
+});
+    </code></pre>
+    <p>Sometimes you don't&nbsp;<em>need</em> to complete an async tasks within the promise -- if it's&nbsp;<em>possible</em> that an async action&nbsp;will be taken, however, returning a promise will be best so that you can always count on a promise coming
+        out of a given function. In that case you can simply call <code>Promise.resolve()</code> or <code>Promise.reject()</code> without using the <code>new</code> keyword.&nbsp;For example:</p>
+    <span class="filename">Example : app.js</span>
+    <pre><code class="language-javascript">
+            var userCache = {};
+
+function getUserDetail(username) {
+  // In both cases, cached or not, a promise will be returned
+
+  if (userCache[username]) {
+  	// Return a promise without the "new" keyword
+    return Promise.resolve(userCache[username]);
+  }
+
+  // Use the fetch API to get the information
+  // fetch returns a promise
+  return fetch('users/' + username + '.json')
+    .then(function(result) {
+      userCache[username] = result;
+      return result;
+    })
+    .catch(function() {
+      throw new Error('Could not find user: ' + username);
+    });
+}
+        </code></pre>
+    <p>Since a promise is always returned, you can always use the <code>then</code> and <code>catch</code> methods on its return value!</p>
+    <h2>then</h2>
+    <p>All promise instances get&nbsp;a <code>then</code> method which allows you to react to the promise. &nbsp;The first <code>then</code> method callback&nbsp;receives the result given to it by the <code>resolve()</code> call:</p>
+    <span class="filename">Example : app.js</span>
+    <pre><code class="language-javascript">
+        new Promise(function(resolve, reject) {
+	// A mock async action using setTimeout
+	setTimeout(function() { resolve(10); }, 3000);
+    })
+    .then(function(result) {
+        console.log(result);
+    });
+
+    // From the console:
+    // 10
+    </code></pre>
+    <p>The <code>then</code> callback&nbsp;is&nbsp;triggered when the promise is resolved. &nbsp;You can also chain <code>then</code> method&nbsp;callbacks:</p>
+    <span class="filename">Example : app.js</span>
+    <pre><code class="language-javascript">
+        new Promise(function(resolve, reject) { 
+	// A mock async action using setTimeout
+	setTimeout(function() { resolve(10); }, 3000);
+    })
+    .then(function(num) { console.log('first then: ', num); return num * 2; })
+    .then(function(num) { console.log('second then: ', num); return num * 2; })
+    .then(function(num) { console.log('last then: ', num);});
+
+    // From the console:
+    // first then:  10
+    // second then:  20
+    // last then:  40
+    </code></pre>
+    <p>Each <code>then</code>&nbsp;receives the result of the previous <code>then</code>'s return value.</p>
+    <p>If a promise has already resolved but <code>then</code> is called again, the callback immediately fires. If the promise is rejected and you call <code>then</code> after rejection, the callback is never called.</p>
+    <p>The <code>catch</code> callback is executed when the promise is rejected:</p>
+    <h2>catch</h2>
+    <span class="filename">Example : app.js</span>
+    <pre><code class="language-javascript">
+    new Promise(function(resolve, reject) {
+        // A mock async action using setTimeout
+        setTimeout(function() { reject('Done!'); }, 3000);
+    })
+    .then(function(e) { console.log('done', e); })
+    .catch(function(e) { console.log('catch: ', e); });
+
+    // From the console:
+    // 'catch: Done!'
+    </code></pre>
+    <p>What you provide to the <code>reject</code> method is up to you. A frequent pattern is sending an <code>Error</code> to the <code>catch</code>:</p>
+    <p>reject(Error('Data could not be found'));</p>
+    <h2><code>Promise.all</code></h2>
+    <p>Think&nbsp;about JavaScript loaders: &nbsp;there are times when you trigger multiple async interactions but only want to respond when all of them are completed -- that's where <code>Promise.all</code> comes in. &nbsp;The <code>Promise.all</code> method
+        takes an&nbsp;array of promises and fires one callback once they are all resolved:</p>
+    <span class="filename">Example : app.js</span>
+    <pre><code class="language-javascript">
+        Promise.all([promise1, promise2]).then(function(results) {
+            // Both promises resolved
+        })
+        .catch(function(error) {
+            // One or more promises was rejected
+        });
+    </code></pre>
+    <p>An&nbsp;perfect way of thinking about <code>Promise.all</code> is firing off multiple AJAX (via <code>fetch</code>) requests at one time:</p>
+    <span class="filename">Example : app.js</span>
+    <pre><code class="language-javascript">
+        var request1 = fetch('/users.json');
+        var request2 = fetch('/articles.json');
+
+        Promise.all([request1, request2]).then(function(results) {
+            // Both promises done!
+        });
+    </code></pre>
+    <p>You could combine APIs like <code>fetch</code> and the Battery API since they both return promises:</p>
+    <span class="filename">Example : app.js</span>
+    <pre><code class="language-javascript">
+        Promise.all([fetch('/users.json'), navigator.getBattery()]).then(function(results) {
+            // Both promises done!
+        });
+    </code></pre>
+    <p>Dealing with rejection is, of course, hard. If any promise is rejected the catch fires for the first rejection:</p>.
+    <span class="filename">Example : app.js</span>
+    <pre><code class="language-javascript">
+        var req1 = new Promise(function(resolve, reject) { 
+	// A mock async action using setTimeout
+	setTimeout(function() { resolve('First!'); }, 4000);
+});
+var req2 = new Promise(function(resolve, reject) { 
+	// A mock async action using setTimeout
+	setTimeout(function() { reject('Second!'); }, 3000);
+});
+Promise.all([req1, req2]).then(function(results) {
+	console.log('Then: ', results);
+}).catch(function(err) {
+	console.log('Catch: ', err);
+});
+
+// From the console:
+// Catch: Second!
+    </code></pre>
+    <p><code>Promise.all</code> will be super useful as more APIs move toward promises.</p>
+    <h2><code>Promise.race</code></h2>
+    <p><code>Promise.race</code> is an interesting function&nbsp;-- instead of waiting for all promises to be resolved or rejected, <code>Promise.race</code> triggers as soon as any&nbsp;promise in the array is resolved or rejected:</p>
+    <span class="filename">Example : app.js</span>
+    <pre><code class="language-javascript">
+        var req1 = new Promise(function(resolve, reject) { 
+	// A mock async action using setTimeout
+	setTimeout(function() { resolve('First!'); }, 8000);
+});
+var req2 = new Promise(function(resolve, reject) { 
+	// A mock async action using setTimeout
+	setTimeout(function() { resolve('Second!'); }, 3000);
+});
+Promise.race([req1, req2]).then(function(one) {
+	console.log('Then: ', one);
+}).catch(function(one, two) {
+	console.log('Catch: ', one);
+});
+
+// From the console:
+// Then: Second!
+    </code></pre>
+    <p>A use case could be triggering a request to a primary source and a secondary source (in case the primary or secondary are unavailable).</p>
+    <h3>Get Used to Promises</h3>
+    <p>Promises have been a hot topic for the past few years (or the last 10 years if you were a Dojo Toolkit user) and they've gone from a JavaScript framework pattern to a language staple. It's probably wise to assume you'll be seeing most new JavaScript
+        APIs being implemented with a promise-based pattern...</p>
+
+
+    <p>...and that's a great thing! Developers are able to avoid callback hell and async interactions can be passed around like any other variable. Promises take some time getting used to be the tools are (natively) there and now is the time to learn them!</p>
+
+    <h2>Examples</h2>
+    <span class="filename">Example : app.js</span>
+    <pre><code class="language-javascript">
+        
+var promiseToCleanRoom = new Promise(function(resolve, reject) {
+
+    var isClean = false;
+
+    if (isClean) {
+        resolve('clean');
+    } else {
+        reject('not clean');
+    }
+
+})
+
+promiseToCleanRoom.then(function(fromResolve) {
+    console.log('Room cleansed');
+}).catch(function(fromReject) {
+    console.log('Room not cleaned');
+})
+console.log('*********************');
+/******************** */
+
+var cleanRoom = function() {
+    return new Promise(function(resolve, reject) {
+        resolve('Cleaned The Room');
+    });
+}
+
+var removeGarbage = function(message) {
+    return new Promise(function(resolve, reject) {
+        resolve(message + ' reomve Garbage');
+    })
+}
+
+var winIcecream = function(message) {
+    return new Promise(function(resolve, reject) {
+        resolve(message + ' Won Ice Cream')
+    })
+}
+
+//call Promise cleanRoom() ->  wait for promise done 
+//after that then() will be called, we have the callback function
+//once cleanRoom() finished then only removeGarbage called
+
+cleanRoom().then(function(result) {
+    return removeGarbage(result);
+}).then(function(result1) {
+    return winIcecream(result1);
+}).then(function(result2) {
+    console.log(result2);
+})
+
+/****************** */
+
+Promise.all([cleanRoom(), removeGarbage(), winIcecream()]).then(function() {
+    console.log('All Finished');
+})
+
+Promise.race([cleanRoom(), removeGarbage(), winIcecream()]).then(function() {
+    console.log('One of them Finished');
+})
+    </code></pre>
+    <ul style="list-style:none;">
+    	<li><a href="https://github.com/maxogden/art-of-node#callbacks">Node JS</a></li>
+        <li><a href="https://medium.com/coding-design/writing-better-ajax-8ee4a7fb95f"> Better AJAX calls in jQuery </a></li>
+        <li><a href="http://www.binaryintellect.net/articles/749ed588-b408-4a7e-94da-77549c00e803.aspx"> Three Ways of Callbacks To JQuery $.Ajax()</a></li>
+        <li><a href="http://www.html5rocks.com/en/tutorials/es6/promises/#toc-promisifying-xmlhttprequest" target="_blank">Promise</a></li>
+    </ul>
+    
+    
+    
+    
+
+    
+</article>
+
+
+        <aside id="sidebar">
+          <div class="dark">
+            <h3>What We Do</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius auctor lacus nec feugiat. Phasellus sit amet ex ipsum. Praesent pharetra tincidunt tempor. Etiam velit eros, dapibus eget porta in, lacinia et magna</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      <p>UI Tutorials collection by Prabakaran, 2017</p>
+    </footer>
+  </body>
+</html>
