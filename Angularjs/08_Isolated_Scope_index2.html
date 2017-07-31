@@ -17,6 +17,16 @@
     <link rel="stylesheet" type="text/css" href="../css/prism.css">
     <script src="../scripts/prism.js"></script>
     
+    <style type="text/css">
+	.leftCol{
+		font-family: Arial, sans-serif; font-size: 14px; padding: 10px 5px; border-style: solid; border-width: 1px; overflow: hidden; word-break: normal; font-weight: bold; background-color: #fd6864; color: #ffffff;
+		}
+		.rightCol{
+			
+			font-family: Arial, sans-serif; font-size: 14px; padding: 10px 5px; border-style: solid; border-width: 1px; overflow: hidden; word-break: normal; text-align: left;}
+	</style>
+    
+    
   
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -170,8 +180,6 @@
                     </li>
                     <li><a href='#'>UI Route</a>
                       <ul>
-
-
                         <li><a href="01UiRoute_index.html">Index</a></li>
                         <li><a href="#">Code</a>
                           <ul>
@@ -212,9 +220,24 @@
 <section id="main">
       <div class="container">
     <article id="main-col">
-    <h1>07. Transclusion Usinig my own transclude - directive</h1>
-        
-          <span class="filename">Example : index.html</span>
+    <h1>08 Isoclated Scope  using '=' symbol</h1>
+    
+    
+    
+    <h2>'=' Object Pass </h2>
+    <p>Unlike the @ property which allows us to pass only string value, it allows us to pass the object itself to directive. And the data also gets synced in parent and child scope like two data binding. If the data changes from inside the directive it reflects in parent scope.</p>
+    <img src="images/TwoWaybind_objectPass.png" />
+    <p>Here talk (whole object) is passed in directive and assigned to talkinfo. Now whether the talk or talkinfo gets updated both remains always in sync.</p>
+    <img src="images/TwoWaybindcode.png" />
+    <p>We can see from above that how the directive got created with = and its uses. The details of three points (in pic) are</p>
+    <ol>
+    	<li>1- talkinfo here is the object that that got received via talkdetails. You can see, I have accessed the value of talkinfo three times via its properties.</li>
+
+<li>2- talkdetails is attribute name that is used to pass the object via directive. Similar as earlier if we don’t provide the attr as scope : { talkinfo: ‘=’ } then the attribute name will be talkinfo only.</li>
+
+<li>3- talk is the scope object that is assigned to talkdetails.</li>
+    </ol>
+    <span class="filename">Example : index.html</span>
     <pre><code class="language-html">
     &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -223,59 +246,136 @@
     &lt;meta charset="utf-8"&gt;
     &lt;title&gt;Angular Intro&lt;/title&gt;
     &lt;link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"&gt;&lt;/script&gt;
+    &lt;script src="app_object_two.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
 
+&lt;body ng-app="myangularapp" ng-controller="mycontroller"&gt;
+    &lt;bindcustomdirective talkdetails="talk"&gt;&lt;/bindcustomdirective&gt;
+
+    &lt;hr&gt;
+    &lt;bindcustomdirective talkdetails="talk2"&gt;&lt;/bindcustomdirective&gt;
+&lt;/body&gt;
+
+&lt;!-- &lt;body ng-app="docsIsolateScopeDirective" ng-controller="Controller"&gt;
+
+    &lt;my-customer info="naomi"&gt;&lt;/my-customer&gt;
+    &lt;hr&gt;
+    &lt;my-customer info="igor"&gt;&lt;/my-customer&gt;
+
+&lt;/body&gt; --&gt;
+
+&lt;/html&gt;
+    </code></pre>
+    
+    <span class="filename">Example : app_object_two.js</span>
+    <pre><code class="language-javascript">
+    var myangularapp = angular.module("myangularapp", []);
+myangularapp.controller("mycontroller", function($scope) {
+    $scope.talk = {
+        name: 'Building Angular 1.x',
+        duration: '60m'
+    }
+    $scope.talk2 = {
+        name: 'Building Angular 2',
+        duration: '60m'
+    }
+});
+myangularapp.directive('bindcustomdirective', function() {
+    var directive = {
+        restrict: 'E', // restrict this directive to elements
+        scope: { talkinfo: '=talkdetails' },
+        template: "&lt;input type='text' ng-model='talkinfo.name'/&gt; &lt;div&gt;{{talkinfo.name}} : {{talkinfo.duration}}&lt;/div&gt; ",
+    };
+    return directive;
+});
+
+// angular.module('docsIsolateScopeDirective', [])
+//     .controller('Controller', ['$scope', function($scope) {
+//         $scope.naomi = { name: 'Naomi', address: '1600 Amphitheatre' };
+//         $scope.igor = { name: 'Igor', address: '123 Somewhere' };
+//     }])
+//     .directive('myCustomer', function() {
+//         return {
+//             restrict: 'E',
+//             scope: {
+//                 customerInfo: '=info'
+//             },
+//             template: 'Name: {{customerInfo.name}} Address: {{customerInfo.address}} '
+//         };
+//     });
+    </code></pre>
+    
+    <h4>= stands for object and two-way binding (parent to directive scope and vice-versa)</h4>
+          <span class="filename">Example : index.html</span>
+    <pre><code class="language-html">
+   &lt;!DOCTYPE html&gt;
+&lt;html ng-app="app"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Angular Intro&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;
     &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"&gt;&lt;/script&gt;
     &lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"&gt;&lt;/script&gt;
     &lt;script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"&gt;&lt;/script&gt;
-
     &lt;script src="app.js"&gt;&lt;/script&gt;
 &lt;/head&gt;
 
 &lt;body ng-app="app"&gt;
-    &lt;div ng-controller="sample"&gt;
-        This is Controller &lt;br&gt;
-        &lt;hr&gt; Message 1 - Instance 1
-        &lt;div message1&gt;This is inner Message&lt;/div&gt;&lt;br&gt;
+
+    &lt;div id="div1" ng-controller="sample"&gt;
+        Controller: empno = {{emp.empno}}, ename = {{emp.ename}}
+        &lt;br&gt; Ename: &lt;input ng-model="emp.ename" /&gt;
+        &lt;hr&gt; Directive1 Instance 1:
+        &lt;div message employee="emp"&gt;&lt;/div&gt;
+        &lt;br&gt; Directive1 Instance 2:
+        &lt;div message employee="emp"&gt;&lt;/div&gt;
+        &lt;br&gt;
+
+        &lt;!-- or following with change in directive scope--&gt;
+        &lt;!-- Directive1 Instance 3: &lt;div message o-emp="emp"&gt;&lt;/div&gt;&lt;br&gt; --&gt;
     &lt;/div&gt;
 &lt;/body&gt;
 
 &lt;/html&gt;
     </code></pre>
-<span class="filename">Example : msg1.html</span>
-    <pre><code class="language-html">
-    &lt;div&gt; this is msg 2 from template following is inner content
-    &lt;div id="innerPannel" my-transclude style="color: green; font-weight: 600"&gt;&lt;/div&gt;
-&lt;/div&gt;
-    </code></pre>	
+	
 <span class="filename">Example : app.js</span>
     <pre><code class="language-javascript">
     var app = angular.module('app', []);
 
 app.controller('sample', ['$scope', function($scope) {
 
+    $scope.emp = {
+        empno: 1001,
+        ename: 'Jag'
+    }
+
 }]);
 
-//using my own transclude directive
-app.directive('message1', function() {
+app.directive('message', function() {
+
     return {
-        templateUrl: 'msg1.html',
-        transclude: true,
-    }
-});
-
-
-app.directive('myTransclude', function() { //3
-    return {
-        link: function(scope, iElement, iAttrs, controller, transclude) { //2
-
-            iElement.append(transclude()) //1
+        templateUrl: 'info-msg.htm',
+        //= stands for object and two-way binding (parent to directive scope and vice-versa)
+        scope: {
+            employee: '='
+                //or following with change in markup
+                //employee:'=oEmp'
         }
-
     }
+
 });
     </code></pre>
-    
-    
+<span class="filename">Example : info-msg.html</span>
+    <pre><code class="language-html">
+    &lt;div&gt;
+    empno = {{employee.empno}}, b = {{employee.ename}}
+    &lt;br&gt; Ename: &lt;input ng-model="employee.ename" /&gt;
+&lt;/div&gt;
+    </code></pre>
     
         </article>
     <aside id="sidebar">

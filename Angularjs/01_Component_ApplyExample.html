@@ -8,7 +8,8 @@
   	<meta name="author" content="Prabakaran">
     <title>UI Tutorials | Welcome</title>
     
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">    
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">    
     <link rel="stylesheet" type="text/css" href="../css/MenuStyle.css">
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="../scripts/menuScript.js"></script>
@@ -57,7 +58,11 @@
                       <ul>
                         <li><a href="01_AngularIntro_Index.html">Basic</a></li>
                         <li><a href="03_AngularIntro_Module.html">Module</a></li>
-                        <li><a href="02_AngularIntro_Controller.html">Controller MVC</a></li>
+                        <li><a href="02_AngularIntro_Controller.html">Controller MVC</a>
+                        	<ul>
+                            	<li><a href='01_Scope_inheritance_index.html'>Scoope Inheritance</a></li>
+                            </ul>
+                        </li>
                       </ul>
                     </li>
                     <li><a href='#'>Angular DOM</a>
@@ -103,12 +108,11 @@
                         <li><a href='00_Directive_index.html'>Index</a></li>
                         <li><a href="#">Shared Scope</a>
                           <ul>
-                            <li><a href='01_Scope_inheritance_index.html'>Scoope Inheritance</a></li>
                             <li><a href='02_SharedScope_index.html'>SharedScope(SS)</a></li>
                             <li><a href='03_Shared_Scope_index.html'>SS-Modifying</a></li>
                           </ul>
                         </li>
-                        <li><a href="#">Isolated Scope</a>
+                        <li><a href="#">Inherited Scope</a>
                           <ul>
                             <li><a href='04_Inherited_ScopeChild_index.html'>InheritedScope(Child)</a></li>
                             <li><a href='05_Child_index.html'>Child-Directive</a></li>
@@ -119,9 +123,9 @@
                         
                         <li><a href="#">IsolatedScope</a>
                           <ul>
-                            <li><a href='07_Isolated_Scope_index.html'>IsolatedScope @</a></li>
-                            <li><a href='08_Isolated_Scope_index.html'>IsolatedScope =</a></li>
-                            <li><a href='09_Isolated_Scope_index.html'>IsolatedScope &amp;</a></li>
+                            <li><a href='07_Isolated_Scope_index2.html'>IsolatedScope @</a></li>
+                            <li><a href='08_Isolated_Scope_index2.html'>IsolatedScope =</a></li>
+                            <li><a href='09_Isolated_Scope_index2.html'>IsolatedScope &amp;</a></li>
                           </ul>
                         </li>
                         
@@ -145,8 +149,17 @@
                         </li>
                         
                       </ul>
-                    </li>
-                    <li><a href='#'>Routing</a>
+                    </li><li><a href='#'>Data Binding</a>
+                      <ul>
+                        <li><a href="00_Component_DataBinding.html">Binding</a></li>
+                        <li><a href="01_Component_ApplyExample.html">Apply</a></li>
+                        <li><a href="05_Component_watchapply.html">WatchApply</a></li>
+                        <li><a href="06_Component_withoutApply.html">WatchWithoutApply</a></li>
+                        <li><a href="02_Component_Emit.html">Emit</a></li>
+                        <li><a href="03_Component_NestedEmit.html">NestedEmit</a></li>
+                        <li><a href="04_Component_SiblingEmit.html">SiblingEmit</a></li>
+                      </ul>
+                    </li>  <li><a href='#'>Routing</a>
                       <ul>
                         <li><a href="01_Route_index.html">Index</a></li>
                         <li><a href="#">Code</a>
@@ -207,6 +220,170 @@
 <section id="main">
       <div class="container">
         <article id="main-col">
+        <p><strong>What is Scope?</strong></p>
+        <p>Scope is the core of an Angular application. It refers to an application model and execution context. An application has single <em>$rootscope</em> and multiple <em>$scope</em> objects associated to it. <em>$scope</em> is accessible between view and controller and it is the only medium of communication between both. It is like a container and holds all the other required information that is used by Angular for providing other features. You’ll see some in this post.</p>
+        <p>So before moving ahead, let’s understand that how browser identifies an event and takes the necessary actions. The flow of an event handling works as</p>
+        <img src="images/normaljs-event-flow.png" />
+        <p>Events could be fired in many scenarios like page load, some response comes from server, mouse move, button click, timer events etc.</p>
+        <p>When we use Angular in a application, It modifies the normal JavaScript event flow and provides its own event handling model. This event handling model comes in flow when event is processed through Angular Execution context. It also provide many other features like exception handling, property watching etc. All the events that we define using angular constructs, is part of Angular Execution context. But you must have seen that when we try to use normal JavaScript or jQuery event then it does not fire. Hold On!!  we will discuss it and its workaround at later part of the post.
+</p>
+<p>So we have understood the basics, now lets come to the main topic and discuss how data-binding works in Angular. There are two steps involved in it.</p>
+<ol>
+	<li>1- Angular creates a $watch list that is available under scope.$$watchers. Every element that accessed in UI using some directive, a watch is created for that and got a place in this list.</li>
+
+<li>2- Whenever a event (already discussed earlier in this post) occurs, all the watchers get iterated (also known as digest loop) and it is checked if any of the data got changed (called dirty-checking). If yes then it updates the UI or the underlying model.</li>
+
+
+</ol>
+<p>Let’s understand the above points in detail. The key concepts are</p>
+<ol>
+<li>$watch and $watchlist</li>
+
+<li>$digest loop</li>
+
+<li>$apply (Looking new? Got discussed in detail later section)</li>
+
+<li>Dirty checking etc</li>
+</ol>
+<h3>What is $Watch list ?</h3>
+<p>It is the key of data binding and as discussed above that when a item is accessed in UI via angular directive, an entry gets created in the watch list for that item. Now can you imagine the number of watchers in an application? It could be way high than what you think. We’ll see that in coming section. Let’s see some examples</p>
+<p>1- $Watch gets created for elements that are bound to UI. Say I have created some properties as</p>
+<span class="filename">Example : index.html</span>
+    <pre><code class="language-html">
+    &lt;div ng-controller="myController"&gt;
+        Message - {{helloMessage}}
+    &lt;/div&gt;
+    </code></pre>
+    
+    <span class="filename">Example : app.js</span>
+    <pre><code class="language-javascript">
+    appModule.controller('myController', function ($scope) {
+    $scope.message1 = 'message1';
+    $scope.message2 = 'message2';
+    $scope.helloMessage = &quot;Hello&quot;;
+});
+    </code></pre>
+    <p>So here only one entry will be created in the watch-list as only helloMessage is accessed in UI. Other properties like message1, message2 that are part of $scope but watchers would not be created for those as there are not accessed in UI.</p>
+    <p>2- For each ng-model attribute, one item gets created in watch-list. As</p>
+    <span class="filename">Example : </span>
+    <pre><code class="language-html">
+    &lt;input type="text" ng-model="talkName" /&gt;
+&lt;input type="text" ng-model="speakerName" /&gt;
+    </code></pre>
+    <p>Here, we have two input controls with <em>ng-model</em> as <em>talkName</em> and <em>speakerName</em>. For both, there will be an entry get created in watch list. <em>$scope.talkName</em> and <em>$scope.speakerName</em> are bound to first and second input respectively.</p>
+    <p>3- We have used <em>ng-repeat</em> in our earlier post, which renders the elements in UI based on the available list of items. How&nbsp; many watchers will be created in that case. Let’s take example from the last post, where I have shown the list of talks on UI by using ng-repeat.</p>
+    <span class="filename">Example : app.js</span>
+    <pre><code class="language-javascript">
+    eventModule.controller(&quot;eventController&quot;, function ($scope, EventsService) {
+    EventsService.getTalks().then(function (talks) { $scope.talks = talks }, function ()
+    { alert('error while fetching talks from server') })
+});
+    </code></pre>	
+<p>Here Talks comes from server which contains (Say six items) in the list.</p>
+<span class="filename">Example : index.html</span>
+    <pre><code class="language-html">
+    &lt;div class="row"&gt;
+        &lt;table class="table table-condensed table-hover"&gt;
+            &lt;tr ng-repeat="talk in talks"&gt;
+                &lt;td&gt; {{talk.id}}&lt;/td&gt;
+                &lt;td&gt; {{talk.name}}&lt;/td&gt;
+                &lt;td&gt; {{talk.speaker}}&lt;/td&gt;
+                &lt;td&gt; {{talk.venue}}&lt;/td&gt;
+                &lt;td&gt; {{talk.duration}}&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+    </code></pre>
+    <p>How many watchers get created for the above?<br>
+It would be 5*6 = 30. (Properties bound in UI * number of items in the list ).</p>
+<p>As I mentioned in my post earlier, number of watchers could be very high because if you have used many <em>ng-repeat</em> in your page then it would grow exponentially.</p>
+<p>4- We can also create the watch programmatically. Let’s see the example</p>
+
+<span class="filename">Example : index.html</span>
+    <pre><code class="language-html">
+    &lt;div ng-controller="myController"&gt;
+        &lt;input type="button" value="UpdateHelloMessage" ng-click="updateHelloMessage()" /&gt;
+        {{message1}}
+    &lt;/div&gt;
+    </code></pre>
+    
+    <span class="filename">Example : app.js</span>
+    <pre><code class="language-javascript">
+    appModule.controller('myController', function ($scope) {
+    $scope.message1 = 'Test Message';
+    $scope.helloMessage = &quot;Hello&quot;;
+ 
+    $scope.updateHelloMessage= function () {
+        $scope.helloMessage = &quot;Hellow World!!&quot;;
+        console.log($scope.helloMessage);
+    };
+ 
+    $scope.$watch('helloMessage', function (newVal, oldVal) {
+       if(newVal != oldVal)
+            $scope.message1 = &quot;Hello message updated&quot;;
+    });
+});
+    </code></pre>
+    <p>If we see the HTML then we’ll say that there are only one watch (for <em>message1</em>) in this app. But it has two as I had added a watch on <em>$scope.helloMessage </em>programmatically. When we click on button UpdateHelloMessage, <em>$scope.message1</em> also get updated due to new watch created and gets reflected on UI.</p>
+    <p>Before moving to next topic, let’s understand when does an entry get created and added in watch list.</p>
+    <p><strong>When does an entry get added in the watch list?</strong></p>
+    <p>Angular uses it’s own compiler which traverses the UI to get all the angular directives used. This is how angular directives used in the HTML are understood and accordingly rendered in UI. Angular process can be depicted as</p>
+    <img src="images/ngcompilingprocess.png" />
+    <p>As we can see there are two main steps involved : Compile and Linking.</p>
+    <p><strong>1- Compile process</strong> – It traverses the DOM and collects all the directives and passes it to the linking function.</p>
+    <p><strong>2- Linking</strong> – It actually combines all the directives and assigns to a scope. It sets up <em>$watch</em> expression for each directive. <em>$watch</em> actually responsible to notify the directive in case of a change in property of <em>$scope</em>, then it get reflected in UI. Similarly, if any changes occurs in UI as by some user interaction, it get reflected in model. Here one point to be noted that both controller and directive has the ability to access the scope but not each other.</p>
+    <p>So here we can understand the entries in watch list, get created in linking phase. And this is where it knows the number of watch need to be created in case of <em>ng-repeat</em>. We’ll see some examples later.</p>
+    <p><strong>$digest loop&nbsp;</strong></p>
+    <p>Earlier in this post, I mentioned that whenever an event occurs on browser, digest loop gets fired. It contains two smaller loops, one processes <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$evalAsync">$evalAsync</a> queue and other iterates the watch list for each item, to detect the changes. Then, it finds all the items which got changed and UI gets updated accordingly.</p>
+    <p><em>Note – The <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$evalAsync">$evalAsync</a> queue is used to schedule work which needs to occur outside of current stack frame, but before the browser’s view render. It provides the similar features provided by&nbsp;setTimeout().</em></p>
+    <p><strong>What is dirty checking?</strong></p>
+    <p>The process of checking every watch to detect the changes, is called dirty checking. There could be two scenarios</p>
+    <img src="images/digest-nochange.png" />
+    <p>Second –</p>
+    <img src="images/digest-chnage.png" />
+    <p>In second case, loop continues till it finds no changes in the entire loop. And once it completes, DOM gets updated if required.</p>
+    
+    <p>So till now you must have understood that magic of data binding occurs in AngularJS. We had one more key item left apply that we didn’t discuss in detail. Whats the use of that?</p>
+<p><strong>$apply</strong> – It actually plays pivotal role in the whole process. Angular does not trigger the digest loop directly, it has to be triggered via <em>$apply</em> call and this method is responsible to enter the execution in Angular Execution context. Only model modifications which execute inside the&nbsp;<em>$apply</em> method is properly accounted for by Angular. So now question arises that even we did not call the $<em>apply</em> in any earlier examples still it is working as expected. Actually Angular does it for us. Angular wraps every event with apply so that digest loop gets fired.</p>
+<p><strong>What are other uses of apply method?</strong></p>
+<p>As we have already seen that angular wraps every event with apply that fires digest loop. It means if we want to run the digest loop in some scenarios then we need to execute the apply method. You must have seen many times that whenever we make some changes using JavaScript or jQuery methods it is not reflected in Angular. In those scenarios apply method provides entry in Angular Execution context. Let’s see it with an example.</p>
+<span class="filename">Example : index.html</span>
+    <pre><code class="language-html">
+    &lt;div ng-controller="myController"&gt;
+        &lt;input type="button" value="UpdateHelloMessage" ng-click="updateHelloMessage()" /&gt;
+        {{helloMessage}}
+    &lt;/div&gt;
+    </code></pre>
+<span class="filename">Example : app.js</span>
+    <pre><code class="language-javascript">
+    appModule.controller('myController', function ($scope) {
+    $scope.helloMessage = &quot;Hello&quot;;
+ 
+    $scope.updateHelloMessage = function () {
+        setTimeout(function() {
+            $scope.helloMessage = &quot;Hello World!!&quot;;
+        }, 0);
+    };
+});
+    </code></pre>
+    <p>So what do you think about the above code? Would it work as expected?&nbsp; I mean when you click on the <em>UpdateHelloMessage</em> button, updated $scope.helloMessage (Hello World!!) would reflect on UI.<br>
+No It wont work.</p>
+<p>Although the model <em>$scope.helloMessage</em> will get updated but it wont appear on UI because digest loop wont run in this case. But why digest loop wont run? Because the value is updated in <em>setTimeout</em> method which is java-script method and it won’t run in Angular context. So to get it running as expected we need to call <em>$scope.$apply()</em> and that would trigger digest loop and updated value will be shown on UI. So we can update the JS as</p>
+<span class="filename">Example : app.js</span>
+    <pre><code class="language-javascript">
+    appModule.controller('myController', function ($scope) {
+    $scope.helloMessage = &quot;Hello&quot;;
+ 
+    $scope.updateHelloMessage = function () {
+        setTimeout(function() {
+            $scope.helloMessage = &quot;Hello World!!&quot;;
+            $scope.$apply();
+        }, 0);
+    };
+});
+    </code></pre>
+    <p>Now it will work as expected. Now you must have understand that there is no magic but a simple logic is written to do that.</p>
+<hr>
         <h1>$pply()</h1>
         <p>When You Click, only alert shows but text doesn't update</p>
         <span class="filename">Example 2 : index.html (without $apply())</span>

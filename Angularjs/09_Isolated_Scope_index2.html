@@ -17,6 +17,16 @@
     <link rel="stylesheet" type="text/css" href="../css/prism.css">
     <script src="../scripts/prism.js"></script>
     
+    <style type="text/css">
+	.leftCol{
+		font-family: Arial, sans-serif; font-size: 14px; padding: 10px 5px; border-style: solid; border-width: 1px; overflow: hidden; word-break: normal; font-weight: bold; background-color: #fd6864; color: #ffffff;
+		}
+		.rightCol{
+			
+			font-family: Arial, sans-serif; font-size: 14px; padding: 10px 5px; border-style: solid; border-width: 1px; overflow: hidden; word-break: normal; text-align: left;}
+	</style>
+    
+    
   
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -170,8 +180,6 @@
                     </li>
                     <li><a href='#'>UI Route</a>
                       <ul>
-
-
                         <li><a href="01UiRoute_index.html">Index</a></li>
                         <li><a href="#">Code</a>
                           <ul>
@@ -212,9 +220,53 @@
 <section id="main">
       <div class="container">
     <article id="main-col">
-    <h1>07. Transclusion Usinig my own transclude - directive</h1>
-        
-          <span class="filename">Example : index.html</span>
+    <h1>09 Isoclated Scope  using '&' symbol</h1>
+    
+    <h2>'&' Pass method</h2>
+    <p>This is the third and last isolate local scope property. It allows us to wire up external expression to the isolate directive. It could be very useful at certain scenario, where we don’t have details about the expression while defining the directive like we want to call some external function when some event occurs inside the directive based on requirement.</p>
+    <img src="images/PassMethod_expression.png" />
+    <p>In the above pic, we see that we have function with name method that is passed to directive as via the attribute named expr. Let’s see how do we create the directive and how different property and attributes are co-related.</p>
+    <img src="images/PassMethod_code.png" />
+    <p>In the example above, I have used two directives & and @. @ is just used to support this example. Although you must have understand the three points that I have used in the above pic as it is similar to earlier but let me explain it once more in this context. In this example, we are updating an object that gets updated and reflected in the directive as well because of one way binding behavior of @ local scope property</p>
+    <ol>
+    	<li>1- method is the property of inner scope here so it is used to access the passed method</li>
+
+<li>2- expr is the attribute name that is used in the directive to pass the expression or defined method. Behavior would be same as earlier local scope property if we just write scope : { method: ‘&amp;’}</li>
+
+<li>3- UpdateData() is the method name that we want to pass in the directive and it is defined as part of parent scope.</li>
+
+<li>4- This value gets updated when we click on Update Data button that calls UpdateData() method which updated the object Talk.</li>
+    </ol>
+    <span class="filename">Example 1 : app_method_pass.js</span>
+    <pre><code class="language-javascript">
+     var myangularapp = angular.module("myangularapp", []);
+ myangularapp.controller("mycontroller", function($scope) {
+     $scope.talk = {
+         name: 'Building AngularJS 1.x',
+         duration: '60m'
+     }
+
+     $scope.UpdateData = function() {
+         $scope.talk = {
+             name: 'Building AngularJS 2',
+             duration: '45m'
+         };
+     };
+ });
+ myangularapp.directive('expcustomdirective', function() {
+     var directive = {
+         restrict: 'E', // restrict this directive to elements
+         scope: {
+             method: '&expr',
+             talkname: '@'
+         },
+         template: "&lt;div&gt;{{talkname}}&lt;/div&gt; " +
+             "&lt;input type='button' ng-click='method()' value='Update Data'/&gt; ",
+     };
+     return directive;
+ });
+    </code></pre>
+    <span class="filename">Example 1 : index.html</span>
     <pre><code class="language-html">
     &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -223,58 +275,134 @@
     &lt;meta charset="utf-8"&gt;
     &lt;title&gt;Angular Intro&lt;/title&gt;
     &lt;link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;
-
     &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"&gt;&lt;/script&gt;
-    &lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"&gt;&lt;/script&gt;
     &lt;script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"&gt;&lt;/script&gt;
+    &lt;script src="app_method_pass.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
 
+&lt;body ng-app="myangularapp" ng-controller="mycontroller"&gt;
+    {{talk.name}}
+    &lt;hr&gt;
+    &lt;expcustomdirective expr="UpdateData()" talkname="{{talk.name}}"&gt;&lt;/expcustomdirective&gt;
+    &lt;hr&gt;
+    &lt;expcustomdirective expr="UpdateData()" talkname="{{talk.name}}"&gt;&lt;/expcustomdirective&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+    </code></pre>
+    <hr>
+    
+    <h4>& - function binding (call external function from directive)</h4>
+          <span class="filename">Example 2 : index.html</span>
+    <pre><code class="language-html">
+   &lt;!DOCTYPE html&gt;
+&lt;html ng-app="app"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Angular Intro&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"&gt;&lt;/script&gt;
     &lt;script src="app.js"&gt;&lt;/script&gt;
 &lt;/head&gt;
 
 &lt;body ng-app="app"&gt;
-    &lt;div ng-controller="sample"&gt;
-        This is Controller &lt;br&gt;
-        &lt;hr&gt; Message 1 - Instance 1
-        &lt;div message1&gt;This is inner Message&lt;/div&gt;&lt;br&gt;
+
+    &lt;div id="div1" ng-controller="sample"&gt;
+        Controller: a = {{a}}, b = {{b}}
+        &lt;br&gt; a: &lt;input ng-model="a" /&gt;
+        &lt;br&gt;b: &lt;input ng-model="b" /&gt;
+        &lt;br&gt;&lt;button ng-click="doSum(a, b)"&gt;Sum&lt;/button&gt;
+        &lt;hr&gt;
+        &lt;!-- first way (with first way in template--&gt;
+        Directive1 Instance 1:
+        &lt;!--doSum : defenition of parent Not execution only sending or assigned to ext-sum --&gt;
+        &lt;div message ext-sum="doSum"&gt;&lt;/div&gt;&lt;br&gt;
+
+        &lt;!-- second way (with second way in template--&gt;
+        &lt;!-- sending as an object --&gt;
+        &lt;!-- Directive1 Instance 2: &lt;div message ext-sum="doSum(m,n)"&gt;&lt;/div&gt;&lt;br&gt; --&gt;
+
+        &lt;!-- third way (with third way in js--&gt;
+        &lt;!-- Directive1 Instance 1: &lt;div message just-sum="doSum"&gt;&lt;/div&gt;&lt;br&gt; --&gt;
     &lt;/div&gt;
 &lt;/body&gt;
 
 &lt;/html&gt;
     </code></pre>
-<span class="filename">Example : msg1.html</span>
-    <pre><code class="language-html">
-    &lt;div&gt; this is msg 2 from template following is inner content
-    &lt;div id="innerPannel" my-transclude style="color: green; font-weight: 600"&gt;&lt;/div&gt;
-&lt;/div&gt;
-    </code></pre>	
-<span class="filename">Example : app.js</span>
+	
+<span class="filename">Example 2 : app.js</span>
     <pre><code class="language-javascript">
     var app = angular.module('app', []);
 
 app.controller('sample', ['$scope', function($scope) {
 
+    $scope.a = 10;
+    $scope.b = 20;
+
+    //Sum Calculate Parent Conroller 
+    $scope.doSum = function(x, y) {
+        alert("Sum = " + (parseInt(x) + parseInt(y)));
+    }
+
 }]);
 
-//using my own transclude directive
-app.directive('message1', function() {
+app.directive('message', function() {
+
     return {
-        templateUrl: 'msg1.html',
-        transclude: true,
-    }
-});
+        templateUrl: 'info-msg.htm',
+        //& - function binding (call external function from directive)
+        scope: {
+            extSum: '&'
 
+            //third way (with third way in markup) with  different specification of attribute
+            //extSum: '&justSum'
+        },
 
-app.directive('myTransclude', function() { //3
-    return {
-        link: function(scope, iElement, iAttrs, controller, transclude) { //2
+        //Directive based controller
+        controller: function($scope, $element, $attrs) {
 
-            iElement.append(transclude()) //1
+            //Add a button execute the function
+            $scope.doProcess = function() {
+                //Execute External Sum
+                //$scope - Local Scope / Isolate Scope
+                //$scope.p,q - From Current Scope
+                $scope.extSum({ m: $scope.p, n: $scope.q });
+            };
+
+            //Access Parent directly from isolated scope
+            // $scope.doProcess2 = function() {
+            //     //$scope.extSum()($scope.p, $scope.q);            
+            //     //$scope.extSum()($scope.p, $scope.q * $scope.$parent.a);
+            //     $scope.extSum({ m: $scope.p, n: ($scope.q * $scope.$parent.a) })
+            // }
+
         }
 
+
     }
+
 });
     </code></pre>
-    
+<span class="filename">Example : info-msg.html</span>
+    <pre><code class="language-html">
+    &lt;div&gt;
+    &lt;!--Local p,q as part of isolated scope for directive--&gt;
+    p = {{p}}, q = {{q}}
+    &lt;br&gt;p: &lt;input ng-model="p" /&gt;
+    &lt;br&gt;q: &lt;input ng-model="q" /&gt;
+    &lt;br&gt;
+    &lt;!-- first way (with first way in template--&gt;
+    &lt;button ng-click="extSum()(p,q)"&gt;Sum&lt;/button&gt;
+
+    &lt;!-- sceond way (with sceond way in template--&gt;
+    &lt;!--&lt;button ng-click="extSum({m:p,n:q})"&gt;Sum&lt;/button&gt;--&gt;
+
+    &lt;button ng-click="doProcess()"&gt;Sum&lt;/button&gt;
+
+&lt;/div&gt;
+    </code></pre>
     
     
         </article>

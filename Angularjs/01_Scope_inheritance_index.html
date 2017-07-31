@@ -8,7 +8,8 @@
   	<meta name="author" content="Prabakaran">
     <title>UI Tutorials | Welcome</title>
     
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">    
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">    
     <link rel="stylesheet" type="text/css" href="../css/MenuStyle.css">
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="../scripts/menuScript.js"></script>
@@ -57,7 +58,11 @@
                       <ul>
                         <li><a href="01_AngularIntro_Index.html">Basic</a></li>
                         <li><a href="03_AngularIntro_Module.html">Module</a></li>
-                        <li><a href="02_AngularIntro_Controller.html">Controller MVC</a></li>
+                        <li><a href="02_AngularIntro_Controller.html">Controller MVC</a>
+                        	<ul>
+                            	<li><a href='01_Scope_inheritance_index.html'>Scoope Inheritance</a></li>
+                            </ul>
+                        </li>
                       </ul>
                     </li>
                     <li><a href='#'>Angular DOM</a>
@@ -102,13 +107,12 @@
                       <ul>
                         <li><a href='00_Directive_index.html'>Index</a></li>
                         <li><a href="#">Shared Scope</a>
-                          <ul>
-                            <li><a href='01_Scope_inheritance_index.html'>Scoope Inheritance</a></li>
+                          <ul>                            
                             <li><a href='02_SharedScope_index.html'>SharedScope(SS)</a></li>
                             <li><a href='03_Shared_Scope_index.html'>SS-Modifying</a></li>
                           </ul>
                         </li>
-                        <li><a href="#">Isolated Scope</a>
+                        <li><a href="#">Inherited Scope</a>
                           <ul>
                             <li><a href='04_Inherited_ScopeChild_index.html'>InheritedScope(Child)</a></li>
                             <li><a href='05_Child_index.html'>Child-Directive</a></li>
@@ -119,9 +123,9 @@
                         
                         <li><a href="#">IsolatedScope</a>
                           <ul>
-                            <li><a href='07_Isolated_Scope_index.html'>IsolatedScope @</a></li>
-                            <li><a href='08_Isolated_Scope_index.html'>IsolatedScope =</a></li>
-                            <li><a href='09_Isolated_Scope_index.html'>IsolatedScope &amp;</a></li>
+                            <li><a href='07_Isolated_Scope_index2.html'>IsolatedScope @</a></li>
+                            <li><a href='08_Isolated_Scope_index2.html'>IsolatedScope =</a></li>
+                            <li><a href='09_Isolated_Scope_index2.html'>IsolatedScope &amp;</a></li>
                           </ul>
                         </li>
                         
@@ -145,8 +149,17 @@
                         </li>
                         
                       </ul>
-                    </li>
-                    <li><a href='#'>Routing</a>
+                    </li><li><a href='#'>Data Binding</a>
+                      <ul>
+                        <li><a href="00_Component_DataBinding.html">Binding</a></li>
+                        <li><a href="01_Component_ApplyExample.html">Apply</a></li>
+                        <li><a href="05_Component_watchapply.html">WatchApply</a></li>
+                        <li><a href="06_Component_withoutApply.html">WatchWithoutApply</a></li>
+                        <li><a href="02_Component_Emit.html">Emit</a></li>
+                        <li><a href="03_Component_NestedEmit.html">NestedEmit</a></li>
+                        <li><a href="04_Component_SiblingEmit.html">SiblingEmit</a></li>
+                      </ul>
+                    </li>  <li><a href='#'>Routing</a>
                       <ul>
                         <li><a href="01_Route_index.html">Index</a></li>
                         <li><a href="#">Code</a>
@@ -207,7 +220,7 @@
 <section id="main">
       <div class="container">
     <article id="main-col">
-    <h1>1.Scope Hierarchy - In Directive</h1>
+    <h1>1.Scope Hierarchy - In Controller</h1>
     
     <h4>child scope merged to parent (using prototypal inheritance)</h4>
            
