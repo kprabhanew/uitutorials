@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="angularjs, javascript, ui development, controller, directive, module, Filter, Databinding, Dependancy injection, service, ui route, transclusion, angular validation, scope, scope inheritance">
+	  <meta name="keywords" content="angularjs, javascript, ui development, controller, directive, module, Filter, Databinding, Dependancy injection, service, ui route, transclusion, angular validation, scope, scope inheritance">
+  	<meta name="author" content="Prabakaran">
+    <title>UI Tutorials | Welcome</title>
+    
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">    
+    <link rel="stylesheet" type="text/css" href="../css/MenuStyle.css">
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="../scripts/menuScript.js"></script>
+    <link rel="stylesheet" href="../css/SiteStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/prism.css">
+    <script src="../scripts/prism.js"></script>
+    
+    <style type="text/css">
+	.leftCol{
+		font-family: Arial, sans-serif; font-size: 14px; padding: 10px 5px; border-style: solid; border-width: 1px; overflow: hidden; word-break: normal; font-weight: bold; background-color: #fd6864; color: #ffffff;
+		}
+		.rightCol{
+			
+			font-family: Arial, sans-serif; font-size: 14px; padding: 10px 5px; border-style: solid; border-width: 1px; overflow: hidden; word-break: normal; text-align: left;}
+	</style>
+    
+    
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-103420198-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">UI</span> Tutorials</h1>
+        </div>
+        <nav id='cssmenu'>            
+            <div id="head-mobile"></div>
+            <div class="button"></div>
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href='#'>Bootstrap</a></li>
+                <li class='active'><a href="#">AngularJS</a>
+                  <ul>
+                    <li><a href='#'>Introduction</a>
+                      <ul>
+                        <li><a href="01_AngularIntro_Index.html">Basic</a></li>
+                        <li><a href="03_AngularIntro_Module.html">Module</a></li>
+                        <li><a href="02_AngularIntro_Controller.html">Controller MVC</a>
+                        	<ul>
+                            	<li><a href='01_Scope_inheritance_index.html'>Scoope Inheritance</a></li>
+                            </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Angular DOM</a>
+                      <ul>
+                        <li><a href="01_AngularDOM_events.html">Events</a></li>
+                        <li><a href="03_AngularDOM_ngShow.html">ng Show</a></li>
+                        <li><a href="02_AngularDOM_ngHide.html">ng Hide</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Filter</a>
+                      <ul>
+                        <li><a href="02_FilterIndex_FormatData.html">Format Data</a></li>
+                        <li><a href="03_Filter_SortData.html">Sort Data</a></li>
+                        <li><a href="01_FilterData.html">Filter Data</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Form</a>
+                      <ul>
+                        <li><a href="01Form_index.html">Form</a></li>
+                        <li><a href="03_AngularDOM_ngShow.html">CheckBox</a></li>
+                        <li><a href="02_AngularDOM_ngHide.html">ShowHide</a></li>
+                        <li><a href="01_AngularDOM_events.html">RadioButton</a></li>
+                        <li><a href="01_AngularDOM_events.html">TrackingEvents</a></li>
+                        <li><a href="01_AngularDOM_events.html">Validation</a></li>
+                        <li><a href="01_AngularDOM_events.html">NestedValidation</a></li>
+                        <li><a href="01_AngularDOM_events.html">FormSubmission</a></li>
+                        <li><a href="#">Select Element</a>
+                          <ul>
+                            <li><a href="09SelectDD_htmlIndex.html">Html</a></li>
+                            <li><a href="09SelectDD_arrayIndex.html">Array</a></li>
+                            <li><a href="09SelectDD_objectIndex.html">Object</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Service</a>
+                      <ul>                                
+                        <li><a href="01_Service_index.html">Index</a></li>
+                      </ul>
+                    </li>
+                    <li><a href='#'>Directive</a>
+                      <ul>
+                        <li><a href='00_Directive_index.html'>Index</a></li>
+                        <li><a href="#">Shared Scope</a>
+                          <ul>
+                            <li><a href='02_SharedScope_index.html'>SharedScope(SS)</a></li>
+                            <li><a href='03_Shared_Scope_index.html'>SS-Modifying</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Inherited Scope</a>
+                          <ul>
+                            <li><a href='04_Inherited_ScopeChild_index.html'>InheritedScope(Child)</a></li>
+                            <li><a href='05_Child_index.html'>Child-Directive</a></li>
+                            <li><a href='06_Child_index.html'>Child-ng Repeat</a></li>
+                          </ul>
+                        </li>
+                        
+                        
+                        <li><a href="#">IsolatedScope</a>
+                          <ul>
+                            <li><a href='07_Isolated_Scope_index2.html'>IsolatedScope @</a></li>
+                            <li><a href='08_Isolated_Scope_index2.html'>IsolatedScope =</a></li>
+                            <li><a href='09_Isolated_Scope_index2.html'>IsolatedScope &amp;</a></li>
+                          </ul>
+                        </li>
+                        
+                        <li><a href='#'>Directive Compile</a>
+                          <ul>
+                            <li><a href='01_Directive_Compile_compile.html'>Compile</a></li>
+                            <li><a href='02_ Directive_Compile_controller.html'>Controller</a></li>
+                            <li><a href='03_Directive_Compile_PrePostLink.html'>LinkPrePost</a></li>
+                            <li><a href='04_Directive_Compile_compileCtrlLink.html'>CompileControllerLink</a></li>
+                          </ul>
+                        </li>
+                        <li><a href='#'>Directive Link</a>
+                          <ul>
+                            <li><a href='01_Directive_Link_interpolation.html'>Interpolation</a></li>
+                            <li><a href='02_Directive_Link_modifyDomInCompile.html'>ModifyDom</a></li>
+                            <li><a href='03_Directive_Link_DomEventHandler.html'>EventHandler</a></li>
+                            <li><a href='04_Directive_Link_WithoutCompile.html'>WithoutCompile</a></li>
+                            <li><a href='05_Directive_Link_CompileReturn.html'>CompileReturn</a></li>
+                            <li><a href='06_Directive_Link_PostOnly.html'>PostOnly</a></li>
+                          </ul>
+                        </li>
+                        
+                      </ul>
+                    </li><li><a href='#'>Data Binding</a>
+                      <ul>
+                        <li><a href="00_Component_DataBinding.html">Binding</a></li>
+                        <li><a href="01_Component_ApplyExample.html">Apply</a></li>
+                        <li><a href="05_Component_watchapply.html">WatchApply</a></li>
+                        <li><a href="06_Component_withoutApply.html">WatchWithoutApply</a></li>
+                        <li><a href="02_Component_Emit.html">Emit</a></li>
+                        <li><a href="03_Component_NestedEmit.html">NestedEmit</a></li>
+                        <li><a href="04_Component_SiblingEmit.html">SiblingEmit</a></li>
+                      </ul>
+                    </li>  <li><a href='#'>Routing</a>
+                      <ul>
+                        <li><a href="01_Route_index.html">Index</a></li>
+                        <li><a href="#">Code</a>
+                          <ul>
+                            
+                            <li><a href="02_Route_Intro.html">Intro Routing</a></li>
+                            <li><a href="03_Route_Parameters.html">Parameters</a></li>
+                            <li><a href="04_Route_Async.html">Asynchronous</a></li>
+                            <li><a href="05_Route_Redirect.html">Redirect</a></li>
+                            <li><a href="06_Route_events.html">Events</a></li>
+                            <li><a href="Routing/code/06 Route-routeService-events with Loading/index.htm">With Loading</a></li>
+                            <li><a href="Routing/code/07 Route-routeService-with-resolve/index.htm">With Resolve</a></li>
+                          </ul>
+                          
+                        </li>
+                        
+                      </ul>
+                    </li>
+                    <li><a href='#'>UI Route</a>
+                      <ul>
+                        <li><a href="01UiRoute_index.html">Index</a></li>
+                        <li><a href="#">Code</a>
+                          <ul>
+                            
+                            <li><a href="02UIRoute_Intro_Routing_index.html">Intro Routing</a></li>
+                            <li><a href="03_UIRoute_RouteWithParams.html">Parameters</a></li>
+                            <li><a href="04_UIRoute_StateService.html">State</a></li>
+                            <li><a href="05_UIRoute_WithResolve.html">Resolve</a></li>
+                            <li><a href="06_UIRoute_SingleView.html">SingleView</a></li>
+                            <li><a href="07_UIRoute_MultipleViews.html">MultipleView</a></li>
+                            
+                          </ul>
+                          
+                        </li>
+                        
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href='#'>Javascript</a></li>
+                <li><a href='#'>NodeJS</a></li>
+                
+              </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!--<section id="newsletter">
+      <div class="container">
+        <h1>Subscribe To Our Newsletter</h1>
+        <form>
+          <input type="email" placeholder="Enter Email...">
+          <button type="submit" class="button_1">Subscribe</button>
+        </form>
+      </div>
+    </section>-->
+
+<section id="main">
+      <div class="container">
+    <article id="main-col">
+    <h1>Angular 2</h1>
+		<h3>What is module in Angular 2 ?</h3>
+		<p>Angular Module is different from JS module.It is a just a way of bringing various parts of angular appication in single unit.Every Angular2 module nothing but class. </p>
+        <h2>Setup Angualr 2</h2>
+        <ol>
+<li>Install angularjs packages </li>
+<li>Add Folder 'app'</li>
+<li>Add ts file inside app (app\test.ts)</li>
+<li>Add tsconfig.json file to Compile ts file</li>
+<li>Compile the ts file using tsc command (dir\node_modules\.bin\tsc)</li>
+<li>We can compile Typescript using three methods a. cmd, b. VS Build,
+c.Gulp[1."dir\node_modules\.bin\gulp", 2. Task Runner Option from solution]</li>
+<li>Add the Component file</li>
+<li>Add the AppModule file (Typescript stuff completed)</li>
+<li>Hook all these together and get them into our web page (Systemjs)</li>
+<li>Add "systemjs.config.js" file</li>
+<li>Add "Index.html" page</li>
+
+        </ol>
+        <pre>
+        
+        
+        cd dir
+
+node -v
+
+npm -v
+
+npm init
+
+--
+Download package as well as save package
+c:\Test> npm install --save @angular/common
+--
+Install multiple package
+c:\Test> npm install --save @angular/compiler @angular/core @angular/forms @angular/http @angular/platform-browser @angular/platform-browser-dynamic @angular/router
+----
+Install Dependant libraries
+c:\test>npm install --save core.js rxjs zone.js
+-----------------------
+Install javascript module loader
+c:\Test>npm install --save systemjs
+---------------------
+Install Typescript compiler (It is developer dependancy)
+c:\Test>npm install --save-dev typescript
+--
+Need to specify typescript compiler options in "tsconfig.json"
+To Compile typescript file in folder
+c:\Test>node_modules\.bin\tsc
+----------
+To install core-js
+npm install core-js
+-----------
+To install package for Web Server
+npm install http-server --save-dev
+------------
+To run the http server
+node_modules\.bin\http-server -p 8090
+        </pre>
+        <span class="filename">Example : package.json</span>
+    <pre><code class="language-javascript">
+    {
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@angular/common": "^4.0.1",
+    "@angular/compiler": "^4.0.1",
+    "@angular/core": "^4.0.1",
+    "@angular/forms": "^4.0.1",
+    "@angular/http": "^4.0.1",
+    "@angular/platform-browser": "^4.0.1",
+    "@angular/platform-browser-dynamic": "^4.0.1",
+    "@angular/router": "^4.0.1",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.3.0",
+    "systemjs": "^0.20.12",
+    "zone.js": "^0.8.5"
+  },
+  "devDependencies": {
+  //Gulp Optional
+    "gulp": "^3.9.1",
+    "gulp-cli": "^1.3.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-typescript": "^3.1.6",
+    
+    "@types/node": "^7.0.12",
+    "http-server": "^0.9.0",
+    "typescript": "^2.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+    </code></pre>
+    
+    <span class="filename">Example : tsconfig.json</span>
+    <pre><code class="language-javascript">
+    {
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "lib": [
+            "es2015", "dom"
+        ],
+        "noImplicitAny": true,
+        "suppressImplicitAnyIndexErrors": true
+    }
+}
+    </code></pre>
+    
+    <span class="filename">Example : systemjs.config.js</span>
+    <pre><code class="language-javascript">
+    (function(global) {
+    System.config({
+        paths: {
+            //paths serve aas alias
+            'npm:': 'node_modules/'
+
+            //'npm:': 'node_modules/' Can cause error so follow the above syntax
+        },
+
+
+
+        //map tells the System loader where to look for things
+        map: {
+            //our app is within the app folder
+            app: 'app',
+            //angular bundles
+            '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
+            '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
+            '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
+            '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
+            '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+            '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
+            '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
+            '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+
+            //other librarires
+            'rxjs': 'npm:rxjs'
+        },
+        //packages tells the system loader how to load when no filename and /or no extension
+
+        packages: {
+            app: {
+                main: './main.js',
+                defaultExtension: 'js'
+            },
+            rxjs: {
+                defaultExtension: 'js'
+            }
+        }
+    });
+})(this)
+    </code></pre>
+    <span class="filename">Example : index.html</span>
+    <pre><code class="language-html">
+    &lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;!-- Polyfill(s) for older browsers --&gt;
+    &lt;script src="node_modules/core-js/client/shim.min.js"&gt;&lt;/script&gt;
+    &lt;script src="node_modules/zone.js/dist/zone.js"&gt;&lt;/script&gt;
+    &lt;script src="node_modules/systemjs/dist/system.src.js"&gt;&lt;/script&gt;
+    &lt;script src="systemjs.config.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        System.import('app').catch(function(err) {
+            console.log(err);
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;hello&gt;Loading...&lt;/hello&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;    
+    </code></pre>
+    <span class="filename">Example : app/app.module.ts</span>
+    <pre><code class="language-javascript">
+    //Importing javascript modules
+import {NgModule} from '@angular/core'; 
+import {BrowserModule} from '@angular/platform-browser';
+import {HelloWorldComponent} from './helloworld.component'
+
+//Importing AngularJS modules
+@NgModule({
+    imports:[BrowserModule],
+    declarations:[HelloWorldComponent],
+    bootstrap:[HelloWorldComponent] // Start app with helloworld component
+})
+
+//Module Bootstraping
+export class AppModule{} 
+    </code></pre>
+    <span class="filename">Example : app/helloworld.component.ts</span>
+    <pre><code class="language-javascript">
+    import {Component} from '@angular/core'
+
+@Component({
+    selector: 'hello',
+    template:'<strong>Hello World</strong>'
+})
+
+export class HelloWorldComponent{
+
+}
+    </code></pre>
+    <span class="filename">Example : app/main.ts</span>
+    <pre><code class="language-javascript">
+    //This is the bootstraping our . How our pplication needs to be started
+//Main.ts loads app.moudle it will loads helloworldcomponents Main -> App -> Helloworld
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic' //platformBrowserDynamic - JIT feature
+import {AppModule} from './app.module';
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+    </code></pre>
+        </article>
+    <aside id="sidebar">
+          <div class="dark">
+        <h3>What We Do</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius auctor lacus nec feugiat. Phasellus sit amet ex ipsum. Praesent pharetra tincidunt tempor. Etiam velit eros, dapibus eget porta in, lacinia et magna</p>
+      </div>
+        </aside>
+  </div>
+    </section>
+<footer>
+      <p>UI Tutorials, Copyright &copy; 2017</p>
+    </footer>
+</body>
+</html>
