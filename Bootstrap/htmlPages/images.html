@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap Reference: Images</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="bootstrap.css" media="screen">
+    <link rel="stylesheet" href="../assets/css/custom.min.css">
+    <link rel="stylesheet" href="../assets/css/grid.css">
+        <link rel="stylesheet" href="../assets/css/bootstrapCommon.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+          <script src="../assets/js/dist/html5shiv.min.js"></script>
+    <script src="../assets/js/dist/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+
+     var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-23019901-1']);
+      _gaq.push(['_setDomainName', "Bootstrap Reference.com"]);
+        _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+
+    </script>
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-103420198-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="http://www.uitutorials.in" class="navbar-brand">Bootstrap Reference</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="themes">
+                <li><a href="../../indexV2.html">Default</a></li>
+                <li class="divider"></li>
+                <li><a href="grid.html">Grid</a></li>
+                <li><a href="typography.html">Typography</a></li>
+                <li><a href="images.html">Images</a></li>
+                <li><a href="table.html">Tables</a></li>
+                <li><a href="helpers.html">Helpers</a></li>
+                <li><a href="buttons.html">Buttons</a></li>
+                <li><a href="dropdowns.html">DropDowns</a></li>
+              </ul>
+            </li>
+            <li>
+              <li><a href="../../indexV2.html">Home</a></li>
+            </li>
+            <li>
+              <a href="#">Blog</a>
+            </li>
+            
+          </ul>
+<ul class="nav navbar-nav navbar-right">
+            <li><a href="http://www.uitutorials.in" target="_self"><strong>Uitutorials.in</strong></a></li>
+          </ul>
+          
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container" id="grid-page">
+
+      <!-- Navbar
+      ================================================== -->
+      <div class="bs-docs-section clearfix">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="grid-header">Images</h1>
+            </div>
+<!--            <div class="bs-component"></div>-->
+				<h1>Bootstrap Images</h1>
+                <h2>Rounded Corners</h2>
+                <p>The <code class="w3-codespan">.img-rounded</code> class adds rounded corners to an image (IE8 does not support rounded corners):</p>
+                <div class="bs-component">
+                <img src="../images/cinqueterre.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236">
+                </div>
+                <h2>Circle</h2>
+                <p>The <code class="w3-codespan">.img-circle</code> class shapes the image to a circle (IE8 does not support rounded corners):</p>
+                <div class="bs-component">
+                <img src="../images/cinqueterre.jpg" class="img-circle" alt="Cinque Terre" width="304" height="236">
+                </div>
+                <h2>Thumbnail</h2>
+                <p>The <code class="w3-codespan">.img-thumbnail</code> class shapes the image to a thumbnail:</p>
+                <div class="bs-component">
+                <img src="../images/cinqueterre.jpg" class="img-thumbnail" alt="Cinque Terre" width="304" height="236">
+                </div>
+                <h2>Responsive Images</h2>
+                <p>Images come in all sizes. So do screens. Responsive images automatically adjust to fit the size of the screen. </p>
+                <p>Create responsive images by adding an <code class="w3-codespan">.img-responsive</code> class to the <code class="w3-codespan">&lt;img&gt;</code> tag. The image will then scale nicely to the parent element.</p>
+                <p>The <code class="w3-codespan">.img-responsive</code> class applies <code class="w3-codespan">display: block;</code> and <code class="w3-codespan">max-width: 100%;</code> and
+                    <code class="w3-codespan">height: auto;</code> to the image:</p>
+                    <div class="bs-component">
+                <img class="img-responsive" src="../images/img_chania.jpg" alt="Chania" width="460" height="345">                
+                </div>
+                <h2>Image Gallery</h2>
+                <p>You can also use Bootstrap's grid system in conjunction with the <code class="w3-codespan">.thumbnail</code> class to create an image gallery.</p>
+                <div class="bs-component">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <a href="../images/lights.jpg" target="_blank">
+                                <img src="../images/lights.jpg" alt="Lights" style="width:100%">
+                                <div class="caption">
+                                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <a href="../images/nature.jpg" target="_blank">
+                                <img src="../images/nature.jpg" alt="Nature" style="width:100%">
+                                <div class="caption">
+                                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <a href="../images/fjords.jpg" target="_blank">
+                                <img src="../images/fjords.jpg" alt="Fjords" style="width:100%">
+                                <div class="caption">
+                                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+          </div>
+        </div>
+	</div>
+        <!-- Headings -->
+
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+
+            <ul class="list-unstyled">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+              <li><a href="#" onclick="pageTracker._link(this.href); return false;">Blog</a></li>
+              <li><a href="#">RSS</a></li>
+              <li><a href="#">GitHub</a></li>              
+            </ul>
+
+          </div>
+        </div>
+
+      </footer>
+
+
+    
+
+	</div>
+</div>
+<!-- Modal -->
+<div id="source-modal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Source Code</h4>
+            </div>
+            <div class="modal-body">
+              <pre></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="../assets/js/jquery-1.10.2.js"></script>
+  <script src="../assets/js/bootstrap.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script src="../assets/js/customgrid.js"></script>
+  </body>
+</html>

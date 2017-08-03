@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap Reference: Typography</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="bootstrap.css" media="screen">
+    <link rel="stylesheet" href="../assets/css/custom.min.css">
+    <link rel="stylesheet" href="../assets/css/grid.css">
+        <link rel="stylesheet" href="../assets/css/bootstrapCommon.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+          <script src="../assets/js/dist/html5shiv.min.js"></script>
+    <script src="../assets/js/dist/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+
+     var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-23019901-1']);
+      _gaq.push(['_setDomainName', "Bootstrap Reference.com"]);
+        _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+
+    </script>
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-103420198-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="http://www.uitutorials.in" class="navbar-brand">Bootstrap Reference</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="themes">
+                <li><a href="../../indexV2.html">Default</a></li>
+                <li class="divider"></li>
+                <li><a href="grid.html">Grid</a></li>
+                <li><a href="typography.html">Typography</a></li>
+                <li><a href="images.html">Images</a></li>
+                <li><a href="helpers.html">Helpers</a></li>
+                <li><a href="buttons.html">Buttons</a></li>
+                <li><a href="dropdowns.html">DropDowns</a></li>
+              </ul>
+            </li>
+            <li>
+              <li><a href="../../indexV2.html">Home</a></li>
+            </li>
+            <li>
+              <a href="#">Blog</a>
+            </li>
+            
+            
+            
+          </ul>
+		  <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://www.uitutorials.in" target="_self"><strong>Uitutorials.in</strong></a></li>
+          </ul>
+          
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container" id="grid-page">
+
+      <!-- Navbar
+      ================================================== -->
+      <div class="bs-docs-section clearfix">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="grid-header">Typography</h1>
+            </div>
+<!--            <div class="bs-component"></div>-->
+				<h1>Bootstrap's Default Settings</h1>
+                <p>Bootstrap's global default font-size is 14px, with a line-height of 1.428.</p>
+                <p>This is applied to the &lt;body&gt; element and all paragraphs (&lt;p&gt;).</p>
+                <p>In addition, all &lt;p&gt; elements have a bottom margin that equals half their computed line-height (10px by default).</p>
+
+                <h1>Highlight Text</h1>
+                <div class="bs-component">
+                <p>Use the mark element to <mark>highlight</mark> text.</p>
+                </div>
+
+                <h1>Abbreviations</h1>
+                <p>The abbr element is used to mark up an abbreviation or acronym:</p>
+                <div class="bs-component">
+                <p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+                </div>
+                <h1>Blockquotes</h1>
+                <p>The blockquote element is used to present content from another source:</p>
+                <div class="bs-component">
+                <blockquote>
+                    <p>For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.</p>
+                    <footer>From WWF's website</footer>
+                </blockquote>
+                </div>
+
+                <h1>Description Lists</h1>
+                <p>The dl element indicates a description list:</p>
+                <div class="bs-component">
+                <dl>
+                    <dt>Coffee</dt>
+                    <dd>- black hot drink</dd>
+                    <dt>Milk</dt>
+                    <dd>- white cold drink</dd>
+                </dl>
+                </div>
+
+                <h1>Code Snippets</h1>
+                <p>Inline snippets of code should be embedded in the code element:</p>
+                <div class="bs-component">
+                <p>The following HTML elements: <code>span</code>, <code>section</code>, and <code>div</code> defines a section in a document.</p>
+                </div>
+
+                <h1>Multiple Code Lines</h1>
+                <p>For multiple lines of code, use the pre element:</p>
+                <div class="bs-component">
+                <pre>
+                    Text in a pre element
+                    is displayed in a fixed-width
+                    font, and it preserves
+                    both      spaces and
+                    line breaks.
+                    </pre>
+                </div>>
+                <h2>Contextual Colors and Backgrounds</h2>
+                <p>Bootstrap also has some contextual classes that can be used to provide "meaning through colors".</p>
+                <div class="bs-component">
+                <p>The classes for text colors are:<code>.text-muted</code>,
+                    <code>.text-primary</code>, <code>.text-success</code>, <code>.text-info</code>,
+                    <code>.text-warning</code>, and <code>.text-danger</code>:</p>
+                </div>
+                <h2>Contextual Colors</h2>
+                <p>Use the contextual classes to provide "meaning through colors":</p>
+                <div class="bs-component">
+                <p class="text-muted">This text is muted.</p>
+                <p class="text-primary">This text is important.</p>
+                <p class="text-success">This text indicates success.</p>
+                <p class="text-info">This text represents some information.</p>
+                <p class="text-warning">This text represents a warning.</p>
+                <p class="text-danger">This text represents danger.</p>
+                </div>
+
+                <p>The classes for background colors are:<code>.bg-primary</code>, <code>
+.bg-success</code>, <code>.bg-info</code>, <code>.bg-warning</code>, and <code>.bg-danger</code>:</p>
+
+                <h2>Contextual Backgrounds</h2>
+                
+                <p>Use the contextual background classes to provide "meaning through colors":</p>
+                <div class="bs-component">
+                <p class="bg-primary">This text is important.</p>
+                <p class="bg-success">This text indicates success.</p>
+                <p class="bg-info">This text represents some information.</p>
+                <p class="bg-warning">This text represents a warning.</p>
+                <p class="bg-danger">This text represents danger.</p>
+                </div>
+			
+          </div>
+        </div>
+</div>
+        <!-- Headings -->
+
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+
+            <ul class="list-unstyled">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+              <li><a href="#" onclick="pageTracker._link(this.href); return false;">Blog</a></li>
+              <li><a href="#">RSS</a></li>
+              <li><a href="#">GitHub</a></li>              
+            </ul>
+
+          </div>
+        </div>
+
+      </footer>
+
+
+    
+
+	</div>
+</div>
+<!-- Modal -->
+<div id="source-modal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Source Code</h4>
+            </div>
+            <div class="modal-body">
+              <pre></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="../assets/js/jquery-1.10.2.js"></script>
+  <script src="../assets/js/bootstrap.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script src="../assets/js/customgrid.js"></script>
+  </body>
+</html>

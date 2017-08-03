@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap Reference: Images</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="bootstrap.css" media="screen">
+    <link rel="stylesheet" href="../assets/css/custom.min.css">
+    <link rel="stylesheet" href="../assets/css/grid.css">
+        <link rel="stylesheet" href="../assets/css/bootstrapCommon.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+          <script src="../assets/js/dist/html5shiv.min.js"></script>
+    <script src="../assets/js/dist/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+
+     var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-23019901-1']);
+      _gaq.push(['_setDomainName', "Bootstrap Reference.com"]);
+        _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+
+    </script>
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-103420198-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="http://www.uitutorials.in" class="navbar-brand">Bootstrap Reference</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="themes">
+                <li><a href="../../indexV2.html">Default</a></li>
+                <li class="divider"></li>
+                <li><a href="grid.html">Grid</a></li>
+                <li><a href="typography.html">Typography</a></li>
+                <li><a href="images.html">Images</a></li>
+                <li><a href="table.html">Tables</a></li>
+                <li><a href="helpers.html">Helpers</a></li>
+                <li><a href="buttons.html">Buttons</a></li>
+                <li><a href="dropdowns.html">DropDowns</a></li>
+              </ul>
+            </li>
+            <li>
+              <li><a href="../../indexV2.html">Home</a></li>
+            </li>
+            <li>
+              <a href="#">Blog</a>
+            </li>
+            
+          </ul>
+<ul class="nav navbar-nav navbar-right">
+            <li><a href="http://www.uitutorials.in" target="_self"><strong>Uitutorials.in</strong></a></li>
+          </ul>
+          
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container" id="grid-page">
+
+      <!-- Navbar
+      ================================================== -->
+      <div class="bs-docs-section clearfix">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="grid-header">Dropdowns</h1>
+            </div>
+<!--            <div class="bs-component"></div>-->
+				<h2>Basic Dropdown</h2>
+                <p>A dropdown menu is a toggleable menu that allows the user to choose one value from a predefined list:</p>
+                
+                <div class="bs-component">
+                <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="#">HTML</a></li>
+    <li><a href="#">CSS</a></li>
+    <li><a href="#">JavaScript</a></li>
+  </ul>
+</div>
+                </div>
+                <h3>Example Explained</h3>
+                <p>The <code >.dropdown</code> class indicates a dropdown menu.</p>
+                <p>To open the dropdown menu, use a button or a link with a class of <code >.dropdown-toggle</code> and 
+the <code >data-toggle="dropdown"</code> attribute.</p>
+<p>The <code >.caret</code> class creates a caret arrow icon (<span class="caret"></span>), which indicates that the 
+button is a dropdown.</p>
+<p>Add the <code >.dropdown-menu</code> class to a <code >&lt;ul&gt;</code> element to actually build the dropdown menu.</p>
+<p>The <code >.divider</code> class is used to separate links inside the dropdown menu with a thin horizontal border:</p>
+<p>The <code >.dropdown-header</code> class is used to add headers inside the dropdown menu:</p>
+
+<div class="bs-component">
+<div class="dropdown" style="margin-bottom:16px;">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="menu2" data-toggle="dropdown" aria-expanded="false">Dropdown Header Example
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu test" role="menu" aria-labelledby="menu2">
+    <li role="presentation" class="dropdown-header">Dropdown header 1</li>
+    <li role="presentation"><a role="menuitem" href="javascript:void(0);">HTML</a></li>
+    <li role="presentation"><a role="menuitem" href="javascript:void(0);">CSS</a></li>
+    <li role="presentation"><a role="menuitem" href="javascript:void(0);">JavaScript</a></li>
+    <li role="presentation" class="divider"></li>
+    <li role="presentation" class="dropdown-header">Dropdown header 2</li>
+    <li role="presentation"><a role="menuitem" href="javascript:void(0);">About Us</a></li>
+  </ul>
+</div>
+
+
+</div>
+<h2>Disable and Active items</h2>
+<p>Highlight a specific dropdown item with the .active class (adds a blue background color).</p>
+<p>To disable an item in the dropdown menu, use the <code >.disabled</code> class (gets a light-grey text color and a "no-parking-sign" icon on hover):</p>
+<div class="bs-component">
+<div class="dropdown" style="margin-bottom:10px;">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="menu3" data-toggle="dropdown" aria-expanded="false">Dropdown Disabled Example
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu test" role="menu" aria-labelledby="menu3">
+    <li role="presentation"><a role="menuitem" href="javascript:void(0);">Normal</a></li>
+    <li class="disabled" role="presentation"><a role="menuitem" href="javascript:void(0);">Disabled</a></li>
+    <li class="active" role="presentation"><a role="menuitem" href="javascript:void(0);" style="background-color: #337ab7;">Active</a></li>
+  </ul>
+</div>
+</div>
+<h2>Dropup</h2>
+<p>If you want the dropdown menu to expand upwards instead of downwards, change 
+the &lt;div&gt; element with class="dropdown" to <code >"dropup"</code>:</p>
+<div class="bs-component">
+<div class="dropup" style="margin-bottom:10px;">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="menu4" data-toggle="dropdown" aria-expanded="false">Dropup Example
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu test" role="menu" aria-labelledby="menu4">
+    <li role="presentation"><a role="menuitem" href="javascript:void(0);">HTML</a></li>
+    <li role="presentation"><a role="menuitem" href="javascript:void(0);">CSS</a></li>
+    <li role="presentation"><a role="menuitem" href="javascript:void(0);">JavaScript</a></li>
+    <li role="presentation" class="divider"></li>
+    <li role="presentation"><a role="menuitem" href="javascript:void(0);">About Us</a></li>
+  </ul>
+</div>
+</div>
+
+<div class="page-header">
+<h1>Panels</h1>
+</div>
+<p>A panel in bootstrap is a bordered box with some padding around its content:</p>
+<p>Panels are created with the <code >.panel</code> class, and content inside the panel has a 
+<code >.panel-body</code> class:</p>
+<div class="bs-component">
+<div class="panel panel-default">
+  <div class="panel-body">A Basic Panel</div>
+</div>
+</div>
+<h2>Panel Heading</h2>
+<p>The <code class="w3-codespan">.panel-heading</code> class adds a heading to the panel:</p>
+<div class="bs-component">
+<div class="panel panel-default">
+  <div class="panel-heading">Panel Heading</div>
+  <div class="panel-body">Panel Content</div>
+</div>
+</div>
+<p>The <code class="w3-codespan">.panel-footer</code> class adds a footer to the panel:</p>
+<h2>Panel Group</h2>
+<p>To group many panels together, wrap a <code class="w3-codespan">&lt;div&gt;</code> with class <code class="w3-codespan">
+.panel-group</code> around them.</p>
+<p>The <code class="w3-codespan">.panel-group</code> class clears the bottom-margin of each panel:</p>
+<div class="bs-component">
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-body">Panel Content</div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-body">Panel Content</div>
+  </div>
+</div>
+</div>
+<h2>Panels with Contextual Classes</h2>
+<p>To color the panel, use contextual classes (<code class="w3-codespan">.panel-default</code>, <code class="w3-codespan">.panel-primary</code>, <code class="w3-codespan">.panel-success</code>, <code class="w3-codespan">.panel-info</code>, <code class="w3-codespan">.panel-warning</code>, or <code class="w3-codespan">.panel-danger</code>):</p>
+<div class="bs-component">
+<div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">Panel with panel-default class</div>
+      <div class="panel-body">Panel Content</div>
+    </div>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">Panel with panel-primary class</div>
+      <div class="panel-body">Panel Content</div>
+    </div>
+
+    <div class="panel panel-success">
+      <div class="panel-heading">Panel with panel-success class</div>
+      <div class="panel-body">Panel Content</div>
+    </div>
+
+    <div class="panel panel-info">
+      <div class="panel-heading">Panel with panel-info class</div>
+      <div class="panel-body">Panel Content</div>
+    </div>
+
+    <div class="panel panel-warning">
+      <div class="panel-heading">Panel with panel-warning class</div>
+      <div class="panel-body">Panel Content</div>
+    </div>
+
+    <div class="panel panel-danger">
+      <div class="panel-heading">Panel with panel-danger class</div>
+      <div class="panel-body">Panel Content</div>
+    </div>
+  </div>
+</div>
+<div class="page-header">
+<h1>Basic Collapsible</h1>
+</div>
+<p>Collapsibles are useful when you want to hide and show large amount of content:</p>
+<div class="bs-component">
+<button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo">Click Me</button>
+<div id="demo" class="collapse">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </div>
+</div>
+<h3>Example Explained</h3>
+<p>The <code class="w3-codespan">.collapse</code> class indicates a collapsible element (a &lt;div&gt; in our example); 
+this is the content that will be shown or hidden with a click of a button.</p>
+<p>To control (show/hide) the collapsible content, add the <code class="w3-codespan">data-toggle="collapse"</code> attribute to an &lt;a&gt; or a &lt;button&gt; element. 
+Then add the <code class="w3-codespan">data-target="#id"</code> attribute to 
+connect the button with the collapsible content (&lt;div id="demo"&gt;).</p>
+<p><strong>Note:</strong> For &lt;a&gt; 
+elements, you can use the <code class="w3-codespan">href</code> attribute instead of the <code class="w3-codespan">data-target</code> 
+attribute:</p>
+<div class="bs-component">
+<h2>Simple Collapsible</h2>
+  <a href="#demo" class="btn btn-info" data-toggle="collapse">Simple collapsible</a>
+  <div id="demo" class="collapse">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </div>
+</div>
+<p>By default, the collapsible content is hidden. However, you can add the <code class="w3-codespan">.in</code> class to show the content by default:</p>
+<hr>
+<h1>List Groups</h1>
+<p>The most basic list group is an unordered list with list items:</p>
+<p>To create a basic list group, use an <code >&lt;ul&gt;</code> element with class <code >.list-group</code>, and <code >&lt;li&gt;</code> elements with class <code >.list-group-item</code>:</p>
+<ul class="list-group">
+  <li class="list-group-item">First item</li>
+  <li class="list-group-item">Second item</li>
+  <li class="list-group-item">Third item</li>
+</ul>
+<h2>List Group With Badges</h2>
+<p>You can also add badges to a list group. The badges will automatically be positioned on the right:</p>
+<p>To create a badge, create a <code >&lt;span&gt;</code> element with class <code >.badge</code> 
+inside the list item:</p>
+<div class="bs-component">
+<ul class="list-group">
+  <li class="list-group-item">New <span class="badge">12</span></li>
+  <li class="list-group-item">Deleted <span class="badge">5</span></li> 
+  <li class="list-group-item">Warnings <span class="badge">3</span></li> 
+</ul>
+</div>
+<h2>List Group With Linked Items</h2>
+<p>The items in a list group can also be hyperlinks. This will add a grey 
+background color on hover:</p>
+<p>To create a list group with linked items, use <code >&lt;div&gt;</code> instead of <code >&lt;ul&gt;</code> 
+and <code >&lt;a&gt;</code> instead of <code >&lt;li&gt;</code>:</p>
+<div class="bs-component">
+<div class="list-group">
+  <a href="#" class="list-group-item">First item</a>
+  <a href="#" class="list-group-item">Second item</a>
+  <a href="#" class="list-group-item">Third item</a>
+</div>
+</div>
+<p>Use the <code >.active</code> class to highlight the current item:</p>
+<p>To disable an item, add the <code >.disabled</code> class:</p>
+<h2>Contextual Classes</h2>
+<p>Contextual classes can be used to color list items:</p>
+<p>The classes for coloring list-items are: <code >
+.list-group-item-success</code>, <code >list-group-item-info</code>, <code >
+list-group-item-warning</code>, and <code >.list-group-item-danger</code>:</p>
+<div class="bs-component">
+<ul class="list-group">
+  <li class="list-group-item list-group-item-success">First item</li>
+  <li class="list-group-item list-group-item-info">Second item</li>
+  <li class="list-group-item list-group-item-warning">Third item</li>
+  <li class="list-group-item list-group-item-danger">Fourth item</li>
+</ul>
+</div>
+<h2>Custom Content</h2>
+<p>You can add nearly any HTML inside a list group item.</p>
+<p>Bootstrap provides the classes <code >.list-group-item-heading</code> and
+<code >.list-group-item-text</code> which can be used as follows:</p>
+<div class="bs-component">
+<div class="list-group">
+  <a href="#" class="list-group-item active">
+    <h4 class="list-group-item-heading">First List Group Item Heading</h4>
+    <p class="list-group-item-text">List Group Item Text</p>
+  </a>
+  <a href="#" class="list-group-item">
+    <h4 class="list-group-item-heading">Second List Group Item Heading</h4>
+    <p class="list-group-item-text">List Group Item Text</p>
+  </a>
+  <a href="#" class="list-group-item">
+    <h4 class="list-group-item-heading">Third List Group Item Heading</h4>
+    <p class="list-group-item-text">List Group Item Text</p>
+  </a>
+</div>
+</div>
+
+          </div>
+        </div>
+	</div>
+        <!-- Headings -->
+
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+
+            <ul class="list-unstyled">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+              <li><a href="#" onclick="pageTracker._link(this.href); return false;">Blog</a></li>
+              <li><a href="#">RSS</a></li>
+              <li><a href="#">GitHub</a></li>              
+            </ul>
+
+          </div>
+        </div>
+
+      </footer>
+
+
+    
+
+	</div>
+</div>
+<!-- Modal -->
+<div id="source-modal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Source Code</h4>
+            </div>
+            <div class="modal-body">
+              <pre></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="../assets/js/jquery-1.10.2.js"></script>
+  <script src="../assets/js/bootstrap.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script src="../assets/js/customgrid.js"></script>
+  </body>
+</html>

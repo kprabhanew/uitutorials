@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap Reference: Buttons</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="bootstrap.css" media="screen">
+    <link rel="stylesheet" href="../assets/css/custom.min.css">
+    <link rel="stylesheet" href="../assets/css/grid.css">
+        <link rel="stylesheet" href="../assets/css/bootstrapCommon.css">
+        
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+          <script src="../assets/js/dist/html5shiv.min.js"></script>
+    <script src="../assets/js/dist/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+
+     var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-23019901-1']);
+      _gaq.push(['_setDomainName', "Bootstrap Reference.com"]);
+        _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+
+    </script>
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-103420198-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="http://www.uitutorials.in" class="navbar-brand">Bootstrap Reference</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Links <span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="themes">
+                <li><a href="../../indexV2.html">Default</a></li>
+                <li class="divider"></li>
+                <li><a href="grid.html">Grid</a></li>
+                <li><a href="typography.html">Typography</a></li>
+                <li><a href="images.html">Images</a></li>
+                <li><a href="buttons.html">Buttons</a></li>
+                <li><a href="dropdowns.html">DropDowns</a></li>
+              </ul>
+            </li>
+            <li>
+              <li><a href="../../indexV2.html">Home</a></li>
+            </li>
+            <li>
+              <a href="#">Blog</a>
+            </li>
+            
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://www.uitutorials.in" target="_self"><strong>Uitutorials.in</strong></a></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container" id="grid-page">
+
+      <!-- Navbar
+      ================================================== -->
+      <div class="bs-docs-section clearfix">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="grid-header">Buttons</h1>
+            </div>
+<!--            <div class="bs-component"></div>-->
+				<h2>Button Styles</h2>
+                <p>Bootstrap provides different styles of buttons:</p>
+            <div class="bs-component">
+                <button type="button" class="btn">Basic</button>
+                <button type="button" class="btn btn-default">Default</button>
+                <button type="button" class="btn btn-primary">Primary</button>
+                <button type="button" class="btn btn-success">Success</button>
+                <button type="button" class="btn btn-info">Info</button>
+                <button type="button" class="btn btn-warning">Warning</button>
+                <button type="button" class="btn btn-danger">Danger</button>
+                <button type="button" class="btn btn-link">Link</button>
+                </div>
+                <br>
+				<p>To achieve the button styles above, Bootstrap has the following classes:</p>
+                <div class="bs-component">	
+                <ul>
+                  <li><code class="w3-codespan">.btn</code></li>
+                  <li><code class="w3-codespan">.btn-default</code></li>
+                  <li><code class="w3-codespan">.btn-primary</code></li>
+                  <li><code class="w3-codespan">.btn-success</code></li>
+                  <li><code class="w3-codespan">.btn-info</code></li>
+                  <li><code class="w3-codespan">.btn-warning</code></li>
+                  <li><code class="w3-codespan">.btn-danger</code></li>
+                  <li><code class="w3-codespan">.btn-link</code></li>
+                </ul>
+                </div>
+                <p>The button classes can be used on an <code class="w3-codespan">&lt;a&gt;</code>, <code class="w3-codespan">&lt;button&gt;</code>, or <code class="w3-codespan">&lt;input&gt;</code> element:</p>
+                <div class="bs-component">	
+                <a href="#" class="btn btn-info" role="button">Link Button</a>
+                <button type="button" class="btn btn-info">Button</button>
+                <input type="button" class="btn btn-info" value="Input Button">
+                <input type="submit" class="btn btn-info" value="Submit Button">	
+                </div>
+                <h2>Button Sizes</h2>
+                <p>Bootstrap provides four button sizes:</p>
+                <div class="bs-component">
+                <button type="button" class="btn btn-primary btn-lg">Large</button>
+                <button type="button" class="btn btn-primary btn-md">Medium</button>
+                <button type="button" class="btn btn-primary btn-sm">Small</button>
+                <button type="button" class="btn btn-primary btn-xs">XSmall</button>
+                </div>
+                <p>The classes that define the different sizes are:</p>
+                <div class="bs-component">
+                <ul>
+                  <li><code class="w3-codespan">.btn-lg</code></li>
+                  <li><code class="w3-codespan">.btn-md</code></li> 
+                  <li><code class="w3-codespan">.btn-sm</code></li>
+                  <li><code class="w3-codespan">.btn-xs</code></li>
+                </ul>
+                </div>
+                <h2>Block Level Buttons</h2>
+                <p>Add class <code class="w3-codespan">.btn-block</code> to create a block level button:</p>
+                <p>A block level button spans the entire width of the parent element.</p>
+                <div class="bs-component">
+                    <button type="button" class="btn btn-primary btn-block">Button 1</button>
+                    <button type="button" class="btn btn-default btn-block">Button 2</button>
+                </div>
+                <h2>Active/Disabled Buttons</h2>
+                <p>A button can be set to an active (appear pressed) or a disabled (unclickable) state:</p>
+                <div class="bs-component">
+                <button type="button" class="btn btn-primary active">Active Primary</button>
+                <button type="button" class="btn btn-primary disabled">Disabled Primary</button>
+                </div>
+                <p>The class <code class="w3-codespan">.active</code> makes a button appear pressed, and the class <code class="w3-codespan">.disabled</code> makes a button unclickable:</p>
+                <h2>Button Groups</h2>
+                <p>Bootstrap allows you to group a series of buttons together (on a single line) in a button group:</p>
+                <div class="bs-component">
+                <div class="btn-group" style="margin:5px 0 10px 0;">
+                  <button type="button" class="btn btn-primary">Apple</button>
+                  <button type="button" class="btn btn-primary">Samsung</button>
+                  <button type="button" class="btn btn-primary">Sony</button>
+                </div>
+                </div>
+                <p>Use a <code class="w3-codespan">&lt;div&gt;</code> element with class <code class="w3-codespan">.btn-group</code> to create a button group:</p>
+                <p><strong>Tip:</strong> Instead of applying button sizes to every button in a group, use class <code class="w3-codespan">.btn-group-lg|sm|xs</code> to size all buttons in the group:</p>
+            <div class="bs-component">
+            <div class="btn-group btn-group-lg">
+              <button type="button" class="btn btn-primary">Apple</button>
+              <button type="button" class="btn btn-primary">Samsung</button>
+              <button type="button" class="btn btn-primary">Sony</button>
+            </div>
+            </div>
+            <h2>Vertical Button Groups</h2>
+            <p>Bootstrap also supports vertical button groups:</p>
+            <p>Use the class <code class="w3-codespan">.btn-group-vertical</code> to create a vertical button group:</p>
+            <div class="bs-component">
+            <div class="btn-group-vertical" style="margin:5px 0 10px 0;">
+              <button type="button" class="btn btn-primary">Apple</button>
+              <button type="button" class="btn btn-primary">Samsung</button>
+              <button type="button" class="btn btn-primary">Sony</button>
+            </div>
+            </div>
+            <h2>Justified Button Groups</h2>
+            <p>To span the entire width of the screen, use the <code class="w3-codespan">.btn-group-justified</code> class:</p>
+            <p>Example with <code class="w3-codespan">&lt;a&gt;</code> elements:</p>
+            <div class="bs-component">
+            <div class="btn-group btn-group-justified">
+              <a href="#" class="btn btn-primary">Apple</a>
+              <a href="#" class="btn btn-primary">Samsung</a>
+              <a href="#" class="btn btn-primary">Sony</a>
+            </div>
+            </div>
+            <br>
+            <p><strong>Note:</strong> For <code class="w3-codespan">&lt;button&gt;</code> elements, you must wrap each button in a <code class="w3-codespan">.btn-group</code> class:</p>
+            <div class="bs-component">
+            <div class="btn-group btn-group-justified">
+              <div class="btn-group">
+                <button type="button" class="btn btn-primary">Apple</button>
+              </div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-primary">Samsung</button>
+              </div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-primary">Sony</button>
+              </div>
+            </div>
+            </div>
+            <h2>Nesting Button Groups &amp; Dropdown Menus</h2>
+            <p>Nest button groups to create dropdown menus:</p>
+            <div class="bs-component">
+            <div class="btn-group">
+              <button type="button" class="btn btn-primary">Apple</button>
+              <button type="button" class="btn btn-primary">Samsung</button>
+              <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                Sony <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Tablet</a></li>
+                  <li><a href="#">Smartphone</a></li>
+                </ul>
+              </div>
+            </div>
+            </div>
+            <h2>Split Button Dropdowns</h2>
+            <div class="bs-component">
+            <div class="btn-group" style="margin:5px 0 15px 0;">
+                <button type="button" class="btn btn-primary">Sony</button>
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu test" role="menu">
+                  <li><a href="#">Tablet</a></li>
+                  <li><a href="#">Smartphone</a></li>
+                </ul>
+            </div>
+			</div>
+            
+            
+          </div>
+        </div>
+	</div>
+        <!-- Headings -->
+
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+
+            <ul class="list-unstyled">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+              <li><a href="#" onclick="pageTracker._link(this.href); return false;">Blog</a></li>
+              <li><a href="#">RSS</a></li>
+              <li><a href="#">GitHub</a></li>              
+            </ul>
+
+          </div>
+        </div>
+
+      </footer>
+
+
+    
+
+	</div>
+</div>
+<!-- Modal -->
+<div id="source-modal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Source Code</h4>
+            </div>
+            <div class="modal-body">
+              <pre></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="../assets/js/jquery-1.10.2.js"></script>
+  <script src="../assets/js/bootstrap.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script src="../assets/js/customgrid.js"></script>
+  </body>
+</html>
