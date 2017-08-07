@@ -1,0 +1,1 @@
+Infragistics_Understanding scopes in angularjs custom directives
