@@ -219,12 +219,103 @@
     <section id="main">
       <div class="container">
       <article id="main-col">
-      <h1>Promise Functions</h1>
+
       <!--https://davidwalsh.name/promises-->
     <h1>JavaScript Promise API</h1>
-    <p>While synchronous code is easier to follow and debug, async is generally better for performance and flexibility. Why "hold up the show" when you can trigger numerous requests at once and then handle them when each is ready? Promises are becoming a
-        big part of the JavaScript world, with many new APIs being implemented with the promise philosophy. Let's take a look at promises, the API, how it's used!</p>
-    <h2>Promises in the Wild</h2>
+    <p>The concept of promises is not new to web development. Many of us have already used promises in the form of several JS libraries such as Q, when, RSVP.js, etc. Even jQuery has something called a Deferred object which is similar to a promise.</p>
+
+<p><strong>Note : </strong>  This is still an experimental feature. Only Chrome 32 beta and the latest Firefox nightly currently support it.</p>
+ <h3>Overview</h3>
+ <p>A <code>Promise</code> object represents a value that may not be available yet, but will be resolved at some point in the future. It allows you to write asynchronous code in a more synchronous fashion. For example, if you use the promise API to make an asynchronous call to a remote web service you will create a <code>Promise</code> object which represents the data that will be returned by the web service in future. The caveat being that the actual data is not available yet. It will become available when the request completes and a response comes back from the web service. In the meantime the <code >Promise</code> object acts like a proxy to the actual data. Furthermore, you can attach callbacks to the <code>Promise</code> object which will be called once the actual data is available.</p>
+ <h2 id="the-api">The API</h2>
+ <span class="filename">Example</span>
+    <pre><code class="language-javascript">
+    if (window.Promise) { // Check if the browser supports Promises
+  var promise = new Promise(function(resolve, reject) {
+    //asynchronous code goes here
+  });
+}
+    </code></pre>
+    <p>We start by instantiating a new <code>Promise</code> object and passing it a callback function. The callback takes two arguments, <code>resolve</code> and <code>reject</code>, which are both functions. All your asynchronous code goes inside that callback. If everything is successful, the promise is fulfilled by calling <code><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>. In case of an error, <code><span class="token function">reject</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> is called with an <code>Error</code> object. This indicates that the promise is rejected.</p>
+    
+    <span class="filename">Example 1 - Promise ()</span>
+    <pre><code class="language-javascript">
+    let myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('Good to go !');
+    }, 1000);
+
+    setTimeout(() => {
+        reject("Not Good to go !");
+    }, 500);
+});
+
+myPromise.then(
+    (res) => {
+        alert(res);
+    },
+    (err) => {
+        alert(err);
+    }
+)
+    </code></pre>
+    <span class="filename">Example 2 - "Promise.All()" if all the promises resolved</span>
+    <pre><code class="language-javascript">
+    let myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('Good to Go !');
+    }, 1000);
+})
+
+let myPromise2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('Promise2');
+    }, 1500);
+})
+
+Promise.all([myPromise, myPromise2])
+    .then((data) => {
+        console.log(data);
+    })
+    </code></pre>
+    <span class="filename">Exmample 3 - "catch()" If one of the promise rejected </span>
+    <pre><code class="language-javascript">
+    let myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('Good to Go !');
+    }, 1000);
+})
+
+let myPromise2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        reject('Promise2 - rejected');
+    }, 1500);
+})
+
+Promise.all([myPromise, myPromise2])
+    .then((data) => {
+        console.log(data); 
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+    </code></pre>
+    <h3>Fetch</h3>
+    <p><strong>Fetch</strong> itself return promise to resolve something like response object, we can use 'then' for resolve handler</p>
+    <span class="filename">Example 4</span>
+    <pre><code class="language-javascript">
+    fetch('http://apii.icndb.com/jokes/random/10')
+    .then((res) => {
+        res.json().then((data) => {
+            console.log(data);
+        });
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+    </code></pre>
+    
+            <h2>Promises in the Wild</h2>
     <p>The XMLHttpRequest API is async but does&nbsp;<em>not</em> use the Promises API. &nbsp;There are a few native APIs that now use promises, however:</p>
     <ul>
         <li><a href="https://davidwalsh.name/javascript-battery-api">Battery API</a></li>
