@@ -1,0 +1,19 @@
+iisexpressRegEntry.reg
+========================
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\IISExpressWebServer]
+@="Run IIS Express Here"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\IISExpressWebServer\command]
+@="C:\\Program Files (x86)\\IIS Express\\iisexpress.exe /path:\"%1\" /port:8080 /systray:true"
+
+*************************************************
+runiisexpress.bat
+=================
+SET Ex="C:\Program Files (x86)\IIS Express\iisexpress.exe"
+if not "%1" == "" (
+CALL %EX% /path:%CD% /port:%1
+) else (
+CALL %EX% /path:%CD%
+)
