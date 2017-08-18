@@ -280,12 +280,12 @@
             //Controller
            var sample = angular.module("sample", []); //creating module
 
-//create controller and its definition
-sample.controller("blogController", function() {
-    $scope.firstName = "Pankaj",
-    $scope.lastName = "Kumar",
-    $scope.blogName = "JournalDev"
-});
+	//create controller and its definition
+	sample.controller("blogController", function() {
+	    $scope.firstName = "Pankaj",
+	    $scope.lastName = "Kumar",
+	    $scope.blogName = "JournalDev"
+	});
             
             &lt;/script&gt;
             
@@ -330,14 +330,14 @@ sample.controller("blogController", function() {
             
                 var app = angular.module("sample", ['ngRoute']); // Module
 
-app.controller("EmployeeController", function($scope, $routeProvider) { //Controller
-    $scope.names = ["Elano Blumer", "Iain Hume"];
+		app.controller("EmployeeController", function($scope, $routeProvider) { //Controller
+		    $scope.names = ["Elano Blumer", "Iain Hume"];
 
-    $scope.addEmployee = function() {
-        $scope.names.push($scope.newEmployee);
-        $scope.newEmployee = "";
-    }
-}); //syntax
+		    $scope.addEmployee = function() {
+			$scope.names.push($scope.newEmployee);
+			$scope.newEmployee = "";
+		    }
+		}); //syntax
             &lt;/script&gt;
             &lt;/body&gt;
             &lt;/html&gt;
@@ -360,7 +360,7 @@ app.controller("EmployeeController", function($scope, $routeProvider) { //Contro
     <span class="filename">Example : placeView.html</span>
     <pre><code class="language-html">
     &lt;!DOCTYPE html&gt;
-        &lt;html ng-app&gt;
+        &lt;html ng-app="sample"&gt;
         &lt;head&gt;
         &lt;script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"&gt;
         &lt;/script&gt;
