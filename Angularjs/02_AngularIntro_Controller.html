@@ -265,7 +265,7 @@
             
             &lt;body&gt;
             
-            &lt;div ng-app="" ng-controller="blogController"&gt;
+            &lt;div ng-app="sample" ng-controller="blogController"&gt;
             
                 First Name: &lt;input type="text" ng-model="firstName"&gt;&lt;br&gt;
                 Last Name: &lt;input type="text" ng-model="lastName"&gt;&lt;br&gt;
@@ -278,11 +278,14 @@
             
             &lt;script&gt;
             //Controller
-            function blogController($scope) {
-                    $scope.firstName = "Pankaj",
-                    $scope.lastName = "Kumar",
-                    $scope.blogName = "JournalDev"
-            }
+           var sample = angular.module("sample", []); //creating module
+
+//create controller and its definition
+sample.controller("blogController", function() {
+    $scope.firstName = "Pankaj",
+    $scope.lastName = "Kumar",
+    $scope.blogName = "JournalDev"
+});
             
             &lt;/script&gt;
             
@@ -304,7 +307,7 @@
     <span class="filename">Example : controller-methods.html</span>
     <pre><code class="language-html">
         &lt;!DOCTYPE html&gt;
-            &lt;html ng-app&gt;
+            &lt;html ng-app="sample"&gt;
             &lt;head&gt;
             &lt;title&gt;AngularJS - Controllers and Scope&lt;/title&gt;
             &lt;script type="text/javascript"
@@ -325,14 +328,16 @@
             &lt;/div&gt;
             &lt;script&gt;
             
-                function EmployeeController($scope) {
-                    $scope.names = [ "Elano Blumer","Iain Hume"];
-            
-                    $scope.addEmployee = function() {
-                        $scope.names.push($scope.newEmployee);
-                        $scope.newEmployee = "";
-                    }
-                }
+                var app = angular.module("sample", ['ngRoute']); // Module
+
+app.controller("EmployeeController", function($scope, $routeProvider) { //Controller
+    $scope.names = ["Elano Blumer", "Iain Hume"];
+
+    $scope.addEmployee = function() {
+        $scope.names.push($scope.newEmployee);
+        $scope.newEmployee = "";
+    }
+}); //syntax
             &lt;/script&gt;
             &lt;/body&gt;
             &lt;/html&gt;
@@ -347,6 +352,7 @@
             we click on the <strong>Add </strong>button.</li>
         <li>The <code>ng-click</code> directive allows you to specify custom behavior when an element is clicked.</li>
     </ul>
+		
     <h2>Using Controllers in External File</h2>
     <p>The following example demonstrates how to store and include controllers in external files</p>
     <p>In the example, we have created a JavaScript file ( <strong>placeController.js</strong> ) to store the controller used in the application.</p>
@@ -377,19 +383,25 @@
     <span class="filename">Example : placeController.js</span>
     <pre><code class="language-javascript">
     
-        function PlaceController($scope) {
-        $scope.list = [
-            { country: 'India',   city: 'New Delhi' },
-            { country: 'France',  city: 'Paris' },
-            { country: 'USA',     city: 'Washington DC' },
-            { country: 'England', city: 'London' }
-        ];
-    
-        $scope.addItem = function () {
-            $scope.list.push({ country: $scope.countryName,
-                    city: $scope.cityName });
-        };
-    }
+        var app = angular.module("sample", []); // Module
+
+app.controller("PlaceController", function($scope) { //Controller
+
+    $scope.list = [
+        { country: 'India', city: 'New Delhi' },
+        { country: 'France', city: 'Paris' },
+        { country: 'USA', city: 'Washington DC' },
+        { country: 'England', city: 'London' }
+    ];
+
+    $scope.addItem = function() {
+        $scope.list.push({
+            country: $scope.countryName,
+            city: $scope.cityName
+        });
+    };
+
+}); //syntax
     </code></pre>
     <p>You will see the following output in your browser. Enter country name and city and then click on add button. You will see the added names in the list shown below.</p>
     <strong>Application Detail</strong>
