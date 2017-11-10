@@ -374,7 +374,7 @@ ng-controller="myController"
     <p>In this post, we are not going to look into the details of these concepts. We will see these concepts in the coming posts.</p>
     <h2>Creating a Controller in a Module Example</h2>
     <p>The following example demonstrates how to create a controller in angular module. In this example, we will create a module called <strong>demoApp </strong>and will define the controller, <strong>blogController </strong>in it.</p>
-    <p>angular-module</p>
+    <p>index.html</p>
     <pre><code class="language-html">
         &lt;!DOCTYPE html&gt;
             &lt;html ng-app="demoApp"&gt;
@@ -396,22 +396,21 @@ ng-controller="myController"
                 Blog Name : {{blogName }}
             
             &lt;/div&gt;
-            
-            &lt;script&gt;
-            
-            var app = angular.module("demoApp", []);
-            
+            &lt;script src="app.js"&gt;&lt;/script&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+    </code></pre>
+		
+		<p>app.js</p>
+	<pre><code class="language-javascript">
+	var app = angular.module("demoApp", []);
+	
             app.controller("blogController", function($scope) {
                     $scope.firstName = "Pankaj",
                     $scope.lastName = "Kumar",
                     $scope.blogName = "JournalDev"
             });
-            
-            &lt;/script&gt;
-            
-            &lt;/body&gt;
-            &lt;/html&gt;
-    </code></pre>
+	</code></pre>	
     <p>We use ng-app directive to specify the name of the module used in the application. You will see the following output in your browser.</p>
     <h2>AngularJS Application Files</h2>
     <p>Earlier we looked at how to include controllers in external files. That is very helpful when you deal with big applications. In any angular application, we use mainly two types of files, one with module and other with controllers. Let’s look in to
