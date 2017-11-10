@@ -220,7 +220,111 @@
     <section id="main">
       <div class="container">
         <article id="main-col">
+<p>creating modules in angularjs</p>
+<p>creating controllers in angularjs</p>
 
+
+<ol>
+<li>What is a module in angular</li>
+<li>How to create a module</li>
+<li>What is a controller in angular </li>
+<li>How to create a controller</li>
+<li>How to register a controller with the module</li>
+<li>How to use the module that we created to bootstrap the angular application</li>
+</ol>
+
+
+<h2>What is a module in AngularJS</h2>
+<p>A module is a container for different parts of your application i.e controllers, services, directives, filters, etc.</p>
+
+<h2>Why is a module required</h2>
+<p>You can think of a module as a Main() method in other types of applications. For example, a Dot Net console application has a Main() method which is the entry point into the application and it wires together the different parts of the application.</p>
+
+<p>Modules are the angular application's equivalent of the Main() method. Modules declaratively specify how the angular application should be bootstrapped.</p>
+
+<p>There are several benefits of the modular approach. </p>
+
+<h2>How to create a module</h2>
+<p>Creating a module in angular is staright forward. Use the angular object's module() method to create a module. The angular object is provided by angular script. The following example, creates a module.</p>
+<pre class=" language-javascript">
+<code class=" language-javascript">
+var myApp = angular.module("myModule", [])
+</code>
+</pre>
+
+<ul>
+<li>The first parameter specifies the name of the module.</li>
+<li>The second parameter specifies the dependencies for this module</li>
+</ul>
+
+<p>A module can depend on other modules. We will discuss an example of module dependencies in a later here. Right now, the module that we are creating is not dependent on any other external modules, so I am passing an empty array as the value for the second parameter.</p>
+
+<h2>What is a controller in angular</h2>
+<p>In angular a controller is a JavaScript function. The job of the controller is to build a model for the view to display. The model is the data. In a real world application, the controller may call into a service to retrieve data from the database.</p>
+
+<h2>How to create a controller in angular</h2>
+<p>Simple, create a JavaScript constructor function</p>
+<pre class=" language-javascript">
+<code class=" language-javascript">
+var myController = function ($scope) {
+    $scope.message = "AngularJS Tutorial";
+}
+</code>
+</pre>
+<h2>What is $scope</h2>
+<p>$scope is an angular object that is passed to the controller function by the angular framework. We attach the model to the $scope object, which will then be available in the view. With in the view, we use the databinding expression to retrieve the data from the scope object and display it.</p>
+
+<h2>How to register the controller with the module</h2>
+<p>Use module object's controller function to register the controller with the module</p>
+
+<pre class=" language-javascript">
+<code class=" language-javascript">
+myApp.controller("myController", myController);
+</code>
+</pre>
+
+<p>Here is the complete code </p>
+
+<pre class=" language-javascript">
+<code class=" language-javascript">
+//Create the module
+var myApp = angular.module("myModule", []);
+
+//Create the controller
+var myController = function ($scope) {
+    $scope.message = "AngularJS Tutorial";
+}
+
+// Register the controller with the module
+myApp.controller("myController", myController);
+</code>
+</pre>
+<p>The above code can also be written as shown below.</p>
+
+<pre class=" language-javascript">
+<code class=" language-javascript">
+//Create the module
+var myApp = angular.module("myModule", []);
+
+// Creating the controller and registering with the module all done in one line.
+myApp.controller("myController", function ($scope) {
+    $scope.message = "AngularJS Tutorial";
+});
+</code>
+</pre>
+<h2>How to use the module that we created to bootstrap the angular application</h2>
+<p>Associate the module name with ng-app directive</p>
+<pre class=" language-javascript">
+<code class=" language-javascript">
+ng-app="myModule"
+</code>
+</pre>
+<p>Similarly associate the controller using ng-controller directive</p>
+<pre class=" language-javascript">
+<code class=" language-javascript">
+ng-controller="myController"
+</code>
+</pre>
     <h1>AngularJS Module Example</h1>
     <p>In this post, we are going to cover one of the most important feature in AngularJS called Modules. We can use AngularJS Module API to modularize angular applications.</p>
     <h2>What is a Module?</h2>
