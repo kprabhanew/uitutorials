@@ -325,6 +325,15 @@ ng-app="myModule"
 ng-controller="myController"
 </code>
 </pre>
+		
+<p>In the following example, $scope is not the model. The message property that we have attached to the scope is the model. </p>
+<pre class=" language-javascript">
+<code class=" language-javascript">
+myApp.controller("myController", function ($scope) { $scope.message = "AngularJS Tutorial"; }); 
+</code>
+</pre>
+<p>The view will then use the data-binding expression to retrieve the model from the scope. This means the controller is not manipulating the DOM directly, thus keeping that clean separation between the model, view and the controller. So when you are developing controllers, make sure, you are not breaking that clean separation between the model, view and the controllers. The controller should only be used for setting up the $scope object and adding behavior it. 
+		</p>		
     <h1>AngularJS Module Example</h1>
     <p>In this post, we are going to cover one of the most important feature in AngularJS called Modules. We can use AngularJS Module API to modularize angular applications.</p>
     <h2>What is a Module?</h2>
