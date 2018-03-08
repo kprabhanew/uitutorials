@@ -1,235 +1,294 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="angularjs, javascript, ui development, controller, directive, module, Filter, Databinding, Dependancy injection, service, ui route, transclusion, angular validation, scope, scope inheritance">
-	  <meta name="keywords" content="uitutorials.in, angularjs, javascript, ui development, controller, directive, module, Filter, Databinding, Dependancy injection, service, ui route, transclusion, angular validation, scope, scope inheritance">
-  	<meta name="author" content="Prabakaran">
-    <title>UI Tutorials | Welcome</title>    
-<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <meta name="keywords" content="uitutorials.in, angularjs, javascript, ui development, controller, directive, module, Filter, Databinding, Dependancy injection, service, ui route, transclusion, angular validation, scope, scope inheritance">
+    <meta name="author" content="Prabakaran">
+    <title>UI Tutorials | Welcome</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/MenuStyle.css">
     <link rel="stylesheet" href="../css/SiteStyle.css">
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src="../scripts/menuScript.js"></script>    
+    <script src="../scripts/menuScript.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/prism.css">
     <script src="../scripts/prism.js"></script>
-  
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-103420198-1', 'auto');
-  ga('send', 'pageview');
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-</script>
+        ga('create', 'UA-103420198-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 
 </head>
-  <body>
+
+<body>
     <header>
-      <div class="container">
-        <div id="branding">
-          <h1><span class="highlight">UI</span> Tutorials</h1>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">UI</span> Tutorials</h1>
+            </div>
+            <nav id='cssmenu'>
+
+                <div id="head-mobile"></div>
+                <div class="button"></div>
+                <ul>
+                    <li class='active'><a href="../index.html">HOME</a></li>
+                    <li><a href='../Bootstrap/htmlPages/grid.html'>Bootstrap</a></li>
+                    <li><a href="#">AngularJS</a>
+                        <ul>
+                            <li><a href='#'>Introduction</a>
+                                <ul>
+                                    <li><a href="../Angularjs/01_AngularIntro_Index.html">Basic</a></li>
+                                    <li><a href="../Angularjs/03_AngularIntro_Module.html">Module</a></li>
+                                    <li><a href="../Angularjs/02_AngularIntro_Controller.html">Controller MVC</a></li>
+                                </ul>
+                            </li>
+                            <li><a href='#'>Angular DOM</a>
+                                <ul>
+                                    <li><a href="../Angularjs/01_AngularDOM_events.html">Events</a></li>
+                                    <li><a href="../Angularjs/03_AngularDOM_ngShow.html">ng Show</a></li>
+                                    <li><a href="../Angularjs/02_AngularDOM_ngHide.html">ng Hide</a></li>
+                                </ul>
+                            </li>
+                            <li><a href='#'>Filter</a>
+                                <ul>
+                                    <li><a href="../Angularjs/02_FilterIndex_FormatData.html">Format Data</a></li>
+                                    <li><a href="../Angularjs/03_Filter_SortData.html">Sort Data</a></li>
+                                    <li><a href="../Angularjs/01_FilterData.html">Filter Data</a></li>
+                                </ul>
+                            </li>
+                            <li><a href='#'>Form</a>
+                                <ul>
+                                    <li><a href="../Angularjs/01Form_index.html">Form</a></li>
+                                    <li><a href="../Angularjs/03_AngularDOM_ngShow.html">CheckBox</a></li>
+                                    <li><a href="../Angularjs/02_AngularDOM_ngHide.html">ShowHide</a></li>
+                                    <li><a href="../Angularjs/01_AngularDOM_events.html">RadioButton</a></li>
+                                    <li><a href="../Angularjs/01_AngularDOM_events.html">TrackingEvents</a></li>
+                                    <li><a href="../Angularjs/01_AngularDOM_events.html">Validation</a></li>
+                                    <li><a href="../Angularjs/01_AngularDOM_events.html">NestedValidation</a></li>
+                                    <li><a href="../Angularjs/01_AngularDOM_events.html">FormSubmission</a></li>
+                                    <li><a href="#">Select Element</a>
+                                        <ul>
+                                            <li><a href="../Angularjs/09SelectDD_htmlIndex.html">Html</a></li>
+                                            <li><a href="../Angularjs/09SelectDD_arrayIndex.html">Array</a></li>
+                                            <li><a href="../Angularjs/09SelectDD_objectIndex.html">Object</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href='#'>Service</a>
+                                <ul>
+                                    <li><a href="../Angularjs/01_Service_index.html">Index</a></li>
+                                </ul>
+                            </li>
+                            <li><a href='#'>Directive</a>
+                                <ul>
+                                    <li><a href='../Angularjs/00_Directive_index.html'>Index</a></li>
+                                    <li><a href="#">Shared Scope</a>
+                                        <ul>
+                                            <li><a href='../Angularjs/01_Scope_inheritance_index.html'>Scoope Inheritance</a></li>
+                                            <li><a href='../Angularjs/02_SharedScope_index.html'>SharedScope(SS)</a></li>
+                                            <li><a href='../Angularjs/03_Shared_Scope_index.html'>SS-Modifying</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Isolated Scope</a>
+                                        <ul>
+                                            <li><a href='../Angularjs/04_Inherited_ScopeChild_index.html'>InheritedScope(Child)</a></li>
+                                            <li><a href='../Angularjs/05_Child_index.html'>Child-Directive</a></li>
+                                            <li><a href='../Angularjs/06_Child_index.html'>Child-ng Repeat</a></li>
+                                        </ul>
+                                    </li>
+
+
+                                    <li><a href="#">IsolatedScope</a>
+                                        <ul>
+                                            <li><a href='../Angularjs/07_Isolated_Scope_index2.html'>IsolatedScope @</a></li>
+                                            <li><a href='../Angularjs/08_Isolated_Scope_index2.html'>IsolatedScope =</a></li>
+                                            <li><a href='../Angularjs/09_Isolated_Scope_index2.html'>IsolatedScope &amp;</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li><a href='#'>Directive Compile</a>
+                                        <ul>
+                                            <li><a href='../Angularjs/01_Directive_Compile_compile.html'>Compile</a></li>
+                                            <li><a href='../Angularjs/02_ Directive_Compile_controller.html'>Controller</a></li>
+                                            <li><a href='../Angularjs/03_Directive_Compile_PrePostLink.html'>LinkPrePost</a></li>
+                                            <li><a href='../Angularjs/04_Directive_Compile_compileCtrlLink.html'>CompileControllerLink</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href='#'>Directive Link</a>
+                                        <ul>
+                                            <li><a href='../Angularjs/01_Directive_Link_interpolation.html'>Interpolation</a></li>
+                                            <li><a href='../Angularjs/02_Directive_Link_modifyDomInCompile.html'>ModifyDom</a></li>
+                                            <li><a href='../Angularjs/03_Directive_Link_DomEventHandler.html'>EventHandler</a></li>
+                                            <li><a href='../Angularjs/04_Directive_Link_WithoutCompile.html'>WithoutCompile</a></li>
+                                            <li><a href='../Angularjs/05_Directive_Link_CompileReturn.html'>CompileReturn</a></li>
+                                            <li><a href='../Angularjs/06_Directive_Link_PostOnly.html'>PostOnly</a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li><a href='#'>Routing</a>
+                                <ul>
+                                    <li><a href="../Angularjs/01_Route_index.html">Index</a></li>
+                                    <li><a href="#">Code</a>
+                                        <ul>
+
+                                            <li><a href="../Angularjs/02_Route_Intro.html">Intro Routing</a></li>
+                                            <li><a href="../Angularjs/03_Route_Parameters.html">Parameters</a></li>
+                                            <li><a href="../Angularjs/04_Route_Async.html">Asynchronous</a></li>
+                                            <li><a href="../Angularjs/05_Route_Redirect.html">Redirect</a></li>
+                                            <li><a href="../Angularjs/06_Route_events.html">Events</a></li>
+                                            <li><a href="../Angularjs/Routing/code/06 Route-routeService-events with Loading/index.htm">With Loading</a></li>
+                                            <li><a href="../Angularjs/Routing/code/07 Route-routeService-with-resolve/index.htm">With Resolve</a></li>
+                                        </ul>
+
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li><a href='#'>UI Route</a>
+                                <ul>
+                                    <li><a href="../Angularjs/01UiRoute_index.html">Index</a></li>
+                                    <li><a href="#">Code</a>
+                                        <ul>
+
+                                            <li><a href="../Angularjs/02UIRoute_Intro_Routing_index.html">Intro Routing</a></li>
+                                            <li><a href="../Angularjs/03_UIRoute_RouteWithParams.html">Parameters</a></li>
+                                            <li><a href="../Angularjs/04_UIRoute_StateService.html">State</a></li>
+                                            <li><a href="../Angularjs/05_UIRoute_WithResolve.html">Resolve</a></li>
+                                            <li><a href="../Angularjs/06_UIRoute_SingleView.html">SingleView</a></li>
+                                            <li><a href="../Angularjs/07_UIRoute_MultipleViews.html">MultipleView</a></li>
+
+                                        </ul>
+
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="active"><a href='#'>Javascript</a>
+                        <ul>
+                            <li>
+                                <a href='#'>Javascript</a>
+                                <ul>
+                                    <li><a href='#'>Begining</a>
+                                        <ul>
+                                            <li><a href="javascript_c_01whatisjs.html">WhatisJs</a></li>
+                                            <li><a href="javascript_c_02whyjs.html">WhyJs</a></li>
+                                            <li><a href="javascript_c_03disadvant.html">Advantages</a></li>
+                                            <li><a href="javascript_c_04internalExt.html">JSFileCall</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href='#'>String</a>
+                                        <ul>
+                                            <li><a href="javascript_c_05Strings.html">Strings</a></li>
+                                            <li><a href="javascript_c_06Substring.html">Substring</a></li>
+                                            <li><a href="javascript_c_07SubstringInd.html">SubstringIndex</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href='#'>Array</a>
+                                        <ul>
+                                            <li><a href="javascript_c_08ArrayEx.html">Array</a></li>
+                                            <li><a href="javascript_c_09ArrayPush.html">PushAndPop</a></li>
+                                            <li><a href="javascript_c_10ArrayMutator.html">Mutator</a></li>
+                                            <li><a href="javascript_c_11ArrayFilter.html">Filter</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href='#'>Function</a>
+                                        <ul>
+                                            <li><a href="javascript_c_12Functions.html">Functions</a></li>
+                                            <li><a href="javascript_c_13FunctionsDiffway.html">DifferentWay</a></li>
+                                            <li><a href="javascript_c_14GlobalVariable.html">GlobalVar</a></li>
+                                            <li><a href="javascript_c_15Closure.html">Clouser</a></li>
+                                            <li><a href="javascript_c_16Closure2.html">Clouser2</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href='#'>Oops</a>
+                                        <ul>
+                                            <li><a href="javascript_c_17Oops.html">OOPs</a></li>
+                                            <li><a href="javascript_c_18OliteralConst.html">ObjLiteral</a></li>
+                                            <li><a href="javascript_c_19GlobalNamespa.html">Namespace</a></li>
+                                            <li><a href="javascript_c_20PrivateMem.html">PrivateMemb</a></li>
+                                            <li><a href="javascript_c_23Prototype.html">Prototype</a></li>
+                                            <li><a href="javascript_c_24Overriding.html">Overriding</a></li>
+                                            <li><a href="javascript_c_26Abstract.html">Abstract</a></li>
+                                            <li><a href="javascript_c_27Polymorphism.html">Polymorphism</a></li>
+                                            <li><a href="javascript_c_28ObjectReflection.html">ObjReflectiton</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href='#'>OOPs</a>
+                                <ul>
+                                    <li><a href='javascript_Class.html'>Class</a></li>
+                                    <li><a href='javascript_pattern.html'>JS Pattern</a></li>
+                                    <li><a href='javascript_Callback.html'>Callback</a></li>
+                                    <li><a href='javascript_Promise.html'>Promise</a></li>
+                                </ul>
+                            </li>
+                            <li><a href='#'>Advanced JS</a>
+                                <ul>
+                                    <li><a href='javascript_webpack.html'>Webpack</a></li>
+                                    <li><a href='javascript_typescript.html'>Typescript Intro</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href='#'>Core JS</a></li>
+                        </ul>
+                    </li>
+                    <li><a href='#'>NodeJS</a></li>
+
+                </ul>
+            </nav>
         </div>
-        <nav id='cssmenu'>
-            
-            <div id="head-mobile"></div>
-            <div class="button"></div>
-            <ul>
-                <li class='active'><a href="../index.html">HOME</a></li>
-                <li><a href='../Bootstrap/htmlPages/grid.html'>Bootstrap</a></li>
-                <li><a href="#">AngularJS</a>
-                  <ul>
-                    <li><a href='#'>Introduction</a>
-                      <ul>
-                        <li><a href="../Angularjs/01_AngularIntro_Index.html">Basic</a></li>
-                        <li><a href="../Angularjs/03_AngularIntro_Module.html">Module</a></li>
-                        <li><a href="../Angularjs/02_AngularIntro_Controller.html">Controller MVC</a></li>
-                      </ul>
-                    </li>
-                    <li><a href='#'>Angular DOM</a>
-                      <ul>
-                        <li><a href="../Angularjs/01_AngularDOM_events.html">Events</a></li>
-                        <li><a href="../Angularjs/03_AngularDOM_ngShow.html">ng Show</a></li>
-                        <li><a href="../Angularjs/02_AngularDOM_ngHide.html">ng Hide</a></li>
-                      </ul>
-                    </li>
-                    <li><a href='#'>Filter</a>
-                      <ul>
-                        <li><a href="../Angularjs/02_FilterIndex_FormatData.html">Format Data</a></li>
-                        <li><a href="../Angularjs/03_Filter_SortData.html">Sort Data</a></li>
-                        <li><a href="../Angularjs/01_FilterData.html">Filter Data</a></li>
-                      </ul>
-                    </li>
-                    <li><a href='#'>Form</a>
-                      <ul>
-                        <li><a href="../Angularjs/01Form_index.html">Form</a></li>
-                        <li><a href="../Angularjs/03_AngularDOM_ngShow.html">CheckBox</a></li>
-                        <li><a href="../Angularjs/02_AngularDOM_ngHide.html">ShowHide</a></li>
-                        <li><a href="../Angularjs/01_AngularDOM_events.html">RadioButton</a></li>
-                        <li><a href="../Angularjs/01_AngularDOM_events.html">TrackingEvents</a></li>
-                        <li><a href="../Angularjs/01_AngularDOM_events.html">Validation</a></li>
-                        <li><a href="../Angularjs/01_AngularDOM_events.html">NestedValidation</a></li>
-                        <li><a href="../Angularjs/01_AngularDOM_events.html">FormSubmission</a></li>
-                        <li><a href="#">Select Element</a>
-                          <ul>
-                            <li><a href="../Angularjs/09SelectDD_htmlIndex.html">Html</a></li>
-                            <li><a href="../Angularjs/09SelectDD_arrayIndex.html">Array</a></li>
-                            <li><a href="../Angularjs/09SelectDD_objectIndex.html">Object</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><a href='#'>Service</a>
-                      <ul>                                
-                        <li><a href="../Angularjs/01_Service_index.html">Index</a></li>
-                      </ul>
-                    </li>
-                    <li><a href='#'>Directive</a>
-                      <ul>
-                        <li><a href='../Angularjs/00_Directive_index.html'>Index</a></li>
-                        <li><a href="#">Shared Scope</a>
-                          <ul>
-                            <li><a href='../Angularjs/01_Scope_inheritance_index.html'>Scoope Inheritance</a></li>
-                            <li><a href='../Angularjs/02_SharedScope_index.html'>SharedScope(SS)</a></li>
-                            <li><a href='../Angularjs/03_Shared_Scope_index.html'>SS-Modifying</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="#">Isolated Scope</a>
-                          <ul>
-                            <li><a href='../Angularjs/04_Inherited_ScopeChild_index.html'>InheritedScope(Child)</a></li>
-                            <li><a href='../Angularjs/05_Child_index.html'>Child-Directive</a></li>
-                            <li><a href='../Angularjs/06_Child_index.html'>Child-ng Repeat</a></li>
-                          </ul>
-                        </li>
-                        
-                        
-                        <li><a href="#">IsolatedScope</a>
-                          <ul>
-                            <li><a href='../Angularjs/07_Isolated_Scope_index2.html'>IsolatedScope @</a></li>
-                            <li><a href='../Angularjs/08_Isolated_Scope_index2.html'>IsolatedScope =</a></li>
-                            <li><a href='../Angularjs/09_Isolated_Scope_index2.html'>IsolatedScope &amp;</a></li>
-                          </ul>
-                        </li>
-                        
-                        <li><a href='#'>Directive Compile</a>
-                          <ul>
-                            <li><a href='../Angularjs/01_Directive_Compile_compile.html'>Compile</a></li>
-                            <li><a href='../Angularjs/02_ Directive_Compile_controller.html'>Controller</a></li>
-                            <li><a href='../Angularjs/03_Directive_Compile_PrePostLink.html'>LinkPrePost</a></li>
-                            <li><a href='../Angularjs/04_Directive_Compile_compileCtrlLink.html'>CompileControllerLink</a></li>
-                          </ul>
-                        </li>
-                        <li><a href='#'>Directive Link</a>
-                          <ul>
-                            <li><a href='../Angularjs/01_Directive_Link_interpolation.html'>Interpolation</a></li>
-                            <li><a href='../Angularjs/02_Directive_Link_modifyDomInCompile.html'>ModifyDom</a></li>
-                            <li><a href='../Angularjs/03_Directive_Link_DomEventHandler.html'>EventHandler</a></li>
-                            <li><a href='../Angularjs/04_Directive_Link_WithoutCompile.html'>WithoutCompile</a></li>
-                            <li><a href='../Angularjs/05_Directive_Link_CompileReturn.html'>CompileReturn</a></li>
-                            <li><a href='../Angularjs/06_Directive_Link_PostOnly.html'>PostOnly</a></li>
-                          </ul>
-                        </li>
-                        
-                      </ul>
-                    </li>
-                    <li><a href='#'>Routing</a>
-                      <ul>
-                        <li><a href="../Angularjs/01_Route_index.html">Index</a></li>
-                        <li><a href="#">Code</a>
-                          <ul>
-                            
-                            <li><a href="../Angularjs/02_Route_Intro.html">Intro Routing</a></li>
-                            <li><a href="../Angularjs/03_Route_Parameters.html">Parameters</a></li>
-                            <li><a href="../Angularjs/04_Route_Async.html">Asynchronous</a></li>
-                            <li><a href="../Angularjs/05_Route_Redirect.html">Redirect</a></li>
-                            <li><a href="../Angularjs/06_Route_events.html">Events</a></li>
-                            <li><a href="../Angularjs/Routing/code/06 Route-routeService-events with Loading/index.htm">With Loading</a></li>
-                            <li><a href="../Angularjs/Routing/code/07 Route-routeService-with-resolve/index.htm">With Resolve</a></li>
-                          </ul>
-                          
-                        </li>
-                        
-                      </ul>
-                    </li>
-                    <li><a href='#'>UI Route</a>
-                      <ul>
-                        <li><a href="../Angularjs/01UiRoute_index.html">Index</a></li>
-                        <li><a href="#">Code</a>
-                          <ul>
-                            
-                            <li><a href="../Angularjs/02UIRoute_Intro_Routing_index.html">Intro Routing</a></li>
-                            <li><a href="../Angularjs/03_UIRoute_RouteWithParams.html">Parameters</a></li>
-                            <li><a href="../Angularjs/04_UIRoute_StateService.html">State</a></li>
-                            <li><a href="../Angularjs/05_UIRoute_WithResolve.html">Resolve</a></li>
-                            <li><a href="../Angularjs/06_UIRoute_SingleView.html">SingleView</a></li>
-                            <li><a href="../Angularjs/07_UIRoute_MultipleViews.html">MultipleView</a></li>
-                            
-                          </ul>
-                          
-                        </li>
-                        
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li class="active"><a href='#'>Javascript</a>
-                	<ul>
-                    	<li><a href='#'>OOPs</a>
-                            <ul>
-                                <li><a href='javascript_Class.html'>Class</a></li>
-                                <li><a href='javascript_pattern.html'>JS Pattern</a></li>
-                              <li><a href='javascript_Callback.html'>Callback</a></li>
-                        <li><a href='javascript_Promise.html'>Promise</a></li>
-                            </ul>
-                        </li>
-                        <li><a href='#'>Advanced JS</a>
-                            <ul>
-                                <li><a href='javascript_webpack.html'>Webpack</a></li>
-                                <li><a href='javascript_typescript.html'>Typescript Intro</a></li>
-                            </ul>
-                        </li>
-                        
-                        <li><a href='#'>Core JS</a></li>
-                    </ul>
-                </li>
-                <li><a href='#'>NodeJS</a></li>
-                
-              </ul>
-        </nav>
-      </div>
     </header>
 
-    
+
 
     <section id="newsletter">
-      <div class="container">
-        <!--<h1>Follow us for latest update  : </h1>
+        <div class="container">
+            <!--<h1>Follow us for latest update  : </h1>
         <ul id="follow-icons">
         	<li><i class="fa fa-twitter" aria-hidden="true"></i></li>
             <li><i class="fa fa-youtube-play" aria-hidden="true"></i></li>            
         </ul>-->
-        
-      </div>
+
+        </div>
     </section>
 
     <section id="main">
-      <div class="container">
-      <h1>3 ways to define a JavaScript class</h1>
-    <h3>Introduction</h3>
-    <p>JavaScript is a very flexible object-oriented language when it comes to syntax. In this article you can find three ways of defining and instantiating an object. Even if you have already picked your favorite way of doing it, it helps to know some alternatives
-        in order to read other people's code.</p>
-    <p>It's important to note that there are no classes in JavaScript. Functions can be used to somewhat simulate classes, but in general JavaScript is a class-less language. Everything is an object. And when it comes to inheritance, objects inherit
-        <from></from>
-        objects, not classes from classes as in the "class"-ical languages.</p>
-    <h3>1. Using a function</h3>
-    <p>This is probably one of the most common ways. You define a normal JavaScript function and then create an object by using the <code>new</code> keyword. To define properties and methods for an object created using <code>function()</code>, you use the
-        <code>this</code> keyword, as seen in the following example.</p>
-    <span class="filename">Example : app.js</span>
-    <pre><code class="language-javascript">
+        <div class="container">
+            <h1>3 ways to define a JavaScript class</h1>
+            <h3>Introduction</h3>
+            <p>JavaScript is a very flexible object-oriented language when it comes to syntax. In this article you can find three ways of defining and instantiating an object. Even if you have already picked your favorite way of doing it, it helps to know
+                some alternatives in order to read other people's code.</p>
+            <p>It's important to note that there are no classes in JavaScript. Functions can be used to somewhat simulate classes, but in general JavaScript is a class-less language. Everything is an object. And when it comes to inheritance, objects inherit
+                <from></from>
+                objects, not classes from classes as in the "class"-ical languages.</p>
+            <h3>1. Using a function</h3>
+            <p>This is probably one of the most common ways. You define a normal JavaScript function and then create an object by using the <code>new</code> keyword. To define properties and methods for an object created using <code>function()</code>, you
+                use the
+                <code>this</code> keyword, as seen in the following example.</p>
+            <span class="filename">Example : app.js</span>
+            <pre><code class="language-javascript">
     function Apple (type) {
     this.type = type;
     this.color = "red";
@@ -240,19 +299,19 @@
 function getAppleInfo() {
     return this.color + ' ' + this.type + ' apple';
 }</code></pre>
-    <p>To instantiate an object using the Apple <em>constructor function</em>, set some properties and call methods you can do the following:</p>
-    <span class="filename">Example : app.js</span>
-    <pre><code class="language-javascript">
+            <p>To instantiate an object using the Apple <em>constructor function</em>, set some properties and call methods you can do the following:</p>
+            <span class="filename">Example : app.js</span>
+            <pre><code class="language-javascript">
     var apple = new Apple('macintosh');
 apple.color = "reddish";
 alert(apple.getInfo());
 </code></pre>
-    <h3>1.1. Methods defined internally</h3>
-    <p>In the example above you see that the method getInfo() of the Apple "class" was defined in a separate function getAppleInfo(). While this works fine, it has one drawback – you may end up defining a lot of these functions and they are all in the "global
-        namespece". This means you may have naming conflicts if you (or another library you are using) decide to create another function with the same name. The way to prevent pollution of the global namespace, you can define your methods within the constructor
-        function, like this:</p>
-    <span class="filename">Example : app.js</span>
-    <pre><code class="language-javascript">
+            <h3>1.1. Methods defined internally</h3>
+            <p>In the example above you see that the method getInfo() of the Apple "class" was defined in a separate function getAppleInfo(). While this works fine, it has one drawback – you may end up defining a lot of these functions and they are all in
+                the "global namespece". This means you may have naming conflicts if you (or another library you are using) decide to create another function with the same name. The way to prevent pollution of the global namespace, you can define your
+                methods within the constructor function, like this:</p>
+            <span class="filename">Example : app.js</span>
+            <pre><code class="language-javascript">
     function Apple (type) {
     this.type = type;
     this.color = "red";
@@ -261,11 +320,11 @@ alert(apple.getInfo());
     };
 }
 </code></pre>
-    <p>Using this syntax changes nothing in the way you instantiate the object and use its properties and methods.</p>
-    <h3>1.2. Methods added to the prototype</h3>
-    <p>A drawback of 1.1. is that the method getInfo() is recreated every time you create a new object. Sometimes that may be what you want, but it's rare. A more inexpensive way is to add getInfo() to the <em>prototype</em> of the constructor function.</p>
-    <span class="filename">Example : app.js</span>
-    <pre><code class="language-javascript">
+            <p>Using this syntax changes nothing in the way you instantiate the object and use its properties and methods.</p>
+            <h3>1.2. Methods added to the prototype</h3>
+            <p>A drawback of 1.1. is that the method getInfo() is recreated every time you create a new object. Sometimes that may be what you want, but it's rare. A more inexpensive way is to add getInfo() to the <em>prototype</em> of the constructor function.</p>
+            <span class="filename">Example : app.js</span>
+            <pre><code class="language-javascript">
         function Apple (type) {
     this.type = type;
     this.color = "red";
@@ -275,16 +334,16 @@ Apple.prototype.getInfo = function() {
     return this.color + ' ' + this.type + ' apple';
 };
     </code></pre>
-    <p>Again, you can use the new objects exactly the same way as in 1. and 1.1.</p>
-    <h3>2. Using object literals</h3>
-    <p>Literals are shorter way to define objects and arrays in JavaScript. To create an empty object using you can do:<br>
-        <code>var o = {};</code><br> instead of the "normal" way:<br>
-        <code>var o = new Object();</code><br> For arrays you can do:<br>
-        <code>var a = [];</code><br> instead of:<br>
-        <code>var a = new Array();</code><br> So you can skip the class-like stuff and create an instance (object) immediately. Here's the same functionality as described in the previous examples, but using object literal syntax this time:</p>
+            <p>Again, you can use the new objects exactly the same way as in 1. and 1.1.</p>
+            <h3>2. Using object literals</h3>
+            <p>Literals are shorter way to define objects and arrays in JavaScript. To create an empty object using you can do:<br>
+                <code>var o = {};</code><br> instead of the "normal" way:<br>
+                <code>var o = new Object();</code><br> For arrays you can do:<br>
+                <code>var a = [];</code><br> instead of:<br>
+                <code>var a = new Array();</code><br> So you can skip the class-like stuff and create an instance (object) immediately. Here's the same functionality as described in the previous examples, but using object literal syntax this time:</p>
 
-    <span class="filename">Example : app.js</span>
-    <pre><code class="language-javascript">
+            <span class="filename">Example : app.js</span>
+            <pre><code class="language-javascript">
             var apple = {
     type: "macintosh",
     color: "red",
@@ -293,16 +352,16 @@ Apple.prototype.getInfo = function() {
     }
 }
         </code></pre>
-    <p>In this case you don't need to (and cannot) create an instance of the class, it already exists. So you simply start using this instance.</p>
-    <span class="filename">Example : app.js</span>
-    <pre><code class="language-javascript">apple.color = "reddish";
+            <p>In this case you don't need to (and cannot) create an instance of the class, it already exists. So you simply start using this instance.</p>
+            <span class="filename">Example : app.js</span>
+            <pre><code class="language-javascript">apple.color = "reddish";
 alert(apple.getInfo());</code></pre>
-    <p>Such an object is also sometimes called <em>singleton</em>. In "classical" languages such as Java, <em>singleton</em> means that you can have only one single instance of this class at any time, you cannot create more objects of the same class. In
-        JavaScript (no classes, remember?) this concept makes no sense anymore since all objects are singletons to begin with. </p>
-    <h3>3. Singleton using a function</h3>
-    <p>The third way presented in this article is a combination of the other two you already saw. You can use a function to define a singleton object. Here's the syntax:</p>
-    <span class="filename">Example : app.js</span>
-    <pre><code class="language-javascript">
+            <p>Such an object is also sometimes called <em>singleton</em>. In "classical" languages such as Java, <em>singleton</em> means that you can have only one single instance of this class at any time, you cannot create more objects of the same class.
+                In JavaScript (no classes, remember?) this concept makes no sense anymore since all objects are singletons to begin with. </p>
+            <h3>3. Singleton using a function</h3>
+            <p>The third way presented in this article is a combination of the other two you already saw. You can use a function to define a singleton object. Here's the syntax:</p>
+            <span class="filename">Example : app.js</span>
+            <pre><code class="language-javascript">
         var apple = new function() {
     this.type = "macintosh";
     this.color = "red";
@@ -311,106 +370,107 @@ alert(apple.getInfo());</code></pre>
     };
 }
     </code></pre>
-    <p>So you see that this is very similar to 1.1. discussed above, but the way to use the object is exactly like in 2.</p>
-    <span class="filename">Example : app.js</span>
-    <pre><code class="language-javascript">
+            <p>So you see that this is very similar to 1.1. discussed above, but the way to use the object is exactly like in 2.</p>
+            <span class="filename">Example : app.js</span>
+            <pre><code class="language-javascript">
         apple.color = "reddish";
 alert(apple.getInfo());
     </code></pre>
-    <p><code>new function(){...}</code> does two things at the same time: define a function (an anonymous constructor function) and invoke it with <code>new</code>. It might look a bit confusing if you're not used to it and it's not too common, but hey,
-        it's an option, when you really want a constructor function that you'll use only once and there's no sense of giving it a name.</p>
-    <hr>
-    <h2>The <em><strong>this</strong></em> Keyword</h2>
-    <p>In JavaScript, the thing called <strong>this</strong>, is the object that "owns" the JavaScript code.</p>
-    <p>The value of <strong>this</strong>, when used in a function, is the object that "owns" the function.</p>
-    <p>The value of <strong>this</strong>, when used in an object, is the object itself.
-    </p>
-    <p>The <strong>this</strong> keyword in an object constructor does not have a value. It is only a substitute for the new object.</p>
-    <p>The value of <strong>this</strong> will become the new object when the constructor is used to create an object.</p>
-    <p>Note that <strong>this</strong> is not a variable. It is a keyword. You cannot change the value of <strong>this</strong>.</p>
-    <hr>
-    <h2>Did You Know?</h2>
-    <p>As you can see, JavaScript has object versions of the primitive data types String, Number, and Boolean.</p>
-    <p>There is no reason to create complex objects. Primitive values execute much faster.</p>
+            <p><code>new function(){...}</code> does two things at the same time: define a function (an anonymous constructor function) and invoke it with <code>new</code>. It might look a bit confusing if you're not used to it and it's not too common, but
+                hey, it's an option, when you really want a constructor function that you'll use only once and there's no sense of giving it a name.</p>
+            <hr>
+            <h2>The <em><strong>this</strong></em> Keyword</h2>
+            <p>In JavaScript, the thing called <strong>this</strong>, is the object that "owns" the JavaScript code.</p>
+            <p>The value of <strong>this</strong>, when used in a function, is the object that "owns" the function.</p>
+            <p>The value of <strong>this</strong>, when used in an object, is the object itself.
+            </p>
+            <p>The <strong>this</strong> keyword in an object constructor does not have a value. It is only a substitute for the new object.</p>
+            <p>The value of <strong>this</strong> will become the new object when the constructor is used to create an object.</p>
+            <p>Note that <strong>this</strong> is not a variable. It is a keyword. You cannot change the value of <strong>this</strong>.</p>
+            <hr>
+            <h2>Did You Know?</h2>
+            <p>As you can see, JavaScript has object versions of the primitive data types String, Number, and Boolean.</p>
+            <p>There is no reason to create complex objects. Primitive values execute much faster.</p>
 
-    <p>And there is no reason to use <strong>new Array()</strong>. Use array literals instead: <strong>[]</strong></p>
-    <p>And there is no reason to use <strong>new RegExp()</strong>. Use pattern literals instead:<strong> /()/</strong></p>
-    <p>And there is no reason to use <strong>new Function()</strong>. Use function expressions instead:<strong> function () {}.</strong></p>
-    <p>And there is no reason to use <strong>new Object()</strong>. Use object literals instead:<strong> {}</strong></p>
-    <hr>
-    <p>In JavaScript, almost &quot;everything&quot; is an object.</p>
+            <p>And there is no reason to use <strong>new Array()</strong>. Use array literals instead: <strong>[]</strong></p>
+            <p>And there is no reason to use <strong>new RegExp()</strong>. Use pattern literals instead:<strong> /()/</strong></p>
+            <p>And there is no reason to use <strong>new Function()</strong>. Use function expressions instead:<strong> function () {}.</strong></p>
+            <p>And there is no reason to use <strong>new Object()</strong>. Use object literals instead:<strong> {}</strong></p>
+            <hr>
+            <p>In JavaScript, almost &quot;everything&quot; is an object.</p>
 
-    <ul>
-        <li>Booleans can be objects (if defined with the <strong>new</strong> keyword)</li>
-        <li>Numbers can be objects (if defined with the <strong>new</strong> keyword)</li>
-        <li>Strings can be objects (if defined with the <strong>new</strong> keyword)</li>
-        <li>Dates are always objects</li>
-        <li>Maths are always objects</li>
-        <li>Regular expressions are always objects</li>
-        <li>Arrays are always objects</li>
-        <li>Functions are always objects</li>
-        <li>Objects are always objects</li>
-    </ul>
-    <p>All JavaScript values, except primitives, are objects.</p>
+            <ul>
+                <li>Booleans can be objects (if defined with the <strong>new</strong> keyword)</li>
+                <li>Numbers can be objects (if defined with the <strong>new</strong> keyword)</li>
+                <li>Strings can be objects (if defined with the <strong>new</strong> keyword)</li>
+                <li>Dates are always objects</li>
+                <li>Maths are always objects</li>
+                <li>Regular expressions are always objects</li>
+                <li>Arrays are always objects</li>
+                <li>Functions are always objects</li>
+                <li>Objects are always objects</li>
+            </ul>
+            <p>All JavaScript values, except primitives, are objects.</p>
 
 
-    <h2>JavaScript Primitives</h2>
-    <p>A <strong>primitive value</strong> is a value that has no properties or methods.</p>
-    <p>A <strong>primitive data type</strong> is data that has a primitive value.</p>
-    <p>JavaScript defines 5 types of primitive data types:</p>
-    <ul>
-        <li>string</li>
-        <li>number</li>
-        <li>boolean</li>
-        <li>null</li>
-        <li>undefined</li>
-    </ul>
+            <h2>JavaScript Primitives</h2>
+            <p>A <strong>primitive value</strong> is a value that has no properties or methods.</p>
+            <p>A <strong>primitive data type</strong> is data that has a primitive value.</p>
+            <p>JavaScript defines 5 types of primitive data types:</p>
+            <ul>
+                <li>string</li>
+                <li>number</li>
+                <li>boolean</li>
+                <li>null</li>
+                <li>undefined</li>
+            </ul>
 
-    <p>Primitive values are immutable (they are hardcoded and therefore cannot be changed).</p>
+            <p>Primitive values are immutable (they are hardcoded and therefore cannot be changed).</p>
 
-    <div class="w3-panel w3-note">
-        <p>if x = 3.14, you can change the value of x. But you cannot change the value of 3.14.</p>
-    </div>
+            <div class="w3-panel w3-note">
+                <p>if x = 3.14, you can change the value of x. But you cannot change the value of 3.14.</p>
+            </div>
 
-    <h2>String Objects</h2>
-    <p>Normally, strings are created as primitives: <strong>var firstName = &quot;John&quot;</strong></p>
-    <p>But strings can also be created as objects using the <strong>new</strong> keyword: <strong>var 
+            <h2>String Objects</h2>
+            <p>Normally, strings are created as primitives: <strong>var firstName = &quot;John&quot;</strong></p>
+            <p>But strings can also be created as objects using the <strong>new</strong> keyword: <strong>var 
 firstName = new 
 String(&quot;John&quot;)</strong></p>
-    <h2>Number Objects</h2>
-    <p>Normally, numbers are created as primitives: <strong>var x = 123</strong></p>
-    <p>But numbers can also be created as objects using the <strong>new</strong> keyword: <strong>var x = new 
+            <h2>Number Objects</h2>
+            <p>Normally, numbers are created as primitives: <strong>var x = 123</strong></p>
+            <p>But numbers can also be created as objects using the <strong>new</strong> keyword: <strong>var x = new 
 Number(123)</strong></p>
-    <h2>Boolean Objects</h2>
-    <p>Normally, booleans are created as primitives: <strong>var x = 
+            <h2>Boolean Objects</h2>
+            <p>Normally, booleans are created as primitives: <strong>var x = 
 false</strong></p>
-    <p>But booleans can also be created as objects using the <strong>new</strong> keyword: <strong>var x = new 
+            <p>But booleans can also be created as objects using the <strong>new</strong> keyword: <strong>var x = new 
 Boolean(false)</strong></p>
 
-    <h2>JavaScript Objects are Mutable</h2>
-    <p>Objects are mutable: They are addressed by reference, not by value.</p>
-    <p>If person is an object, the following statement will not create a copy of person:</p>
-    <div>
-        var x = person;&nbsp; // This will not create a copy of person.
-    </div>
-    <p>The object x is <strong>not a copy</strong> of person. It <strong>is</strong> person. Both x and person are the same object.</p>
-    <p>Any changes to x will also change person, because x and person are the same object. </p>
-    <span class="filename">Example : app.js</span>
-    <pre><code class="language-javascript">
+            <h2>JavaScript Objects are Mutable</h2>
+            <p>Objects are mutable: They are addressed by reference, not by value.</p>
+            <p>If person is an object, the following statement will not create a copy of person:</p>
+            <div>
+                var x = person;&nbsp; // This will not create a copy of person.
+            </div>
+            <p>The object x is <strong>not a copy</strong> of person. It <strong>is</strong> person. Both x and person are the same object.</p>
+            <p>Any changes to x will also change person, because x and person are the same object. </p>
+            <span class="filename">Example : app.js</span>
+            <pre><code class="language-javascript">
 var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}
 var x = person;
 x.age = 10;           // This will change both x.age and person.age
 </code></pre>
-    <p><strong>Note: </strong>JavaScript variables are not mutable. Only JavaScript objects.</p>
+            <p><strong>Note: </strong>JavaScript variables are not mutable. Only JavaScript objects.</p>
 
 
-    <div style="display:none">http://www.phpied.com/3-ways-to-define-a-javascript-class/</div>
+            <div style="display:none">http://www.phpied.com/3-ways-to-define-a-javascript-class/</div>
 
         </div>
     </section>
 
     <footer>
-      <p>UI Tutorials collection by Prabakaran, 2017</p>
+        <p>UI Tutorials collection by Prabakaran, 2017</p>
     </footer>
-  </body>
+</body>
+
 </html>

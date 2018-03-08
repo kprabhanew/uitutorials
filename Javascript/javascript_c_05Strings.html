@@ -9,10 +9,10 @@
     <meta name="author" content="Prabakaran">
     <title>UI Tutorials | Welcome</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="https:maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/MenuStyle.css">
     <link rel="stylesheet" href="../css/SiteStyle.css">
-    <script src='http:cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="../scripts/menuScript.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/prism.css">
     <script src="../scripts/prism.js"></script>
@@ -28,7 +28,7 @@
             a.async = 1;
             a.src = g;
             m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https:www.google-analytics.com/analytics.js', 'ga');
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-103420198-1', 'auto');
         ga('send', 'pageview');
@@ -47,7 +47,7 @@
                 <div id="head-mobile"></div>
                 <div class="button"></div>
                 <ul>
-                    <li><a href="../index.html">HOME</a></li>
+                    <li class='active'><a href="../index.html">HOME</a></li>
                     <li><a href='../Bootstrap/htmlPages/grid.html'>Bootstrap</a></li>
                     <li><a href="#">AngularJS</a>
                         <ul>
@@ -261,145 +261,143 @@
         </div>
     </header>
 
+
+
+
+
     <section id="main">
         <div class="container">
-            <article id="main-col">
-                <h1>Webpack</h1>
+            <h2>Strings in JavaScript</h2>
+            <strong>In this page we will discuss different functions that are available to manipulate strings in JavaScript. </strong>
+            <p>A string is any text inside quotes. You can use either single or double quotes.</p>
 
-                <ol>
-                    <li>Install npm : npm init (Create Package.json)</li>
-                    <li>Add html file (index.html)</li>
-                    <li>Create Source folder (dir\source)</li>
-                    <li>Create js file 'Message.js' (Message class defenition)</li>
-                    <li>Add app.js (import Message.js )</li>
-                    <li>Install jquery : npm install --save jquery</li>
-                    <li>Import jquery into 'app.js' and write the code</li>
-                    <li>loader needs to be installed to translate the ES6 code to plain js code, so install webpack</li>
-                    <li>Install webpack : npm install --save-dev webpack</li>
-                    <li>Install loader : npm install --save-dev babel-core babel-loader babel-preset-es2015</li>
-                    <li>Webpack configuration : webpack.config.js (specify the entry point 'app.js'. this app.js imported other js files)</li>
-                    <li>Run Cmd : node_modules\.bin\webpack --display-error-details</li>
-                </ol>
-                <pre>
-Task Runners Vs Bundlers
-Executes series of js tasks at client side
-Transpile -> SASS to CSS
-Bundlers => Module System To Plain JS
+            <span class="filename">Example : </span>
+            <pre><code class="language-javascript">
+                    var string1 = "string in double quotes"
+                    var string2 = 'string in single quotes'
+            </code>
+            </pre>
+            <p>Concatenating strings : There are 2 options to concatenate strings in JavaScript. You could either use + operator or concat() method</p>
+            <strong>Example : Concatenating strings using + operator</strong>
+            <span class="filename">Example : </span>
+            <pre><code class="language-javascript">
+                    var string1 = "Hello"
+                    var string2 = "JavaScript"
+                    var result = string1 + " " + string2;
+                    alert(result);
+            </code>
+            </pre>
+            <p>Output : Hello JavaScript</p>
+            <strong>Example : Concatenating strings using concat() method</strong>
+            <span class="filename">Example : </span>
+            <pre><code class="language-javascript">
+                    var string1 = "Hello"
+                    var string2 = "JavaScript"
+                    var result = string1.concat(" ", string2);
+                    alert(result);
+            </code>
+            </pre>
+            <p>Output : Hello JavaScript</p>
+            <p><strong>If you want single quotes inside a string, </strong>there are 2 options</p>
+            <p><strong>Option 1 : </strong> Place your entire string in double quotes, and use single quotes inside the string wherever you need them.</p>
+            <span class="filename">Example : </span>
+            <pre><code class="language-javascript">
+                    var myString = "Welcome to 'JavaScript' Training";
+                    alert(myString);
+            </code>
+            </pre>
+            <p>Output : Welcome to 'JavaScript' Training</p>
 
-Frameworks For Task Runners
-1)Grunt
-2)Gulp
+            <p><strong>If you want single quotes inside a string, </strong>there are 2 options</p>
+            <p><strong>Option 2 : </strong> If you prefer to place your entire string in single quotes, then use escape sequence character \ with a single quote inside the string.</p>
+            <span class="filename">Example : </span>
+            <pre><code class="language-javascript">
+                    var myString = 'Welcome to \'JavaScript\' Training';
+                    alert(myString);
+            </code>
+            </pre>
+            <p>Output : Welcome to 'JavaScript' Training</p>
 
-Frameworks For Bundlers
-1)Browserify
-2)Webpack
 
-File monitoring tool - Watching
-</pre>
+            <p><strong>Please Note : </strong> You can use the above 2 ways if you need double quotes inside a string</p>
+            <p><strong>Converting a string to uppercase : </strong>Use toUpperCase() method</p>
+            <span class="filename">Example : </span>
+            <pre><code class="language-javascript">
+                    var upperCaseString = "JavaScript";
+                    alert(upperCaseString.toUpperCase());
+            </code>
+            </pre>
+            <p>Output : JAVASCRIPT</p>
 
-                <span class="filename">Example : package.json</span>
-                <pre><code class="language-javascript">
-    {
-    "name": "myapp",
-    "version": "1.0.0",
-    "description": "",
-    "main": "app.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "jquery": "^3.2.1"
-    },
-    "devDependencies": {
-        "babel": "^6.23.0",
-        "babel-core": "^6.25.0",
-        "babel-loader": "^7.1.1",
-        "babel-preset-es2015": "^6.24.1",
-        "webpack": "^3.4.1",
-        "webpack-dev-server": "^2.6.1"
-    }
-}
-    </code></pre>
 
-                <span class="filename">Example : app.js</span>
-                <pre><code class="language-javascript">
-    //The whole Message Defenition will be available here, 'msg' is the class here indirectly
-import msg from './Message.js';
-import $ from 'jquery';
+            <p><strong>Converting a string to lowercase :</strong>Use toLowerCase() method</p>
+            <span class="filename">Example : </span>
+            <pre><code class="language-javascript">
+                    var lowerCaseString = "JavaScript";
+                    alert(lowerCaseString.toLowerCase());
+            </code>
+            </pre>
+            <p>Output : javascript</p>
 
-$(function() {
-    $('#showbtn').on("click", function() {
-        var o = new msg();
-        o.show();
-    })
-})
-    </code></pre>
+            <p><strong>Length of string javascript : </strong>Use length property</p>
+            <span class="filename">Example : </span>
+            <pre><code class="language-javascript">
+                    Example : alert("JavaScript".length);
+            </code>
+            </pre>
+            <p>Output : 10</p>
 
-                <span class="filename">Example : Message.js</span>
-                <pre><code class="language-javascript">
-    //js Class ES2015
-export default class Message {
-    show() {
-        alert('Hello World')
-    }
-}
-    </code></pre>
-                <span class="filename">Example : webpack.config.js</span>
-                <pre><code class="language-javascript">
-    var path = require('path');
-var webpack = require('webpack');
+            <span class="filename">Example : </span>
+            <pre><code class="language-javascript">
+                    var myString = "Hello JavaScript";
+                    alert(myString.length);
+            </code>
+            </pre>
+            <p>Output : 16</p>
 
-module.exports = {
-    entry: ['./source/app.js'],
-    output: {
-        path: path.join(__dirname, "/build/"),
-        //publicPath: '/build/js',
-        filename: 'app.all.js'
-    },
-    module: {
-        loaders: [{
-            test: /\.js$/,
-            //include: path.resolve(__dirname, "/build/js"),
-            loader: 'babel-loader',
-            query: {
-                presets: ['es2015']
-            }
-        }]
-    }
-}
-    </code></pre>
-                <img src="images/webpack-structure.png" />
-                <span class="filename">Example : index.html</span>
-                <pre><code class="language-html">
-    &lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
+            <p><strong>Remove whitespace from both ends of a string : </strong>Use trim() method</p>
+            <span class="filename">Example : </span>
+            <pre><code class="language-javascript">
+                    var string1 = " AB ";
+                    var string2 = " CD ";
+                    var result = string1.trim() + string2.trim();
+                    alert(result);
+            </code>
+            </pre>
+            <p>Output : ABCD</p>
 
-&lt;head&gt;
-    &lt;title&gt;&lt;/title&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+            <p><strong>Replacing strings in javascript : </strong>Use replace() method. This method searches a given string for a specified value or a regular expression, replaces the specified values with the replacement values and returns a new string.
+                This method does not change the original string.</p>
+            <span class="filename">Example :Replaces JavaScript with World </span>
+            <pre><code class="language-javascript">
+                    var myString = "Hello JavaScript";
+                    var result = myString.replace("JavaScript", "World");
+                    alert(result);
+            </code>
+            </pre>
+            <p>Output : Hello World</p>
 
-    &lt;script type="text/javascript" src="build/app.all.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
+            <p><strong>Perform a case-sensitive global replacement.</strong>In this example, we are using a regular expression between the 2 forward slashes(//). The letter g after the forward slash specifies a global replacement. The match here is case
+                sensitive. This means Blue(with capital B) is not replaced with green.</p>
 
-&lt;body&gt;
-    &lt;button id="showbtn"&gt;Show&lt;/button&gt;
-&lt;/body&gt;
+            <pre><code class="language-javascript">
+                    var myString = "A Blue bottle with a blue liquid is on a blue table";
+                    var result = myString.replace(/blue/g, "green");
+                    alert(result);
+            </code>
+            </pre>
+            <p>Output : A Blue bottle with a green liquid is on a green table</p>
 
-&lt;/html&gt;
-    </code></pre>
-                <a href="http://semaphoreci.com/community/tutorials/setting-up-angular-2-with-webpack" target="_blank">Ref</a>
-                <a href="https://webpack.github.io/docs/list-of-tutorials.html" target="_blank">Ref</a>
+            <p><strong>Example Perform a case-insensitive global replacement. </strong>The letters gi after the forward slash indicates to do global case-insensitive replacement. Notice that the word Blue(with capital B) is also replaced with green.</p>
 
-            </article>
-            <aside id="sidebar">
-                <div class="dark">
-                    <h3>What We Do</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius auctor lacus nec feugiat. Phasellus sit amet ex ipsum. Praesent pharetra tincidunt tempor. Etiam velit eros, dapibus eget porta in, lacinia et magna</p>
-                </div>
-            </aside>
+            <pre><code class="language-javascript">
+                    var myString = "A Blue bottle with a blue liquid is on a blue table";
+                    var result = myString.replace(/blue/gi, "green");
+                    alert(result);
+            </code>
+            </pre>
+            <p>Output : A green bottle with a green liquid is on a green table </p>
+            <!-- -->
         </div>
     </section>
 

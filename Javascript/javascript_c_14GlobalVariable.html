@@ -9,10 +9,10 @@
     <meta name="author" content="Prabakaran">
     <title>UI Tutorials | Welcome</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="https:maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/MenuStyle.css">
     <link rel="stylesheet" href="../css/SiteStyle.css">
-    <script src='http:cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="../scripts/menuScript.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/prism.css">
     <script src="../scripts/prism.js"></script>
@@ -28,7 +28,7 @@
             a.async = 1;
             a.src = g;
             m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https:www.google-analytics.com/analytics.js', 'ga');
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-103420198-1', 'auto');
         ga('send', 'pageview');
@@ -47,7 +47,7 @@
                 <div id="head-mobile"></div>
                 <div class="button"></div>
                 <ul>
-                    <li><a href="../index.html">HOME</a></li>
+                    <li class='active'><a href="../index.html">HOME</a></li>
                     <li><a href='../Bootstrap/htmlPages/grid.html'>Bootstrap</a></li>
                     <li><a href="#">AngularJS</a>
                         <ul>
@@ -260,146 +260,140 @@
             </nav>
         </div>
     </header>
-
     <section id="main">
         <div class="container">
-            <article id="main-col">
-                <h1>Webpack</h1>
-
-                <ol>
-                    <li>Install npm : npm init (Create Package.json)</li>
-                    <li>Add html file (index.html)</li>
-                    <li>Create Source folder (dir\source)</li>
-                    <li>Create js file 'Message.js' (Message class defenition)</li>
-                    <li>Add app.js (import Message.js )</li>
-                    <li>Install jquery : npm install --save jquery</li>
-                    <li>Import jquery into 'app.js' and write the code</li>
-                    <li>loader needs to be installed to translate the ES6 code to plain js code, so install webpack</li>
-                    <li>Install webpack : npm install --save-dev webpack</li>
-                    <li>Install loader : npm install --save-dev babel-core babel-loader babel-preset-es2015</li>
-                    <li>Webpack configuration : webpack.config.js (specify the entry point 'app.js'. this app.js imported other js files)</li>
-                    <li>Run Cmd : node_modules\.bin\webpack --display-error-details</li>
-                </ol>
-                <pre>
-Task Runners Vs Bundlers
-Executes series of js tasks at client side
-Transpile -> SASS to CSS
-Bundlers => Module System To Plain JS
-
-Frameworks For Task Runners
-1)Grunt
-2)Gulp
-
-Frameworks For Bundlers
-1)Browserify
-2)Webpack
-
-File monitoring tool - Watching
-</pre>
-
-                <span class="filename">Example : package.json</span>
-                <pre><code class="language-javascript">
-    {
-    "name": "myapp",
-    "version": "1.0.0",
-    "description": "",
-    "main": "app.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "jquery": "^3.2.1"
-    },
-    "devDependencies": {
-        "babel": "^6.23.0",
-        "babel-core": "^6.25.0",
-        "babel-loader": "^7.1.1",
-        "babel-preset-es2015": "^6.24.1",
-        "webpack": "^3.4.1",
-        "webpack-dev-server": "^2.6.1"
-    }
-}
-    </code></pre>
-
-                <span class="filename">Example : app.js</span>
-                <pre><code class="language-javascript">
-    //The whole Message Defenition will be available here, 'msg' is the class here indirectly
-import msg from './Message.js';
-import $ from 'jquery';
-
-$(function() {
-    $('#showbtn').on("click", function() {
-        var o = new msg();
-        o.show();
-    })
-})
-    </code></pre>
-
-                <span class="filename">Example : Message.js</span>
-                <pre><code class="language-javascript">
-    //js Class ES2015
-export default class Message {
-    show() {
-        alert('Hello World')
-    }
-}
-    </code></pre>
-                <span class="filename">Example : webpack.config.js</span>
-                <pre><code class="language-javascript">
-    var path = require('path');
-var webpack = require('webpack');
-
-module.exports = {
-    entry: ['./source/app.js'],
-    output: {
-        path: path.join(__dirname, "/build/"),
-        //publicPath: '/build/js',
-        filename: 'app.all.js'
-    },
-    module: {
-        loaders: [{
-            test: /\.js$/,
-            //include: path.resolve(__dirname, "/build/js"),
-            loader: 'babel-loader',
-            query: {
-                presets: ['es2015']
+            <h2>Local and global variables in javascript</h2>
+            <p>In JavaScript there are 2 types of variables</p>
+            <ol>
+                <li>Local variables</li>
+                <li>Global variables</li>
+            </ol>
+            <p><strong>JavaScript local variables :</strong> Local variables are the variables declared with in a function. These variables have local scope meaning these are available only inside the function that contains them. Local variables are created
+                when a function starts, and deleted as soon as the function completes execution.</p>
+            <span class="filename">Example : </span>
+            <pre><code class="language-javascript">
+            function helloWorld()
+            {
+                var greeting = "Hello";
+                // The variable greeting is available in the function
+                greeting = greeting + " JavaScript";
+                alert(greeting);
             }
-        }]
-    }
-}
-    </code></pre>
-                <img src="images/webpack-structure.png" />
-                <span class="filename">Example : index.html</span>
-                <pre><code class="language-html">
-    &lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
+            
+            helloWorld();
+            
+            // The variable greeting is not available outside the function
+            // Error : 'greeting' is undefined
+            
+            alert(greeting);
+            </code>
+            </pre>
+            <p><strong>JavaScript global variables : </strong>Global variables are the variables declared outside a function. Global variables have global scope meaning all scripts and functions on the page can access them. The lifetime of a global variable
+                starts with it's declaration and is deleted when the page is closed.</p>
+            <span class="filename">Example : </span>
+            <pre><code class="language-javascript">
+                var greeting = "Hello";
+                
+                function helloWorld()
+                {
+                    // The variable greeting is available in the function
+                    greeting = greeting + " JavaScript";
+                    alert(greeting);
+                }
+                
+                helloWorld();
+            </code>
+            </pre>
+            <p><strong>If you assign a value to a variable that has not been declared, it will automatically become a global variable, even if it is present inside a function.</strong></p>
+            <span class="filename">Example : </span>
+            <pre><code class="language-javascript">
+            function helloWorld()
+            {
+                // The variable greeting is not declared but a value is assigned.
+                // So it will automatically become a global variable
+                greeting = "Hello JavaScript";
+            }
+            
+            helloWorld();
+            
+            // Variable greeting is available outside the function
+            
+            alert(greeting);
+            </code>
+            </pre>
+            <p><strong>A local variable can have the same name as a global variable.</strong> Changing the value of one variable has no effect on the other. If the variable value is changed inside a function, and if a local version of the variable exists
+                then the local variable gets modified. If the variable value is changed outside a function then the global variable gets modified.</p>
+            <span class="filename">Example : </span>
+            <pre><code class="language-javascript">
+            var greeting = "This is from global Variable";
+            
+            function helloWorld()
+            {
+                var greeting = "This is from local variable";
+                document.write(greeting + "&lt;br/&gt;");
+            }
+            
+            // This line will modify the global greeting variable
+            greeting += "!!!";
+            
+            helloWorld();
+            
+            document.write(greeting);
+            </code>
+            </pre>
+            <strong>Output : </strong>
+            <p>This is from local variable</p>
+            <p>This is from global Variable!!! </p>
+            <p>Sometimes, <strong>variable hoisting and local & global variable with the same name can cause unexpected behavior</strong>.</p>
+            <span class="filename">Example : </span>
+            <pre><code class="language-javascript">
+            var greeting = "This is from global Variable";
+            helloWorld();
+            
+            function helloWorld()
+            {
+                document.write(greeting);
+                var greeting = "Hello from local variable"
+            
+            }
+            </code>
+            </pre>
+            <p><strong>Output :</strong> undefined</p>
+            <p>At runtime due to variable hoisting, the above program would look more like as shown below.</p>
+            <span class="filename">Example : </span>
+            <pre><code class="language-javascript">
+                var greeting = "This is from global Variable";
+                helloWorld();
+                
+                function helloWorld()
+                {
+                    var greeting;
+                    document.write(greeting);
+                    greeting = "Hello from local variable"
+                
+                }
+            </code>
+            </pre>
+            <p><strong>Braces do not create scope in JavaScript :</strong> In the following example <strong>otherNumber</strong> is a global variable though it is defined inside braces. In many languages like C# and Java, braces create scope, but not JavaScript.</p>
+            <span class="filename">Example : </span>
+            <pre><code class="language-javascript">
+            var number = 100;
+            
+            if (number > 10) 
+            {
+                var otherNumber = number;
+            }
+            
+            document.write(otherNumber);
+                    
+            </code>
+            </pre>
+            <p>Output : 100 </p>
 
-&lt;head&gt;
-    &lt;title&gt;&lt;/title&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
 
-    &lt;script type="text/javascript" src="build/app.all.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
 
-&lt;body&gt;
-    &lt;button id="showbtn"&gt;Show&lt;/button&gt;
-&lt;/body&gt;
 
-&lt;/html&gt;
-    </code></pre>
-                <a href="http://semaphoreci.com/community/tutorials/setting-up-angular-2-with-webpack" target="_blank">Ref</a>
-                <a href="https://webpack.github.io/docs/list-of-tutorials.html" target="_blank">Ref</a>
-
-            </article>
-            <aside id="sidebar">
-                <div class="dark">
-                    <h3>What We Do</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius auctor lacus nec feugiat. Phasellus sit amet ex ipsum. Praesent pharetra tincidunt tempor. Etiam velit eros, dapibus eget porta in, lacinia et magna</p>
-                </div>
-            </aside>
+            <!-- -->
         </div>
     </section>
 

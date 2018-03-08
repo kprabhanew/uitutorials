@@ -9,10 +9,10 @@
     <meta name="author" content="Prabakaran">
     <title>UI Tutorials | Welcome</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="https:maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/MenuStyle.css">
     <link rel="stylesheet" href="../css/SiteStyle.css">
-    <script src='http:cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="../scripts/menuScript.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/prism.css">
     <script src="../scripts/prism.js"></script>
@@ -28,7 +28,7 @@
             a.async = 1;
             a.src = g;
             m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https:www.google-analytics.com/analytics.js', 'ga');
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-103420198-1', 'auto');
         ga('send', 'pageview');
@@ -47,7 +47,7 @@
                 <div id="head-mobile"></div>
                 <div class="button"></div>
                 <ul>
-                    <li><a href="../index.html">HOME</a></li>
+                    <li class='active'><a href="../index.html">HOME</a></li>
                     <li><a href='../Bootstrap/htmlPages/grid.html'>Bootstrap</a></li>
                     <li><a href="#">AngularJS</a>
                         <ul>
@@ -260,146 +260,83 @@
             </nav>
         </div>
     </header>
-
     <section id="main">
         <div class="container">
-            <article id="main-col">
-                <h1>Webpack</h1>
-
-                <ol>
-                    <li>Install npm : npm init (Create Package.json)</li>
-                    <li>Add html file (index.html)</li>
-                    <li>Create Source folder (dir\source)</li>
-                    <li>Create js file 'Message.js' (Message class defenition)</li>
-                    <li>Add app.js (import Message.js )</li>
-                    <li>Install jquery : npm install --save jquery</li>
-                    <li>Import jquery into 'app.js' and write the code</li>
-                    <li>loader needs to be installed to translate the ES6 code to plain js code, so install webpack</li>
-                    <li>Install webpack : npm install --save-dev webpack</li>
-                    <li>Install loader : npm install --save-dev babel-core babel-loader babel-preset-es2015</li>
-                    <li>Webpack configuration : webpack.config.js (specify the entry point 'app.js'. this app.js imported other js files)</li>
-                    <li>Run Cmd : node_modules\.bin\webpack --display-error-details</li>
-                </ol>
-                <pre>
-Task Runners Vs Bundlers
-Executes series of js tasks at client side
-Transpile -> SASS to CSS
-Bundlers => Module System To Plain JS
-
-Frameworks For Task Runners
-1)Grunt
-2)Gulp
-
-Frameworks For Bundlers
-1)Browserify
-2)Webpack
-
-File monitoring tool - Watching
-</pre>
-
-                <span class="filename">Example : package.json</span>
-                <pre><code class="language-javascript">
-    {
-    "name": "myapp",
-    "version": "1.0.0",
-    "description": "",
-    "main": "app.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "jquery": "^3.2.1"
-    },
-    "devDependencies": {
-        "babel": "^6.23.0",
-        "babel-core": "^6.25.0",
-        "babel-loader": "^7.1.1",
-        "babel-preset-es2015": "^6.24.1",
-        "webpack": "^3.4.1",
-        "webpack-dev-server": "^2.6.1"
-    }
-}
-    </code></pre>
-
-                <span class="filename">Example : app.js</span>
-                <pre><code class="language-javascript">
-    //The whole Message Defenition will be available here, 'msg' is the class here indirectly
-import msg from './Message.js';
-import $ from 'jquery';
-
-$(function() {
-    $('#showbtn').on("click", function() {
-        var o = new msg();
-        o.show();
-    })
-})
-    </code></pre>
-
-                <span class="filename">Example : Message.js</span>
-                <pre><code class="language-javascript">
-    //js Class ES2015
-export default class Message {
-    show() {
-        alert('Hello World')
-    }
-}
-    </code></pre>
-                <span class="filename">Example : webpack.config.js</span>
-                <pre><code class="language-javascript">
-    var path = require('path');
-var webpack = require('webpack');
-
-module.exports = {
-    entry: ['./source/app.js'],
-    output: {
-        path: path.join(__dirname, "/build/"),
-        //publicPath: '/build/js',
-        filename: 'app.all.js'
-    },
-    module: {
-        loaders: [{
-            test: /\.js$/,
-            //include: path.resolve(__dirname, "/build/js"),
-            loader: 'babel-loader',
-            query: {
-                presets: ['es2015']
+            <h2>Closures in JavaScript</h2>
+            <p>In this page we will understand closures in JavaScript with an example.</p>
+            <strong>What is a closure</strong>
+            <p>A closure is an inner function that has access to the outer function’s variables in addition to it's own variables and global variables. The inner function has access not only to the outer function’s variables, but also to the outer function’s
+                parameters. You create a closure by adding a function inside another function.</p>
+            <strong>JavaScript Closure Example</strong>
+            <span class="filename">Example : </span>
+            <pre><code class="language-javascript">
+            function addNumbers(firstNumber, secondNumber)
+            {
+                var returnValue = "Result is : ";
+                // This inner function has access to the outer function's variables & parameters
+                function add()
+                {
+                    return returnValue + (firstNumber + secondNumber);
+                }
+                return add();
             }
-        }]
-    }
-}
-    </code></pre>
-                <img src="images/webpack-structure.png" />
-                <span class="filename">Example : index.html</span>
-                <pre><code class="language-html">
-    &lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
+            
+            var result = addNumbers(10, 20);
+            
+            document.write(result);
+            </code>
+            </pre>
+            <p>Output : Result is : 30</p>
+            <p><strong>The following code Returns the inner function expression</strong></p>
+            <span class="filename">Example : </span>
+            <pre><code class="language-javascript">
+            function addNumbers(firstNumber, secondNumber)
+            {
+                var returnValue = "Result is : ";
+                function add()
+                {
+                    return returnValue + (firstNumber + secondNumber);
+                }
+                // We removed the parentheses. This will return the
+                // inner function expression without executing it.
+                return add;
+            }
+            
+            // addFunc will contain add() function (inner function) expression.
+            var addFunc = addNumbers(10, 20);
+            // call the addFunc() function and store the return value in result variable
+            var result = addFunc();
+            
+            document.write(result);
+            </code>
+            </pre>
+            <p><strong>Returning and executing the inner function</strong></p>
+            <span class="filename">Example : </span>
+            <pre><code class="language-javascript">
+            function addNumbers(firstNumber, secondNumber)
+            {
+                var returnValue = "Result is : ";
+                function add()
+                {
+                    return returnValue + (firstNumber + secondNumber);
+                }
+                // We removed the parentheses. This will return the
+                // inner function add() expression without executing it.
+                return add;
+            }
+            
+            // This returns add() function (inner function) definition
+            // and executes it. Notice the additonal parentheses.
+            var result = addNumbers(10, 20)();
+            
+            document.write(result);
+            </code>
+            </pre>
 
-&lt;head&gt;
-    &lt;title&gt;&lt;/title&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
 
-    &lt;script type="text/javascript" src="build/app.all.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
 
-&lt;body&gt;
-    &lt;button id="showbtn"&gt;Show&lt;/button&gt;
-&lt;/body&gt;
 
-&lt;/html&gt;
-    </code></pre>
-                <a href="http://semaphoreci.com/community/tutorials/setting-up-angular-2-with-webpack" target="_blank">Ref</a>
-                <a href="https://webpack.github.io/docs/list-of-tutorials.html" target="_blank">Ref</a>
-
-            </article>
-            <aside id="sidebar">
-                <div class="dark">
-                    <h3>What We Do</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius auctor lacus nec feugiat. Phasellus sit amet ex ipsum. Praesent pharetra tincidunt tempor. Etiam velit eros, dapibus eget porta in, lacinia et magna</p>
-                </div>
-            </aside>
+            <!-- -->
         </div>
     </section>
 
