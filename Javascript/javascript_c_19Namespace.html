@@ -263,42 +263,71 @@
     </header>
     <section id="main">
         <div class="container">
-            <h2>Global namespace pollution in JavaScript</h2>
-            <p>In this page we will understand the<strong> problem of global namespace pollution in JavaScript</strong> with an example. When working with JavaScript on a big project, you might hear senior developers saying during the code review, this code
-                pollutes the global scope. In this page let's understand the problem of global namespace pollution. In our next page we will discuss how to write JavaScript in such a way that it does not pollute the global scope. </p>
-            <p>Let us say we have 2 software development teams <strong> (TeamA & TeamB) </strong>working on a large project for HCL Technologies.</p>
-            <p><strong>TeamA</strong> has created a <strong>customer</strong> constructor function with 2 parameters (firstName & lastName) and added it to <strong> TeamA.js </strong>file</p>
+            <h2>Namespaces in JavaScript</h2>
+            <p>In this page, we will discuss <strong>how to use namespaces to avoid polluting the global scope.</strong> </p>
+            <p>JavaScript lack namespaces. However we can use objects to create namespaces. </p>
+            <p>The following line says use the Abc object if it already exists, otherwise create an empty object.</p>
+            <pre>
+                    var Abc = Abc || {};
+            </pre>
+            <p>The following line adds a nested namespace. A nested namespace is a namespace inside another namespace. In JavaScript to define a nested namespace, you define an object inside another object. </p>
+            <pre>
+                    Abc.TeamA = Abc.TeamA || {};
+            </pre>
+            <p>Modify the script in <strong>TeamA.js</strong> file as shown below. In this example we are adding <strong>customer()</strong> function to <strong>Abc.TeamA </strong>namespace. </p>
             <span class="filename">Example : </span>
             <pre><code class="language-javascript">
-            function customer(firstName, lastName)
-            {
-                this.firstName = firstName;
-                this.lastName = lastName;
-                this.getFullName = function ()
+                var Abc = Abc || {};
+                Abc.TeamA = Abc.TeamA || {};
+                
+                Abc.TeamA.customer = function (firstName, lastName) 
                 {
-                    return this.firstName + " " + this.lastName;
-                }
-            }
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                
+                    this.getFullName = function () 
+                    {
+                        return this.firstName + " " + this.lastName;
+                    }
+                
+                    return this;
+                }                    
             </code>
             </pre>
-            <p><strong>TeamB</strong> has also created a customer constructor function but with 3 parameters (firstName, middleName & lastName) and added it TeamB.js file. </p>
+            <p>Abc will be added to the global namespace. window is the alias for global namespace in JavaScript. You can now access customer() function as shown below.</p>
+            <pre>
+                Abc.TeamA.customer("Tom", "Grover")
+                    OR
+                window.Abc.TeamA.customer("Tom", "Grover")
+            </pre>
+            <p>Modify the script in <strong>TeamB.js</strong> file as shown below. In this example we are adding <strong>customer()</strong> function to <strong>Abc.TeamB</strong> namespace. </p>
             <span class="filename">Example : </span>
             <pre><code class="language-javascript">
-            function customer(firstName, middleName, lastName)
+            var Abc = Abc || {};
+            Abc.TeamB = Abc.TeamB || {}; 
+            
+            Abc.TeamB.customer = function (firstName, middleName, lastName) 
             {
                 this.firstName = firstName;
-                this.middleName = middleName;
+                this.middleName = middleName; 
                 this.lastName = lastName;
             
-                this.getFullName = function ()
+                this.getFullName = function () 
                 {
                     return this.firstName + " " + this.middleName + " " + this.lastName;
-                }
+                } 
+            
+                return this;
             }
             </code>
             </pre>
-            <p>So at the moment we have <strong>2 customer constructor functions.</strong> One version has 2 parameters (firstName & lastName) and the other version has 3 parameters (firstName, middleName & lastName). </p>
-            <p><strong>HTML Page code :</strong> In this HTML page we want to use the customer constructor function that has 2 parameters (firstName & lastName). Notice that in the header section we are first loading TeamA.js and then TeamB.js.</p>
+            <pr>Abc will be added to the global namespace. You can now access customer() function as shown below.</pr>
+            <pre>
+                Abc.TeamB.customer("Tom", "T", "Grover")                
+                OR                
+                window.Abc.TeamB.customer("Tom", "T", "Grover")
+            </pre>
+            <p>On any given HTML page you should be able to access both the versions of customer() function as shown below.</p>
             <span class="filename">Example : </span>
             <pre><code class="language-javascript">
             &lt;html&gt;
@@ -307,34 +336,18 @@
                     &lt;script type="text/javascript" src="TeamB.js" &gt;&lt;/script&gt;
                 &lt;/head&gt;
                 &lt;body&gt;
-                    &lt;div id="resultDiv"&gt;&lt;/div&gt;
                     &lt;script type="text/javascript"&gt;
-                        document.getElementById("resultDiv").innerHTML =
-                                    new customer("Tom", "Grover").getFullName();
+                        // Call the customer function that is defined in TeamA.js
+                        alert(Abc.TeamA.customer("Tom", "Grover").getFullName());
+            
+                        // Call the customer function that is defined in TeamB.js
+                        alert(Abc.TeamB.customer("Tom", "T", "Grover").getFullName());
                     &lt;/script&gt;
                 &lt;/body&gt;
             &lt;/html&gt;
             </code>
             </pre>
-            <p>When you view the page in the browser, we get the following output. We expected it to print to "Tom Grover"</p>
-            <strong>Tom Grover undefined</strong>
-            <p><strong>This is because JavaScript does not support function overloading and as a result,</strong> the customer() constructor function with 3 parameters simply overwrites the customer() constructor function with 2 parameters. </p>
-            <p>You may be wondering why didn't it happen the other way round. Why didn't customer() constructor function with 2 parameters overwrite the customer() constructor function with 3 parameters. That is because TeamB.js is loaded after TeamA.js.
-                So the customer() constructor function in TeamB.js has overwritten the customer() constructor function in TeamA.js. </p>
-            <p>The reason, one of the customer() constructor function got overwritten is because we have already <strong> polluted the global scope.</strong> Let's understand what we mean by this. </p>
-            <p>1. window is the Global object in JavaScript </p>
 
-            <p>2. When TeamA.js script file is loaded, the customer() function in TeamA.js file is added to the global namespace </p>
-
-            <p>3. When TeamB.js script file is loaded, the customer() function in TeamB.js file is added to the global namespace. Since 2 functions with the same name cannot exist in the global namespce, the customer() function in TeamB.js overwrites the
-                customer() function in TeamA.js. As a result we cannot use the customer() function in TeamA.js file.</p>
-
-            <p>4. In JavaScript if you declare a variable or a function second time, it simply overwrites the one you created earlier. JavaScript does not raise any errors like C# or Java if you redefine a variable or a function. </p>
-            <p><strong>Here is the summary.</strong></p>
-            <p>Polluting global namespace causes name collision. This is especially true in large projects where you may be using several JavaScript libraries (both internally developed as well as third party libraries). That's why it is very important not
-                to add everything to the global namespace. If someone else use the same variable or function names it can lead to name collision.</p>
-
-            <p>In our next we will discuss, how to write JavaScript code in such a way that it does not pollute the global scope. </p>
             <!-- -->
         </div>
     </section>
