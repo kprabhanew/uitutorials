@@ -257,7 +257,45 @@
 		<p>On top of everything, AngularJS applications can run on all major browsers and smart phones including Android and iOS based phones/tablets.</p>
 <strong>What is Dependency Injection</strong>
 	<p>It's a coding pattern in which a class receives its dependencies from an external source rather than creating them itself.</p>
-	<strong>	To get started with angular </strong>
+		<strong>Data Binding </strong>
+		<p>When the model changes the view is automatically updated. This is achieved using the data binding expression in the view. </p>
+		<p>The code in the controller attaches message property to the scope which is the model.</p>
+		<span class="filename">Example : script.js</span>
+    <pre><code class="language-javascript">
+    var app = angular
+            .module("myModule", [])
+            .controller("myController", function ($scope) {
+                $scope.message = "Hello Angular"
+            });
+    </code>
+    </pre>
+		<p> Whenever the message property value changes, the data binding expression in the view updates the view automatically. </p>
+		<span class="filename">Example : placeView.html</span>
+    <pre><code class="language-html">
+    &lt;!DOCTYPE html&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;script src="Scripts/angular.min.js"&gt;&lt;/script&gt;
+    &lt;script src="Scripts/Script.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body ng-app="myModule"&gt;
+    &lt;div ng-controller="myController"&gt;
+        {{ message }}
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;    
+    </code>
+    </pre>
+<strong>ng-model directive can be used with the following 3 html elements</strong>
+
+<ul>
+<li>input</li>
+<li>select</li>
+<li>textarea</li>
+</ul>
+	
+		<strong>To get started with angular </strong>
 	<p>1. Add a reference to the angular script</p>
 	<p>2. Include ng-app attribute</p>
 	<strong>What is ng-app</strong>
