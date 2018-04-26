@@ -235,7 +235,20 @@
         can be injected into constructor as <code>$scope.</code></p>
     <p><strong>Scope </strong>is an execution context for the angular <strong>expressions </strong>and it can watch expressions and propagate events. Scopes also provides APIs to watch the changes in the <strong>model </strong>and <strong>view</strong>.
         Scope ties the view to the controller so that it does not need to know the view and the view does not need to know about the controller.</p>
-    <h2>Guidelines</h2>
+    <!-- New -->
+		<p><strong>The job of the controller is to build a model for the view. </strong>The controller does this by attaching the model to the scope. The scope is not the model, it's the data that you attach to the scope is the model.</p>
+		<p>In the following example, <strong>$scope is not the model</strong>. The message property that we have attached to the scope is the model.</p>
+		<span class="filename">Example : </span>
+    <pre><code class="language-html">
+	myApp.controller("myController", function ($scope) {
+    $scope.message = "AngularJS Tutorial";
+});
+	</code>
+	</pre>
+	<p>The view will then use the data-binding expression to retrieve the model from the scope. This means the controller is not manipulating the DOM directly, thus keeping that clean separation between the model, view and the controller. So when you are developing controllers, make sure, you are not breaking that clean separation between the model, view and the controllers. The controller should only be used for setting up the $scope object and adding behavior it.</p>
+	
+	<!-- New End -->
+	<h2>Guidelines</h2>
     <p><a title="Angular Controller guidelines" href="https://docs.angularjs.org/guide/controller" rel="nofollow" target="_blank">AngularJS official documentation</a> provides the following <strong>guidelines </strong>to use the controllers in the angular
         applications.
     </p>
